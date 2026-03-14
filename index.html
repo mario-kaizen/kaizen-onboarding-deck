@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Growth Engine — Kaizen Collective</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --cream: #FAF7F2;
+    --cream-dark: #F0EBE3;
+    --ink: #1A1A1A;
+    --ink-soft: #2D2A26;
+    --gold: #C8A870;
+    --gold-dark: #A88B5A;
+    --gold-light: #E8D5B5;
+    --gold-glow: rgba(200, 168, 112, 0.12);
+    --green: #2D6A4F;
+    --green-light: #E8F5E9;
+    --blue: #2C5F8A;
+    --blue-light: #E3F2FD;
+    --purple: #6B4C9A;
+    --purple-light: #F3E8FF;
+    --orange: #D4740E;
+    --orange-light: #FFF3E0;
+    --gray-300: #C9C3B8;
+    --gray-400: #A69F94;
+    --gray-500: #8A8478;
+    --gray-600: #6B665E;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding: 4.5rem 2rem 3.5rem;
+    text-align: center;
+    background: linear-gradient(180deg, var(--ink) 0%, var(--ink-soft) 100%);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(180deg, transparent, var(--cream));
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--gray-400);
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(200, 168, 112, 0.2);
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .hero-stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--gold);
+    display: block;
+  }
+
+  .hero-stat-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gray-500);
+    font-weight: 500;
+  }
+
+  /* ─── CONTAINER ─── */
+  .container {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* ─── INTRO ─── */
+  .intro {
+    text-align: center;
+    padding: 3rem 0 2rem;
+  }
+
+  .intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .intro p {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ─── PHASE CARDS ─── */
+  .phase-card {
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+    border-radius: 14px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+
+  .phase-card:hover {
+    border-color: var(--gold-light);
+  }
+
+  .phase-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem 1.75rem 1.25rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .phase-number {
+    width: 36px;
+    height: 36px;
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .phase-info { flex: 1; }
+
+  .phase-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+
+  .phase-focus {
+    font-size: 0.82rem;
+    color: var(--gold-dark);
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  .phase-meta-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.3rem;
+    flex-shrink: 0;
+  }
+
+  .hours-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--gold-dark);
+    background: var(--gold-glow);
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .expand-arrow {
+    font-size: 0.65rem;
+    color: var(--gray-400);
+    transition: transform 0.25s;
+    margin-top: 0.25rem;
+  }
+
+  .phase-card.open .expand-arrow { transform: rotate(180deg); }
+
+  .phase-body {
+    display: none;
+    padding: 0 1.75rem 1.5rem;
+  }
+
+  .phase-card.open .phase-body { display: block; }
+
+  .phase-divider {
+    height: 1px;
+    background: var(--cream-dark);
+    margin-bottom: 1.25rem;
+  }
+
+  .quad-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .quad-box {
+    padding: 1rem 1.15rem;
+    border-radius: 10px;
+    font-size: 0.84rem;
+    line-height: 1.6;
+  }
+
+  .quad-box h4 {
+    font-size: 0.68rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .quad-box ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .quad-box li {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .quad-box li::before {
+    content: '—';
+    flex-shrink: 0;
+    margin-top: 0;
+  }
+
+  .quad-outcome {
+    background: var(--green-light);
+    border: 1px solid #C8E6C9;
+  }
+
+  .quad-outcome h4 { color: var(--green); }
+  .quad-outcome li::before { color: var(--green); }
+
+  .quad-need {
+    background: var(--orange-light);
+    border: 1px solid #FFE0B2;
+  }
+
+  .quad-need h4 { color: var(--orange); }
+  .quad-need li::before { color: var(--orange); }
+
+  .quad-do {
+    background: var(--blue-light);
+    border: 1px solid #BBDEFB;
+  }
+
+  .quad-do h4 { color: var(--blue); }
+  .quad-do li::before { color: var(--blue); }
+
+  .quad-get {
+    background: var(--purple-light);
+    border: 1px solid #E1BEE7;
+  }
+
+  .quad-get h4 { color: var(--purple); }
+  .quad-get li::before { color: var(--purple); }
+
+  /* ─── OUTCOMES ─── */
+  .outcomes {
+    padding: 3rem 0;
+  }
+
+  .outcomes h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .outcome-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .outcome-card {
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .outcome-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .outcome-desc {
+    font-size: 0.82rem;
+    color: var(--gray-600);
+    line-height: 1.55;
+  }
+
+  /* ─── COMPARISON ─── */
+  .comparison {
+    padding: 2.5rem 0 3rem;
+  }
+
+  .comparison h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .comparison-sub {
+    text-align: center;
+    color: var(--gray-500);
+    font-size: 0.88rem;
+    margin-bottom: 2rem;
+  }
+
+  .comparison-table {
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .comp-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+
+  .comp-row:last-child { border-bottom: none; }
+
+  .comp-header {
+    font-weight: 700;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: var(--cream-dark);
+  }
+
+  .comp-cell {
+    padding: 0.8rem 1.25rem;
+    font-size: 0.88rem;
+  }
+
+  .comp-cell:not(:first-child) { text-align: center; }
+
+  .comp-highlight {
+    background: var(--gold-glow);
+    font-weight: 600;
+  }
+
+  /* ─── PROMISE ─── */
+  .promise {
+    text-align: center;
+    padding: 3rem 2rem;
+    margin: 1rem 0 2rem;
+    background: var(--ink);
+    border-radius: 16px;
+    color: var(--cream);
+  }
+
+  .promise h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--gold);
+  }
+
+  .promise p {
+    font-size: 0.95rem;
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: var(--gray-400);
+  }
+
+  .promise strong { color: var(--cream); }
+
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.75rem;
+    color: var(--gray-500);
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 3rem 1.5rem 2.5rem; }
+    .hero-stats { gap: 1.5rem; }
+    .container { padding: 0 1.25rem; }
+    .phase-header { flex-wrap: wrap; padding: 1.25rem; }
+    .phase-meta-right { flex-direction: row; align-items: center; margin-top: 0.5rem; }
+    .phase-body { padding: 0 1.25rem 1.25rem; }
+    .quad-grid { grid-template-columns: 1fr; }
+    .outcome-grid { grid-template-columns: 1fr; }
+    .comp-row { grid-template-columns: 1fr; }
+    .comp-cell:not(:first-child) { text-align: left; }
+    .comp-header { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">Kaizen Collective &middot; Done With You</div>
+  <h1>We're About to Build Your <em>Growth Engine</em></h1>
+  <p class="hero-sub">Over the next 12 phases, our team will build, test, and launch your complete marketing system — with you in the driver's seat the entire time.</p>
+  <div class="hero-stats">
+    <div>
+      <span class="hero-stat-number">12</span>
+      <span class="hero-stat-label">Phases</span>
+    </div>
+    <div>
+      <span class="hero-stat-number">148</span>
+      <span class="hero-stat-label">Hours of Work</span>
+    </div>
+    <div>
+      <span class="hero-stat-number">85+</span>
+      <span class="hero-stat-label">Projects</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="intro">
+  <h2>Here's what happens next.</h2>
+  <p>Every phase builds on the last. By the end, you won't just have a campaign running — you'll have a system you understand, own, and can scale with confidence. Click any phase to see the full breakdown.</p>
+</div>
+
+<!-- PHASE 1 -->
+<div class="phase-card" onclick="this.classList.toggle('open')">
+  <div class="phase-header">
+    <div class="phase-number">1</div>
+    <div class="phase-info">
+      <div class="phase-title">Solidify Your Brand Identity</div>
+      <div class="phase-focus">Clarity creates confidence. Confidence increases conversion.</div>
+    </div>
+    <div class="phase-meta-right">
+      <span class="hours-badge">8 HOURS</span>
+      <span class="expand-arrow">&#9660;</span>
+    </div>
+  </div>
+  <div class="phase-body">
+    <div class="phase-divider"></div>
+    <div class="quad-grid">
+      <div class="quad-box quad-outcome">
+        <h4>What You'll Achieve</h4>
+        <ul>
+          <li>Crystal clarity on what makes your brand different</li>
+          <li>A consistent voice across every touchpoint</li>
+          <li>Confidence to show up knowing everything feels like <em>you</em></li>
+        </ul>
+      </div>
+      <div class="quad-box quad-need">
+        <h4>What We Need From You</h4>
+        <ul>
+          <li>Attend the discovery call (90 mins)</li>
+          <li>Share existing brand assets, content, and past marketing</li>
+          <li>Review and sign off on the Brand Identity document</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-do">
+        <h4>What We'll Do</h4>
+        <ul>
+          <li>Discovery call & business deep-dive</li>
+          <li>Competitive positioning analysis</li>
+          <li>Brand values & differentiators workshop</li>
+          <li>Messaging framework & tone of voice development</li>
+          <li>Brand identity document creation</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-get">
+        <h4>What You'll Get</h4>
+        <ul>
+          <li>Brand Identity document</li>
+          <li>Messaging framework</li>
+          <li>Tone of voice guide</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 2 -->
+<div class="phase-card" onclick="this.classList.toggle('open')">
+  <div class="phase-header">
+    <div class="phase-number">2</div>
+    <div class="phase-info">
+      <div class="phase-title">Define Your Ideal Client</div>
+      <div class="phase-focus">When you speak to someone specific, conversion improves instantly.</div>
+    </div>
+    <div class="phase-meta-right">
+      <span class="hours-badge">6 HOURS</span>
+      <span class="expand-arrow">&#9660;</span>
+    </div>
+  </div>
+  <div class="phase-body">
+    <div class="phase-divider"></div>
+    <div class="quad-grid">
+      <div class="quad-box quad-outcome">
+        <h4>What You'll Achieve</h4>
+        <ul>
+          <li>Know exactly who you're talking to — and what makes them buy</li>
+          <li>Stop wasting ad spend on the wrong people</li>
+          <li>Every piece of content, copy, and offer speaks directly to your dream client</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-need">
+        <h4>What We Need From You</h4>
+        <ul>
+          <li>Share insights on your best current clients</li>
+          <li>Describe the people you love working with (and those you don't)</li>
+          <li>Review the avatar document</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-do">
+        <h4>What We'll Do</h4>
+        <ul>
+          <li>Current client base analysis</li>
+          <li>Ideal client avatar deep-dive</li>
+          <li>Buying triggers & objection mapping</li>
+          <li>Client language & messaging bank</li>
+          <li>Avatar document & team briefing</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-get">
+        <h4>What You'll Get</h4>
+        <ul>
+          <li>Ideal Client Avatar document</li>
+          <li>Messaging bank</li>
+          <li>Buying triggers map</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 3 -->
+<div class="phase-card" onclick="this.classList.toggle('open')">
+  <div class="phase-header">
+    <div class="phase-number">3</div>
+    <div class="phase-info">
+      <div class="phase-title">Confirm Your Path to Purchase</div>
+      <div class="phase-focus">No friction. No confusion. No awkward transitions.</div>
+    </div>
+    <div class="phase-meta-right">
+      <span class="hours-badge">8 HOURS</span>
+      <span class="expand-arrow">&#9660;</span>
+    </div>
+  </div>
+  <div class="phase-body">
+    <div class="phase-divider"></div>
+    <div class="quad-grid">
+      <div class="quad-box quad-outcome">
+        <h4>What You'll Achieve</h4>
+        <ul>
+          <li>See every step a customer takes — and where you were losing them</li>
+          <li>Remove the friction that's costing you conversions</li>
+          <li>A journey that feels seamless from first touch to first sale</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-need">
+        <h4>What We Need From You</h4>
+        <ul>
+          <li>Walk us through how someone currently finds and buys from you</li>
+          <li>Share any pain points you've noticed in the process</li>
+          <li>Approve the redesigned journey</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-do">
+        <h4>What We'll Do</h4>
+        <ul>
+          <li>Current customer journey audit</li>
+          <li>Touchpoint mapping (discovery → enquiry → booking → sale)</li>
+          <li>Friction point identification & removal plan</li>
+          <li>Journey redesign & documentation</li>
+          <li>Implementation checklist & handover</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-get">
+        <h4>What You'll Get</h4>
+        <ul>
+          <li>Customer journey map</li>
+          <li>Friction points identified and addressed</li>
+          <li>Implementation checklist</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 4 -->
+<div class="phase-card" onclick="this.classList.toggle('open')">
+  <div class="phase-header">
+    <div class="phase-number">4</div>
+    <div class="phase-info">
+      <div class="phase-title">Define & Optimise Your Packages</div>
+      <div class="phase-focus">When the offer is clear, the sale is easier.</div>
+    </div>
+    <div class="phase-meta-right">
+      <span class="hours-badge">8 HOURS</span>
+      <span class="expand-arrow">&#9660;</span>
+    </div>
+  </div>
+  <div class="phase-body">
+    <div class="phase-divider"></div>
+    <div class="quad-grid">
+      <div class="quad-box quad-outcome">
+        <h4>What You'll Achieve</h4>
+        <ul>
+          <li>Offers that make sense — explained in one sentence</li>
+          <li>Pricing that reflects your value and attracts the right clients</li>
+          <li>Confidence on every sales conversation because your offer does the heavy lifting</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-need">
+        <h4>What We Need From You</h4>
+        <ul>
+          <li>Current pricing and package details</li>
+          <li>Feedback on what's selling well vs. what's confusing people</li>
+          <li>Approve the redesigned offer structure</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-do">
+        <h4>What We'll Do</h4>
+        <ul>
+          <li>Current offer audit & pricing analysis</li>
+          <li>Value stack redesign</li>
+          <li>Pricing strategy & tier structure</li>
+          <li>Package copy & sales descriptions</li>
+          <li>Sales collateral update</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-get">
+        <h4>What You'll Get</h4>
+        <ul>
+          <li>Optimised package pricing document</li>
+          <li>Updated sales collateral</li>
+          <li>Value stack documentation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 5 -->
+<div class="phase-card" onclick="this.classList.toggle('open')">
+  <div class="phase-header">
+    <div class="phase-number">5</div>
+    <div class="phase-info">
+      <div class="phase-title">Install Your Sales Mechanisms</div>
+      <div class="phase-focus">Confidence isn't personality. It's process.</div>
+    </div>
+    <div class="phase-meta-right">
+      <span class="hours-badge">16 HOURS</span>
+      <span class="expand-arrow">&#9660;</span>
+    </div>
+  </div>
+  <div class="phase-body">
+    <div class="phase-divider"></div>
+    <div class="quad-grid">
+      <div class="quad-box quad-outcome">
+        <h4>What You'll Achieve</h4>
+        <ul>
+          <li>No more dreading sales conversations</li>
+          <li>Know exactly what to say, when to say it, and how to handle objections</li>
+          <li>A repeatable process your team can follow — not just you</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-need">
+        <h4>What We Need From You</h4>
+        <ul>
+          <li>Attend the sales training & role-play session</li>
+          <li>Share your current sales process (even if informal)</li>
+          <li>Common objections you hear</li>
+          <li>Practice the scripts and give us feedback</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-do">
+        <h4>What We'll Do</h4>
+        <ul>
+          <li>Sales process audit & gap analysis</li>
+          <li>Primary sales mechanism design</li>
+          <li>Sell By Chat (SBC) structure & scripts</li>
+          <li>Discovery call framework & scripts</li>
+          <li>Objection handling playbook</li>
+          <li>Price presentation structure</li>
+          <li>Follow-up sequences in CRM</li>
+          <li>Sales pipeline & tracking setup</li>
+          <li>Team training & role-play session</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-get">
+        <h4>What You'll Get</h4>
+        <ul>
+          <li>Sales scripts (chat, call, follow-up)</li>
+          <li>Objection handling playbook</li>
+          <li>SBC framework</li>
+          <li>CRM pipeline configured</li>
+          <li>Follow-up sequences active</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 6 -->
+<div class="phase-card" onclick="this.classList.toggle('open')">
+  <div class="phase-header">
+    <div class="phase-number">6</div>
+    <div class="phase-info">
+      <div class="phase-title">Create Your Landing Pages</div>
+      <div class="phase-focus">Not a brochure — a sales asset.</div>
+    </div>
+    <div class="phase-meta-right">
+      <span class="hours-badge">12 HOURS</span>
+      <span class="expand-arrow">&#9660;</span>
+    </div>
+  </div>
+  <div class="phase-body">
+    <div class="phase-divider"></div>
+    <div class="quad-grid">
+      <div class="quad-box quad-outcome">
+        <h4>What You'll Achieve</h4>
+        <ul>
+          <li>Pages that do the selling for you — 24/7</li>
+          <li>Every visitor is guided toward one clear action</li>
+          <li>A professional digital presence that builds instant trust</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-need">
+        <h4>What We Need From You</h4>
+        <ul>
+          <li>Approve the wireframe and page structure</li>
+          <li>Provide any photos, videos, or testimonials</li>
+          <li>Review the final pages on mobile and desktop</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-do">
+        <h4>What We'll Do</h4>
+        <ul>
+          <li>Landing page strategy & wireframe</li>
+          <li>Conversion copy & messaging</li>
+          <li>Page design & build in CRM</li>
+          <li>Form & CRM integration</li>
+          <li>Mobile optimisation & QA testing</li>
+          <li>Client review & revisions</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-get">
+        <h4>What You'll Get</h4>
+        <ul>
+          <li>Conversion-optimised landing pages (live)</li>
+          <li>Forms integrated with your CRM</li>
+          <li>QA tested across all devices</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 7 -->
+<div class="phase-card" onclick="this.classList.toggle('open')">
+  <div class="phase-header">
+    <div class="phase-number">7</div>
+    <div class="phase-info">
+      <div class="phase-title">Build Automated Workflows</div>
+      <div class="phase-focus">Automation increases revenue without increasing workload.</div>
+    </div>
+    <div class="phase-meta-right">
+      <span class="hours-badge">14 HOURS</span>
+      <span class="expand-arrow">&#9660;</span>
+    </div>
+  </div>
+  <div class="phase-body">
+    <div class="phase-divider"></div>
+    <div class="quad-grid">
+      <div class="quad-box quad-outcome">
+        <h4>What You'll Achieve</h4>
+        <ul>
+          <li>Leads get followed up instantly — even when you're asleep</li>
+          <li>No one falls through the cracks again</li>
+          <li>Your business feels like a big, well-run operation</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-need">
+        <h4>What We Need From You</h4>
+        <ul>
+          <li>Confirm your preferred response times and messaging tone</li>
+          <li>Approve the automation sequences</li>
+          <li>Test a few bookings to verify everything works</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-do">
+        <h4>What We'll Do</h4>
+        <ul>
+          <li>Automation strategy & workflow mapping</li>
+          <li>Instant enquiry response sequence</li>
+          <li>Appointment reminder workflows</li>
+          <li>Follow-up & re-engagement sequences</li>
+          <li>Pipeline stage automations</li>
+          <li>Internal team notifications</li>
+          <li>End-to-end testing & QA</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-get">
+        <h4>What You'll Get</h4>
+        <ul>
+          <li>All automations live in your CRM</li>
+          <li>Response times under 5 minutes</li>
+          <li>Every workflow tested end-to-end</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 8 -->
+<div class="phase-card" onclick="this.classList.toggle('open')">
+  <div class="phase-header">
+    <div class="phase-number">8</div>
+    <div class="phase-info">
+      <div class="phase-title">Define Your Social Strategy</div>
+      <div class="phase-focus">You don't need to go viral. You need to be visible and trusted.</div>
+    </div>
+    <div class="phase-meta-right">
+      <span class="hours-badge">10 HOURS</span>
+      <span class="expand-arrow">&#9660;</span>
+    </div>
+  </div>
+  <div class="phase-body">
+    <div class="phase-divider"></div>
+    <div class="quad-grid">
+      <div class="quad-box quad-outcome">
+        <h4>What You'll Achieve</h4>
+        <ul>
+          <li>Know exactly what to post, when, and why</li>
+          <li>Content that builds authority — not just fills a feed</li>
+          <li>A repeatable system so content creation stops being chaotic</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-need">
+        <h4>What We Need From You</h4>
+        <ul>
+          <li>Share what content has worked or felt right in the past</li>
+          <li>Record raw footage or stories when prompted</li>
+          <li>Approve the content plan</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-do">
+        <h4>What We'll Do</h4>
+        <ul>
+          <li>Content audit & platform analysis</li>
+          <li>Content pillars & messaging angles</li>
+          <li>Reel script frameworks</li>
+          <li>Carousel script frameworks</li>
+          <li>Authority positioning content plan</li>
+          <li>First content batch creation</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-get">
+        <h4>What You'll Get</h4>
+        <ul>
+          <li>Content pillars documented</li>
+          <li>Reel & carousel script frameworks</li>
+          <li>First content batch ready to post</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 9 -->
+<div class="phase-card" onclick="this.classList.toggle('open')">
+  <div class="phase-header">
+    <div class="phase-number">9</div>
+    <div class="phase-info">
+      <div class="phase-title">Amplify Your Message & Grow Your Database</div>
+      <div class="phase-focus">Followers are rented. Databases are owned.</div>
+    </div>
+    <div class="phase-meta-right">
+      <span class="hours-badge">16 HOURS</span>
+      <span class="expand-arrow">&#9660;</span>
+    </div>
+  </div>
+  <div class="phase-body">
+    <div class="phase-divider"></div>
+    <div class="quad-grid">
+      <div class="quad-box quad-outcome">
+        <h4>What You'll Achieve</h4>
+        <ul>
+          <li>Leads coming in consistently — not feast or famine</li>
+          <li>Every dollar is tracked from ad to conversion</li>
+          <li>A growing database of people who know, like, and trust you</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-need">
+        <h4>What We Need From You</h4>
+        <ul>
+          <li>Meta Business Manager access (admin level)</li>
+          <li>Approve ad creative and copy</li>
+          <li>Approve campaign budget</li>
+          <li>Record UGC content if needed (we'll send the script)</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-do">
+        <h4>What We'll Do</h4>
+        <ul>
+          <li>Audience research & targeting strategy</li>
+          <li>Competitor ad library analysis</li>
+          <li>Ad creative briefing & production</li>
+          <li>Ad copy variations (3-5 angles)</li>
+          <li>Campaign structure & budget plan</li>
+          <li>Pixel & tracking setup</li>
+          <li>Campaign build & launch</li>
+          <li>Initial optimisation (first 72 hours)</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-get">
+        <h4>What You'll Get</h4>
+        <ul>
+          <li>Live campaign on Meta</li>
+          <li>Pixel installed and verified</li>
+          <li>Leads flowing into your CRM</li>
+          <li>Performance dashboard</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 10 -->
+<div class="phase-card" onclick="this.classList.toggle('open')">
+  <div class="phase-header">
+    <div class="phase-number">10</div>
+    <div class="phase-info">
+      <div class="phase-title">Activate & Monetise Your Database</div>
+      <div class="phase-focus">The easiest sale is to someone who already knows you.</div>
+    </div>
+    <div class="phase-meta-right">
+      <span class="hours-badge">14 HOURS</span>
+      <span class="expand-arrow">&#9660;</span>
+    </div>
+  </div>
+  <div class="phase-body">
+    <div class="phase-divider"></div>
+    <div class="quad-grid">
+      <div class="quad-box quad-outcome">
+        <h4>What You'll Achieve</h4>
+        <ul>
+          <li>Revenue from your existing database — without running a single ad</li>
+          <li>Past leads and clients re-engaged and buying again</li>
+          <li>A promotion machine you can activate any time</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-need">
+        <h4>What We Need From You</h4>
+        <ul>
+          <li>Access to your existing contact/email list</li>
+          <li>Approve the nurture and re-engagement sequences</li>
+          <li>Share any upcoming promotions or events</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-do">
+        <h4>What We'll Do</h4>
+        <ul>
+          <li>Database audit & segmentation</li>
+          <li>Nurture sequence strategy</li>
+          <li>Authority email framework build</li>
+          <li>Re-engagement campaign design</li>
+          <li>Launch campaign template</li>
+          <li>Promotional sequence build</li>
+          <li>Segmented messaging setup</li>
+          <li>Tracking & performance dashboard</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-get">
+        <h4>What You'll Get</h4>
+        <ul>
+          <li>Nurture sequences active</li>
+          <li>Re-engagement campaigns live</li>
+          <li>Launch campaign template (reusable)</li>
+          <li>Revenue tracked from database campaigns</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 11 -->
+<div class="phase-card" onclick="this.classList.toggle('open')">
+  <div class="phase-header">
+    <div class="phase-number">11</div>
+    <div class="phase-info">
+      <div class="phase-title">Build Your Authority Brand</div>
+      <div class="phase-focus">Brand builds credibility. Credibility builds trust. Trust drives decisions.</div>
+    </div>
+    <div class="phase-meta-right">
+      <span class="hours-badge">12 HOURS</span>
+      <span class="expand-arrow">&#9660;</span>
+    </div>
+  </div>
+  <div class="phase-body">
+    <div class="phase-divider"></div>
+    <div class="quad-grid">
+      <div class="quad-box quad-outcome">
+        <h4>What You'll Achieve</h4>
+        <ul>
+          <li>When people research you, everything reinforces their decision to work with you</li>
+          <li>A visual identity that matches the quality of your service</li>
+          <li>Consistency across every channel and touchpoint</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-need">
+        <h4>What We Need From You</h4>
+        <ul>
+          <li>Feedback on visual direction (colours, style, feel)</li>
+          <li>Approve the brand guidelines</li>
+          <li>Brief your team on the new standards</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-do">
+        <h4>What We'll Do</h4>
+        <ul>
+          <li>Brand positioning refinement</li>
+          <li>Messaging framework finalisation</li>
+          <li>Visual identity design (logo, colours, typography)</li>
+          <li>Brand guidelines document</li>
+          <li>Team alignment & brand briefing</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-get">
+        <h4>What You'll Get</h4>
+        <ul>
+          <li>Complete brand guidelines document</li>
+          <li>Visual identity applied across all channels</li>
+          <li>Team briefing completed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 12 -->
+<div class="phase-card" onclick="this.classList.toggle('open')">
+  <div class="phase-header">
+    <div class="phase-number">12</div>
+    <div class="phase-info">
+      <div class="phase-title">Launch Your Authority Platform</div>
+      <div class="phase-focus">When someone hears about you and researches you, they land somewhere that reinforces their decision.</div>
+    </div>
+    <div class="phase-meta-right">
+      <span class="hours-badge">24 HOURS</span>
+      <span class="expand-arrow">&#9660;</span>
+    </div>
+  </div>
+  <div class="phase-body">
+    <div class="phase-divider"></div>
+    <div class="quad-grid">
+      <div class="quad-box quad-outcome">
+        <h4>What You'll Achieve</h4>
+        <ul>
+          <li>A website that's not just informational — it's a conversion asset</li>
+          <li>Every page designed to build trust and drive action</li>
+          <li>SEO foundations so you're findable long after ads stop</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-need">
+        <h4>What We Need From You</h4>
+        <ul>
+          <li>Content and imagery for key pages</li>
+          <li>Approve wireframes and page structure</li>
+          <li>Review and approve before go-live</li>
+          <li>Domain and hosting access</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-do">
+        <h4>What We'll Do</h4>
+        <ul>
+          <li>Website strategy & sitemap</li>
+          <li>Wireframes & page structure</li>
+          <li>Conversion copy for all pages</li>
+          <li>Website design & build</li>
+          <li>CRM & lead capture integration</li>
+          <li>Mobile optimisation & cross-browser testing</li>
+          <li>SEO setup & meta tags</li>
+          <li>Client review & revisions</li>
+          <li>Go live & post-launch monitoring</li>
+        </ul>
+      </div>
+      <div class="quad-box quad-get">
+        <h4>What You'll Get</h4>
+        <ul>
+          <li>Full website live and generating enquiries</li>
+          <li>CRM integration active</li>
+          <li>SEO fundamentals in place</li>
+          <li>Ongoing monitoring for the first 2 weeks</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OUTCOMES -->
+<div class="outcomes">
+  <h2>When it's all said and done, you'll have:</h2>
+  <div class="outcome-grid">
+    <div class="outcome-card">
+      <div class="outcome-title">A Brand That Converts</div>
+      <div class="outcome-desc">Identity, voice, messaging, and visual design — all aligned and working together to build instant trust.</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-title">A Sales System That Works Without You</div>
+      <div class="outcome-desc">Scripts, pipelines, follow-up sequences, and automations — so leads get converted even when you're not there.</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-title">A Marketing Engine On Autopilot</div>
+      <div class="outcome-desc">Ads, funnels, nurture sequences, and a database monetisation strategy — all tracked, tested, and optimised.</div>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-title">A Platform That Builds Authority</div>
+      <div class="outcome-desc">Content strategy, social frameworks, a conversion-focused website, and brand guidelines your whole team can follow.</div>
+    </div>
+  </div>
+</div>
+
+<!-- COMPARISON -->
+<div class="comparison">
+  <h2>What this would cost to build yourself</h2>
+  <p class="comparison-sub">Hiring internally for the same scope of work:</p>
+  <div class="comparison-table">
+    <div class="comp-row comp-header">
+      <div class="comp-cell">Role</div>
+      <div class="comp-cell">Annual Salary</div>
+      <div class="comp-cell">Weekly Cost</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-cell">CRM / Tech Specialist</div>
+      <div class="comp-cell">$70,000+</div>
+      <div class="comp-cell">$1,346/wk</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-cell">Copywriter</div>
+      <div class="comp-cell">$70,000+</div>
+      <div class="comp-cell">$1,346/wk</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-cell">Graphic Designer</div>
+      <div class="comp-cell">$65,000+</div>
+      <div class="comp-cell">$1,250/wk</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-cell">Ads Manager</div>
+      <div class="comp-cell">$80,000+</div>
+      <div class="comp-cell">$1,538/wk</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-cell">Video Editor</div>
+      <div class="comp-cell">$60,000+</div>
+      <div class="comp-cell">$1,154/wk</div>
+    </div>
+    <div class="comp-row">
+      <div class="comp-cell"><strong>Total in-house</strong></div>
+      <div class="comp-cell"><strong>$345,000+/yr</strong></div>
+      <div class="comp-cell"><strong>$6,634/wk</strong></div>
+    </div>
+    <div class="comp-row comp-highlight">
+      <div class="comp-cell"><strong>Kaizen DWY</strong></div>
+      <div class="comp-cell"><strong>Strategy + Team + Execution</strong></div>
+      <div class="comp-cell"><strong>$300/wk</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROMISE -->
+<div class="promise">
+  <h2>This isn't an agency handoff.</h2>
+  <p>We don't disappear behind a curtain and send you a report in 30 days. <strong>You'll see what we're building, when we're building it, and why every decision was made.</strong> By the end, you won't just have a marketing system — you'll have the clarity and confidence to lead your business like a CEO.</p>
+</div>
+
+</div>
+
+<div class="footer">
+  Kaizen Collective &middot; kaizencollective.com.au &middot; We Turn Pros Into CEOs
+</div>
+
+</body>
+</html>

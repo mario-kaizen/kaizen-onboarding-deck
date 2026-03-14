@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaizen Collective — DWY Client Onboarding Checklist</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+  :root {
+    --cream: #FAF7F2;
+    --ink: #1A1A1A;
+    --gold: #C8A870;
+    --gold-light: #E8D5B5;
+    --green: #2D6A4F;
+    --green-light: #D4EDDA;
+    --orange: #E07C3F;
+    --orange-light: #FDEBD0;
+    --red: #C0392B;
+    --red-light: #FADBD8;
+    --blue: #2C5F8A;
+    --blue-light: #D6EAF8;
+    --gray-100: #F5F3EF;
+    --gray-200: #E8E4DC;
+    --gray-300: #D1CCC3;
+    --gray-500: #8A8478;
+    --gray-700: #4A4640;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    padding: 2rem;
+  }
+
+  .container { max-width: 960px; margin: 0 auto; }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .subtitle {
+    color: var(--gray-500);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .legend {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    padding: 1rem 1.25rem;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid var(--gray-200);
+    font-size: 0.85rem;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .phase {
+    margin-bottom: 2.5rem;
+  }
+
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .phase-number {
+    background: var(--ink);
+    color: var(--cream);
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+
+  .phase-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+  }
+
+  .phase-timing {
+    margin-left: auto;
+    font-size: 0.8rem;
+    color: var(--gray-500);
+    background: var(--gray-100);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .task-group {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+  }
+
+  .task-group-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--gray-100);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .task-group-header:hover { background: var(--gray-200); }
+
+  .task-group-header .arrow {
+    transition: transform 0.2s;
+    font-size: 0.7rem;
+    color: var(--gray-500);
+  }
+
+  .task-group.collapsed .arrow { transform: rotate(-90deg); }
+  .task-group.collapsed .task-list { display: none; }
+
+  .badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 12px;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  .badge-internal { background: var(--blue-light); color: var(--blue); }
+  .badge-client { background: var(--orange-light); color: var(--orange); }
+
+  .task-list { padding: 0; }
+
+  .task-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem 0.5rem 1.5rem;
+    border-top: 1px solid var(--gray-100);
+    font-size: 0.88rem;
+    position: relative;
+  }
+
+  .task-item:first-child { border-top: 1px solid var(--gray-200); }
+
+  .task-item .check {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--gray-300);
+    border-radius: 4px;
+    margin-top: 3px;
+  }
+
+  .task-text { flex: 1; }
+
+  .task-note {
+    font-size: 0.78rem;
+    color: var(--gray-500);
+    font-style: italic;
+    margin-top: 0.15rem;
+  }
+
+  .tag {
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 0.1rem 0.45rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  .tag-optional { background: var(--orange-light); color: var(--orange); }
+  .tag-day1 { background: var(--green-light); color: var(--green); }
+  .tag-day3 { background: var(--blue-light); color: var(--blue); }
+  .tag-day5 { background: #F3E8FF; color: #7C3AED; }
+  .tag-week { background: var(--gray-100); color: var(--gray-700); }
+
+  .subtask {
+    padding-left: 3rem;
+    font-size: 0.83rem;
+    color: var(--gray-700);
+  }
+
+  .subtask .check {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+  }
+
+  .feedback-section {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: white;
+    border: 2px dashed var(--gold);
+    border-radius: 12px;
+  }
+
+  .feedback-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .feedback-area {
+    width: 100%;
+    min-height: 200px;
+    padding: 1rem;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    resize: vertical;
+    line-height: 1.6;
+  }
+
+  .feedback-area:focus { outline: 2px solid var(--gold); border-color: transparent; }
+
+  .save-btn {
+    margin-top: 0.75rem;
+    padding: 0.6rem 1.5rem;
+    background: var(--ink);
+    color: var(--cream);
+    border: none;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+
+  .save-btn:hover { background: var(--gray-700); }
+
+  .stats {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .stat-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+  }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--gold);
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--gray-500);
+    font-weight: 500;
+  }
+
+  @media (max-width: 640px) {
+    body { padding: 1rem; }
+    h1 { font-size: 1.6rem; }
+    .phase-header { flex-wrap: wrap; }
+    .phase-timing { margin-left: 0; }
+    .legend { flex-direction: column; gap: 0.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>DWY Client Onboarding Checklist</h1>
+<p class="subtitle">Kaizen Collective — Onramp Fast Track (6-Week Sprint) + Operational Setup</p>
+
+<div class="stats">
+  <div class="stat-card"><div class="stat-number">9</div><div class="stat-label">Phases</div></div>
+  <div class="stat-card"><div class="stat-number">34</div><div class="stat-label">Task Groups</div></div>
+  <div class="stat-card"><div class="stat-number">147</div><div class="stat-label">Total Subtasks</div></div>
+  <div class="stat-card"><div class="stat-number">6</div><div class="stat-label">Weeks</div></div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:var(--blue)"></div> Internal task</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--orange)"></div> Client task</div>
+  <div class="legend-item"><span class="tag tag-optional">OPTIONAL</span> Skip if not needed</div>
+  <div class="legend-item"><span class="tag tag-day1">DAY 1</span> <span class="tag tag-day3">DAY 1-3</span> <span class="tag tag-day5">DAY 1-5</span> <span class="tag tag-week">WEEK 1-3</span> Timing</div>
+</div>
+
+<!-- ============ PHASE 1: ADMIN SETUP ============ -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">PHASE 1</span>
+    <span class="phase-title">Admin Setup</span>
+    <span class="phase-timing">Day 1</span>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Workspace & Access
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Create Google Drive folder (duplicate from template)</div><span class="tag tag-day1">DAY 1</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Create client workspace/portal in Notion</div><span class="tag tag-day1">DAY 1</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Create dedicated Slack channel with client</div><span class="tag tag-day1">DAY 1</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Record client start date (anchor date)
+        <div class="task-note">All wait steps and due dates calculate from this date</div>
+      </div><span class="tag tag-day1">DAY 1</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Upload all client resources to shared folder (logos, offers, past copy, audience data)</div><span class="tag tag-day1">DAY 1</span></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      CRM & Internal Tracking
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Add client to GHL — create contact + opportunity</div><span class="tag tag-day1">DAY 1</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Link their GHL instance and confirm access</div><span class="tag tag-day1">DAY 1</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Add to Kaizen internal tracking (Notion projects/tasks DB)</div><span class="tag tag-day1">DAY 1</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Trigger "New Member" workflow in GHL</div><span class="tag tag-day1">DAY 1</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Send login email (membership/Koba access)</div><span class="tag tag-day1">DAY 1</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Send purchase/payment link confirmation</div><span class="tag tag-day1">DAY 1</span></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Welcome & Intake
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Send Brand + Marketing Intake Form (welcome email)</div><span class="tag tag-day1">DAY 1</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Send Assets & Access document (client fills: logins, brand assets, existing accounts)</div><span class="tag tag-day1">DAY 1</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Post first Slack message — welcome, next steps, key links, template message</div><span class="tag tag-day1">DAY 1</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PHASE 2: ORIENTATION CALL ============ -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">PHASE 2</span>
+    <span class="phase-title">Orientation Call</span>
+    <span class="phase-timing">Day 1-3</span>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Pre-Call Preparation
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Schedule orientation call and send calendar invite</div><span class="tag tag-day1">DAY 1</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Prepare Client Brief Summary Template</div><span class="tag tag-day3">DAY 1-3</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Review pre-onboarding questionnaire + any past campaign data</div><span class="tag tag-day3">DAY 1-3</span></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Conduct the Call
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Conduct orientation call — intro to team, process, expectations</div><span class="tag tag-day3">DAY 1-3</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Record Loom walkthrough (if live call not possible)</div><span class="tag tag-optional">OPTIONAL</span></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Post-Call
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Post orientation follow-up message in Slack (summary, next steps, key links)</div><span class="tag tag-day3">DAY 1-3</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PHASE 3: CLIENT TASKS / DOCUMENTS ============ -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">PHASE 3</span>
+    <span class="phase-title">Client Tasks & Documents</span>
+    <span class="phase-timing">Day 1-5</span>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Assets & Access Collection
+      <span class="badge badge-client">CLIENT</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Submit Brand + Marketing Intake Form</div><span class="tag tag-day5">DAY 1-5</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Provide brand assets (logos, fonts, colours, photos)</div><span class="tag tag-day5">DAY 1-5</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Provide Meta Business Manager access (admin level)</div><span class="tag tag-day5">DAY 1-5</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Provide CRM/website logins (if existing)</div><span class="tag tag-day5">DAY 1-5</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Complete Offer Clarity intake form</div><span class="tag tag-day5">DAY 1-5</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Share past ad creatives, campaigns, landing pages, funnels (if available)</div><span class="tag tag-optional">OPTIONAL</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Share testimonials, case studies, past headlines that performed well</div><span class="tag tag-optional">OPTIONAL</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PHASE 4: STRATEGY & OFFER DEEP DIVE ============ -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">PHASE 4</span>
+    <span class="phase-title">Business Foundations & Offer Deep Dive</span>
+    <span class="phase-timing">Week 1</span>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Strategy & Discovery
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Schedule 60-90 min Deep Dive Call with Mario or Brando</div><span class="tag tag-week">WEEK 1</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">On call — clarify: main offer, ideal customer, what's working/not, 90-day objectives</div><span class="tag tag-week">WEEK 1</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Draft Offer Clarity Canvas</div><span class="tag tag-week">WEEK 1</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Draft Ideal Avatar Profile (demographics + psychographics)</div><span class="tag tag-week">WEEK 1</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirm initial campaign direction</div><span class="tag tag-week">WEEK 1</span></div>
+      <div class="task-item subtask"><div class="check"></div><div class="task-text">Lead Magnet?</div></div>
+      <div class="task-item subtask"><div class="check"></div><div class="task-text">Trial offer?</div></div>
+      <div class="task-item subtask"><div class="check"></div><div class="task-text">High-ticket call funnel?</div></div>
+      <div class="task-item subtask"><div class="check"></div><div class="task-text">Database reactivation?</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Copy Foundations
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Kick off Brand Messaging Intake Form (if not already completed)</div><span class="tag tag-week">WEEK 1</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Extract tone of voice samples (from emails, captions, site)</div><span class="tag tag-week">WEEK 1</span></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      CRM & Funnel Prep
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Conduct CRM audit (tags, pipelines, automations)</div><span class="tag tag-week">WEEK 1</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Map current state of lead journey (whiteboard / Notion)</div><span class="tag tag-week">WEEK 1</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Identify core conversion goal for campaign</div><span class="tag tag-week">WEEK 1</span></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Week 1 Deliverables
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Share Offer Clarity Canvas with client</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Share Avatar Snapshot with client</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirmed Campaign Goal documented</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Task plan for Week 2 delivery (messaging frameworks)</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Client Approvals — Week 1
+      <span class="badge badge-client">CLIENT</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Approve or provide feedback on Offer Clarity Canvas</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirm direction for first campaign</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Give access to any missing logins (Meta, HighLevel, etc.)</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PHASE 5: MESSAGING & COPY ============ -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">PHASE 5</span>
+    <span class="phase-title">Messaging, Brand Voice & Copy</span>
+    <span class="phase-timing">Week 2</span>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Brand Voice & Messaging Development
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Review Week 1 outputs (Offer Clarity Canvas, Avatar Snapshot, campaign goal)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Extract brand tone samples from existing content (website, emails, IG captions, sales scripts)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Identify key messaging tensions (avatar fears/frustrations, beliefs to break/build)</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Build the Brand Compass
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Define Brand Personality (e.g. Direct, Supportive, Intelligent)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Define Tone of Voice (e.g. No-fluff, Emotionally Intelligent, Strategic)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Define Writing Style Rules (sentence length, CTA style, emoji usage, etc.)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Clarify 3-5 core Messaging Pillars</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Build Core Belief Statements (internal & external)</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Copywriting Production
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Draft Facebook/IG ad copy (3 variations)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Draft headline & subheadlines for funnel</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Draft Email 1-2 (if nurture funnel is part of campaign)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Develop shared "Voice & Copy Library" for client review</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Create Loom walkthrough explaining intention behind tone and structure</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Week 2 Deliverables
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Final Brand Compass (PDF or Notion)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Ad Copy Drafts (3 versions)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Funnel Headline/Body Copy Draft</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Copy Review Notes</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Prep copy for Week 3 (funnel wireframe & email automation flow)</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Client Review — Week 2
+      <span class="badge badge-client">CLIENT</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Review Brand Compass — "does it sound like you?"</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Provide feedback on sample ad and email copy (tone, pain points, phrasing)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Share competitor copy you like/don't like</div><span class="tag tag-optional">OPTIONAL</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Share stories or frameworks you regularly use in content/sales</div><span class="tag tag-optional">OPTIONAL</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PHASE 6: CRM SETUP ============ -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">PHASE 6</span>
+    <span class="phase-title">CRM & Funnel Infrastructure</span>
+    <span class="phase-timing">Week 3</span>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      New CRM — Account Provisioning
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Create new sub-account in GHL (clone from standard DFY template)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Apply internal tagging logic and automation template structure</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Update agency admin user roles</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Assign technical lead for DNS + Twilio config</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      New CRM — Domain & Email Deliverability
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Generate DNS records for Mailgun (SPF, DKIM, tracking)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Generate DNS for funnel/booking subdomain (e.g. go.clientdomain.com)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Provide DNS records to client (or request domain host access)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Set up Mailgun subdomain + verify</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Connect sending domain to CRM</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Activate and test default email templates</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">
+        <strong>Skip if franchise client</strong>
+        <div class="task-note">Franchise clients use HQ domain setup — delete these steps</div>
+      </div><span class="tag tag-optional">OPTIONAL</span></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      New CRM — Twilio / SMS Setup
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Collect Twilio application info from client (legal business name, ABN/ACN, address, website, phone)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Submit Twilio A2P 10DLC application</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Provision and link local phone number</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Configure SMS settings + assign number in GHL</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Set up SMS opt-out message and footer compliance</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Test incoming/outgoing SMS functionality</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      New CRM — Rebilling Setup
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirm pricing tier and payment method with client</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Set up rebilling inside GHL</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Add markups to email/SMS usage as per agreement</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Send receipt confirmation + usage expectations</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Existing CRM — Audit & Cleanup
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Audit existing GHL account: pipelines, stages, tags correctly named/segmented?</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Audit automations — are they firing as intended?</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Audit nurture sequences — already live? Effective?</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirm integration points (Meta, calendars, forms, website)</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      CRM Infrastructure Build (Both Paths)
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Create/clean up pipelines and stages (aligned to offer)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Standardise tags and triggers (Acquisition Tagging Logic framework)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Standardise custom values for copy templating</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Build workflow: Lead capture → nurture + pipeline logic</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Build workflow: Booking confirmation + reminders</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Build workflow: Missed call text-back + voicemail drop</div><span class="tag tag-optional">OPTIONAL</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Build workflow: Abandoned booking / form follow-up</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Build workflow: Manual task creation for call follow-up</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Embed calendar availability for bookings</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Configure task reminders, contact management, and tags</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Funnel Architecture
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Draft funnel wireframe (Notion or Whimsical) — headline, hook, offer, opt-in, confirmation</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Align funnel structure with brand copy from Week 2</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirm platform (GHL, Webflow, or other)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirm if upsells/downsells or scheduling integrations needed</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Draft email + SMS sequence (3-5 touchpoints based on campaign type)</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      QA & Documentation
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Test form submissions → correct pipeline + tags</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Test calendar bookings → automation triggers correctly</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Build "CRM Map" visual (tags, stages, triggers, workflows)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Record Loom walkthrough of CRM backend for client</div><span class="tag tag-optional">OPTIONAL</span></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Client Tasks — Week 3
+      <span class="badge badge-client">CLIENT</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Provide domain host access (GoDaddy, Cloudflare) or delegate DNS access</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Submit business details for Twilio (ABN/ACN, legal name, address, phone, website)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Provide Facebook Business Manager ID</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Approve CRM pricing + rebilling plan</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Add card on file (secure link sent)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Acknowledge SMS usage disclaimer + opt-out compliance</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Approve pipeline names + stages</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirm calendar availability (days/times/locations)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirm sending domain address for CRM emails</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Approve funnel wireframe</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Approve email/SMS sequence draft</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirm campaign goal: "When a lead comes in, what should they do next?"</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Share cancellation policy / booking instructions (for confirmation emails)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirm thank-you page action (schedule call, join group, download guide)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Provide legal disclaimers or privacy policy links for funnel</div><span class="tag tag-optional">OPTIONAL</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PHASE 7: ADS SETUP ============ -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">PHASE 7</span>
+    <span class="phase-title">Ads Manager & Tracking Setup</span>
+    <span class="phase-timing">Week 4</span>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Access & Verification
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirm client access to Meta Business Manager (admin level)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirm agency Partner Access to: Business Manager, Facebook Page, Instagram Account, Ad Account, Pixel, Domain</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Check domain is verified in Meta (matching funnel or root domain)</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Meta Ads Infrastructure
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Create or connect: Ad Account, Pixel, Business Manager (if needed)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Install and test Pixel on funnel pages, thank-you page, key conversion events</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Configure Events Manager — PageView, Lead, Schedule, Purchase/Opt-In</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Prioritise events via Aggregated Event Measurement (AEM)</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Audience Building
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Build custom audiences: website visitors (30/60/90 days)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Build custom audiences: FB/IG engagers (30/60/90 days)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Build custom audiences: CRM email list (customers + leads)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Build custom audiences: lead form engagers</div><span class="tag tag-optional">OPTIONAL</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Create Lookalike audiences (if source >= 1,000)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Document audience logic in Ad Prep Notion doc</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Creative Development
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Review Week 2 messaging → finalise ad angles</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Assign to Growth Pod: 2 static image concepts</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Assign to Growth Pod: 1 short-form video (UGC or scripted)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Assign to Growth Pod: headlines and copy for 2-3 ad variations</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirm format requirements (Stories, Reels, Feed)</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Compliance & Testing
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Meta policy review — no restricted terms in ad copy</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirm funnel privacy policy is present and linked</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirm thank-you page is compliant and not misleading</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Set naming conventions for campaign/ad sets/ads</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Run test lead through funnel — confirm Pixel fires correctly</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Check UTMs and event matching</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirm tracking shows in Events Manager real-time</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Client Tasks — Week 4
+      <span class="badge badge-client">CLIENT</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Add Kaizen team to: Business Manager, Facebook Page, Ad Account, Instagram (all admin)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Share access to CRM contact list (for custom audiences)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirm business name/legal details in Meta match CRM</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirm final funnel URL</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Approve privacy policy + terms footer</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Record UGC video clips (script + structure provided by us)</div><span class="tag tag-optional">OPTIONAL</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Share brand photo/video assets (Dropbox, Drive, etc.)</div><span class="tag tag-optional">OPTIONAL</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PHASE 8: CAMPAIGN BUILD ============ -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">PHASE 8</span>
+    <span class="phase-title">Campaign Build & Pre-Launch QA</span>
+    <span class="phase-timing">Week 5</span>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Funnel Build
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Build funnel pages (opt-in/landing, thank-you, calendar booking)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Mobile optimisation and responsiveness checks</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Finalise form fields, tag logic, and redirect behaviour</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Automation & CRM Connections
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Link form submission to correct CRM pipeline stage</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Ensure tags fire correctly to trigger automation</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Connect to lead nurture sequence (email + SMS)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Configure task creation / staff notifications</div><span class="tag tag-optional">OPTIONAL</span></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Ad Campaign Build
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Create campaign shell (correct objective, naming conventions, budget, schedule)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Upload final ad creative — 2-3 ad sets, each with 2+ ad variations</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Assign audiences: cold (broad, LAL) + warm (website, engagers, CRM)</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Full QA Checklist
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Test all Pixel events via Pixel Helper + Events Manager</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Test form → tag → pipeline → automation logic end-to-end</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Test calendar bookings → confirmations → reminders</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirm UTM parameters and analytics tools (GA4, etc.)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Funnel tested across devices (mobile + desktop)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Emails/SMS fully written, proofed, and scheduled</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Creative compliant with Meta policies</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Campaign naming, tracking, and budget confirmed</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Create Loom walkthrough of full campaign (internal + client handover)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Send "Ready for Launch" Slack message to client with checklist</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Client Approvals — Week 5
+      <span class="badge badge-client">CLIENT</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Review funnel (link shared for mobile + desktop)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Submit feedback or required changes (48-72 hrs)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Review ad copy + creative</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Approve campaign budget and launch timeline</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Approve final email/SMS sequence</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Book first Strategy Call (for Week 6 post-launch)</div><span class="tag tag-optional">OPTIONAL</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PHASE 9: GO LIVE ============ -->
+<div class="phase">
+  <div class="phase-header">
+    <span class="phase-number">PHASE 9</span>
+    <span class="phase-title">Go Live & Performance Orientation</span>
+    <span class="phase-timing">Week 6</span>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Campaign Launch
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirm client approved: funnel, ads, email/SMS, budget + schedule</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Set campaign status to LIVE in Ads Manager</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Send "Campaign is live!" Slack message</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Dashboard & Reporting Setup
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Set up GHL reporting dashboard (funnel conversions, email/SMS open/click, pipeline stages)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Confirm Meta reporting showing activity (lead events, CTR, CPL, CPM, ROAS)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Add UTM parameters to all destination URLs (if not done)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Connect to GA4 or Looker Studio</div><span class="tag tag-optional">OPTIONAL</span></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Performance Orientation Call
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Schedule 30-45 min Client Orientation Call</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Walk through: how to view leads in CRM</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Walk through: how to check campaign dashboard</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Walk through: daily/weekly metrics to track</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Walk through: how to give feedback on tasks moving forward</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Walk through: how to submit Growth Pod requests</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Share recorded Loom walkthrough (if live call not possible)</div><span class="tag tag-optional">OPTIONAL</span></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Final Handover Documents
+      <span class="badge badge-internal">INTERNAL</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Update Notion client portal: final campaign brief</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Update Notion client portal: funnel links + CRM diagrams</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Update Notion client portal: ad creative archive (images, copy, video)</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Update Notion client portal: SOP "How to brief your Growth Pod"</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Update Notion client portal: reporting dashboard links</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Send PDF summary for client's internal team</div><span class="tag tag-optional">OPTIONAL</span></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Send Slack: "You're now live — here's what to expect this week..."</div></div>
+    </div>
+  </div>
+
+  <div class="task-group">
+    <div class="task-group-header" onclick="this.parentElement.classList.toggle('collapsed')">
+      <span class="arrow">&#9660;</span>
+      Client Tasks — Week 6
+      <span class="badge badge-client">CLIENT</span>
+    </div>
+    <div class="task-list">
+      <div class="task-item"><div class="check"></div><div class="task-text">Double-check ad budget is correct and approved</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Ensure card on file is valid for both ad spend AND CRM billing</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Test calendar/funnel to make sure it feels seamless</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Watch Performance Orientation Loom or attend onboarding call</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Bookmark reporting dashboard</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Submit first Growth Pod request</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Share lead quality feedback within 3-5 days of launch</div></div>
+      <div class="task-item"><div class="check"></div><div class="task-text">Share screenshots or testimonials if early wins occur</div><span class="tag tag-optional">OPTIONAL</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FEEDBACK ============ -->
+<div class="feedback-section">
+  <h2>Your Feedback</h2>
+  <p style="font-size:0.88rem; color:var(--gray-500); margin-bottom:0.75rem;">What's missing? What needs to change? What's in the wrong order? Add your notes below.</p>
+  <textarea class="feedback-area" id="feedback" placeholder="Type your feedback here...&#10;&#10;e.g.&#10;- Phase 3 should include sending the client setup spreadsheet&#10;- Missing: database launch tasks for franchise clients&#10;- Twilio setup should be optional for international clients&#10;- Growth plan should be its own phase, not inside Week 1"></textarea>
+  <button class="save-btn" onclick="saveFeedback()">Save Feedback to File</button>
+  <span id="save-status" style="margin-left:0.75rem; font-size:0.85rem; color:var(--green);"></span>
+</div>
+
+</div>
+
+<script>
+function saveFeedback() {
+  const feedback = document.getElementById('feedback').value;
+  const blob = new Blob([feedback], {type: 'text/plain'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'onboarding-feedback.txt';
+  a.click();
+  document.getElementById('save-status').textContent = 'Downloaded!';
+  setTimeout(() => document.getElementById('save-status').textContent = '', 3000);
+}
+
+// Auto-save to localStorage
+const feedbackEl = document.getElementById('feedback');
+const saved = localStorage.getItem('kaizen-onboarding-feedback');
+if (saved) feedbackEl.value = saved;
+feedbackEl.addEventListener('input', () => {
+  localStorage.setItem('kaizen-onboarding-feedback', feedbackEl.value);
+});
+</script>
+
+</body>
+</html>
