@@ -1,0 +1,111 @@
+/* Shared navigation styles */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --cream: #FAF7F2;
+  --cream-dark: #F0EBE3;
+  --ink: #1A1A1A;
+  --ink-soft: #2D2A26;
+  --gold: #C8A870;
+  --gold-dark: #A88B5A;
+  --gold-light: #E8D5B5;
+  --gold-glow: rgba(200, 168, 112, 0.12);
+  --green: #2D6A4F;
+  --green-light: #E8F5E9;
+  --blue: #2C5F8A;
+  --blue-light: #E3F2FD;
+  --purple: #6B4C9A;
+  --purple-light: #F3E8FF;
+  --orange: #D4740E;
+  --orange-light: #FFF3E0;
+  --gray-300: #C9C3B8;
+  --gray-400: #A69F94;
+  --gray-500: #8A8478;
+  --gray-600: #6B665E;
+  --white: #FFFFFF;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--ink);
+  border-bottom: 1px solid rgba(200, 168, 112, 0.15);
+  padding: 0 2rem;
+}
+
+.top-nav-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  height: 52px;
+}
+
+.top-nav-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.top-nav-links {
+  display: flex;
+  gap: 0.25rem;
+  margin-left: auto;
+}
+
+.top-nav-link {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--gray-400);
+  text-decoration: none;
+  padding: 0.5rem 0.85rem;
+  border-radius: 6px;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.top-nav-link:hover {
+  color: var(--cream);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.top-nav-link.active {
+  color: var(--gold);
+  background: rgba(200, 168, 112, 0.1);
+}
+
+.container {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+@media (max-width: 640px) {
+  .top-nav { padding: 0 1rem; }
+  .top-nav-inner { gap: 0.75rem; }
+  .top-nav-brand { font-size: 0.85rem; }
+  .top-nav-link { font-size: 0.72rem; padding: 0.4rem 0.6rem; }
+  .container { padding: 0 1.25rem; }
+}

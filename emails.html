@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email Templates — Kaizen Onramp</title>
+<link rel="stylesheet" href="nav.css">
+<style>
+  .page-header {
+    padding: 3rem 0 2rem;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-header p {
+    color: var(--gray-500);
+    font-size: 0.92rem;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .email-nav {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+
+  .email-nav-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--cream-dark);
+    background: var(--white);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s;
+    color: var(--gray-600);
+  }
+
+  .email-nav-btn:hover {
+    border-color: var(--gold-light);
+    color: var(--ink);
+  }
+
+  .email-nav-btn.active {
+    background: var(--ink);
+    color: var(--gold);
+    border-color: var(--ink);
+  }
+
+  .email-nav-btn.locked {
+    opacity: 0.4;
+    cursor: default;
+  }
+
+  .email-card {
+    display: none;
+    margin-bottom: 3rem;
+  }
+
+  .email-card.active { display: block; }
+
+  .email-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .email-meta-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .email-meta-label {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gray-500);
+    font-weight: 600;
+    margin-bottom: 0.15rem;
+  }
+
+  .email-meta-value {
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
+
+  .email-phases {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 0.25rem;
+  }
+
+  .email-phase-tag {
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    background: var(--gold-glow);
+    color: var(--gold-dark);
+  }
+
+  .email-subject {
+    background: var(--cream-dark);
+    padding: 1rem 1.25rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .email-subject-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gray-500);
+    flex-shrink: 0;
+  }
+
+  .email-subject-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .email-body {
+    background: var(--white);
+    border: 1px solid var(--cream-dark);
+    border-radius: 14px;
+    padding: 2rem 2.25rem;
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: var(--ink);
+  }
+
+  .email-body p {
+    margin-bottom: 1rem;
+  }
+
+  .email-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .email-body .greeting {
+    margin-bottom: 1.25rem;
+  }
+
+  .email-body .signoff {
+    margin-top: 1.75rem;
+    margin-bottom: 0;
+  }
+
+  .email-body .name {
+    font-weight: 600;
+  }
+
+  .email-body ul {
+    list-style: none;
+    margin: 0.75rem 0 1.25rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .email-body li {
+    padding-left: 0;
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .email-body li .check {
+    color: var(--green);
+    flex-shrink: 0;
+    font-weight: 700;
+    margin-top: 1px;
+  }
+
+  .email-body .divider {
+    height: 1px;
+    background: var(--cream-dark);
+    margin: 1.25rem 0;
+  }
+
+  .email-body em {
+    font-style: italic;
+  }
+
+  .email-body strong {
+    font-weight: 600;
+  }
+
+  .email-body .placeholder {
+    background: var(--gold-glow);
+    border: 1px dashed var(--gold-light);
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--gold-dark);
+  }
+
+  .email-notes {
+    margin-top: 1.25rem;
+    padding: 1rem 1.25rem;
+    background: var(--blue-light);
+    border: 1px solid #BBDEFB;
+    border-radius: 10px;
+    font-size: 0.82rem;
+    color: var(--blue);
+  }
+
+  .email-notes strong {
+    display: block;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.35rem;
+  }
+
+  .copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--ink);
+    color: var(--cream);
+    border: none;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .copy-btn:hover { background: var(--ink-soft); }
+
+  @media (max-width: 640px) {
+    .email-body { padding: 1.5rem; }
+    .email-subject { flex-direction: column; gap: 0.25rem; }
+    .email-meta { gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="top-nav-inner">
+    <a href="index.html" class="top-nav-brand">Kaizen Onramp</a>
+    <div class="top-nav-links">
+      <a href="index.html" class="top-nav-link">Overview</a>
+      <a href="project-management.html" class="top-nav-link">Project Management</a>
+      <a href="emails.html" class="top-nav-link active">Email Templates</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="page-header">
+    <h1>Onramp Email Templates</h1>
+    <p>Four emails across the onramp journey. Each one lands at a natural milestone to build excitement and set expectations for what's next.</p>
+  </div>
+
+  <div class="email-nav">
+    <button class="email-nav-btn active" onclick="showEmail(0)">0. Welcome</button>
+    <button class="email-nav-btn" onclick="showEmail(1)">1. Clarity</button>
+    <button class="email-nav-btn" onclick="showEmail(2)">2. Infrastructure</button>
+    <button class="email-nav-btn" onclick="showEmail(3)">3. Engine</button>
+    <button class="email-nav-btn" onclick="showEmail(4)">4. Authority</button>
+  </div>
+
+  <!-- EMAIL 0: WELCOME -->
+  <div class="email-card active" id="email-0">
+    <div class="email-meta">
+      <div class="email-meta-item">
+        <span class="email-meta-label">Send When</span>
+        <span class="email-meta-value">Immediately after sign-up (Day 0)</span>
+      </div>
+      <div class="email-meta-item">
+        <span class="email-meta-label">Theme</span>
+        <span class="email-meta-value">Welcome — setting the frame</span>
+      </div>
+      <div class="email-meta-item">
+        <span class="email-meta-label">Purpose</span>
+        <span class="email-meta-value">Reset expectations before onboarding begins</span>
+      </div>
+    </div>
+
+    <div class="email-subject">
+      <span class="email-subject-label">Subject</span>
+      <span class="email-subject-text">Welcome to Kaizen — here's what you just signed up for</span>
+    </div>
+
+    <div class="email-subject" style="background: var(--gold-glow); border: 1px dashed var(--gold-light);">
+      <span class="email-subject-label" style="color: var(--gold-dark);">Preview</span>
+      <span class="email-subject-text" style="font-weight: 400; font-size: 0.88rem; color: var(--gray-600);">148 hours of work. 12 phases. Built with you, not dumped on you.</span>
+    </div>
+
+    <div class="email-body">
+      <p class="greeting">Hey <span class="placeholder">{{first_name}}</span> —</p>
+
+      <p>You're in. And we don't take that lightly.</p>
+
+      <p>Before we get into the logistics, we want to show you something. Because what you've signed up for isn't "someone to run your ads." It's not a course you'll never finish. And it's not an agency that disappears behind a curtain.</p>
+
+      <p>Here's what's actually about to happen:</p>
+
+      <p><strong>We're going to build your entire marketing system together — from the ground up.</strong></p>
+
+      <p>That means 12 phases. 148 hours of strategic and technical work. Brand identity, messaging, sales systems, CRM infrastructure, landing pages, automations, ad campaigns, content strategy, database monetisation, and a full authority platform.</p>
+
+      <p>Most of our clients have never had anyone go this deep with them before. That's by design.</p>
+
+      <p>We've put together a page that walks through every phase — what we'll build, what you'll get, and what we'll need from you at each stage:</p>
+
+      <p><strong><span class="placeholder">{{welcome_deck_link}}</span></strong></p>
+
+      <p>Take 5 minutes to read through it. It'll change the way you think about what's coming.</p>
+
+      <div class="divider"></div>
+
+      <p><strong>What happens next:</strong></p>
+
+      <ul>
+        <li><span class="check">&#10003;</span> You'll receive access to your Slack channel — that's where we communicate day-to-day</li>
+        <li><span class="check">&#10003;</span> Fill in your <strong><span class="placeholder">{{intake_form_link}}</span></strong> before our first call — it helps us hit the ground running</li>
+        <li><span class="check">&#10003;</span> We'll book your Deep Dive session with Mario or Brando within the first few days</li>
+      </ul>
+
+      <p>That's all you need to do right now. We handle the rest.</p>
+
+      <div class="divider"></div>
+
+      <p>One more thing.</p>
+
+      <p>The first few weeks might feel different from what you're used to. We won't be launching ads on Day 1. We won't be building funnels before we know who they're for.</p>
+
+      <p>We're going to start with clarity. Your brand, your ideal client, your offer, your customer journey — the foundational pieces that everything else gets built on.</p>
+
+      <p>It's not the flashy part. But it's the reason our clients don't have to rebuild their marketing every six months.</p>
+
+      <p>Welcome to Kaizen. We're glad you're here.</p>
+
+      <p class="signoff">
+        <span class="name">Mario + Brando</span><br>
+        Kaizen Collective
+      </p>
+    </div>
+
+    <div class="email-notes">
+      <strong>Internal Notes</strong>
+      This email does three things: (1) preframes the depth so they're not surprised when Phase 1 is brand identity, not ads, (2) links to the welcome deck so they see the 12-phase structure before their first call, and (3) gives exactly 3 actions — no overwhelm. The "first few weeks might feel different" paragraph is critical — it addresses the objection before it forms. Send immediately after payment confirmation.
+    </div>
+
+    <button class="copy-btn" onclick="copyEmail(0)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      Copy Email Text
+    </button>
+  </div>
+
+  <!-- EMAIL 1: CLARITY -->
+  <div class="email-card" id="email-1">
+    <div class="email-meta">
+      <div class="email-meta-item">
+        <span class="email-meta-label">Send When</span>
+        <span class="email-meta-value">After Phase 1 begins (Day 1-3)</span>
+      </div>
+      <div class="email-meta-item">
+        <span class="email-meta-label">Theme</span>
+        <span class="email-meta-value">Clarity — setting the foundation</span>
+      </div>
+      <div class="email-meta-item">
+        <span class="email-meta-label">Covers</span>
+        <div class="email-phases">
+          <span class="email-phase-tag">Phase 1</span>
+          <span class="email-phase-tag">Phase 2</span>
+          <span class="email-phase-tag">Phase 3</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="email-subject">
+      <span class="email-subject-label">Subject</span>
+      <span class="email-subject-text">Before we build anything, we need to get this right</span>
+    </div>
+
+    <div class="email-subject" style="background: var(--gold-glow); border: 1px dashed var(--gold-light);">
+      <span class="email-subject-label" style="color: var(--gold-dark);">Preview</span>
+      <span class="email-subject-text" style="font-weight: 400; font-size: 0.88rem; color: var(--gray-600);">This is the step most agencies skip entirely. We don't.</span>
+    </div>
+
+    <div class="email-body">
+      <p class="greeting">Hey <span class="placeholder">{{first_name}}</span> —</p>
+
+      <p>Welcome to Kaizen. We're genuinely excited to start building this with you.</p>
+
+      <p>Before we touch your CRM, your ads, or your funnel — there's something we need to get right first. And it's the thing that most agencies skip entirely.</p>
+
+      <p><strong>Clarity.</strong></p>
+
+      <p>Not vague "let's find your why" stuff. Real, specific, operational clarity. The kind that means every dollar you spend on marketing actually hits the right person, with the right message, at the right moment.</p>
+
+      <p>Over the next few weeks, we're going to work through three phases together:</p>
+
+      <ul>
+        <li><span class="check">01</span> <strong>Solidify Your Brand Identity</strong> — We'll dig into what makes your business genuinely different. Not a tagline exercise. A deep dive into your positioning, your voice, and the messaging framework that everything else gets built on.</li>
+        <li><span class="check">02</span> <strong>Define Your Ideal Client</strong> — We'll map exactly who you're talking to — their fears, their triggers, the language they use, and the beliefs that need to shift before they'll buy. This changes everything about your copy, your content, and your ads.</li>
+        <li><span class="check">03</span> <strong>Confirm Your Path to Purchase</strong> — We'll audit every step someone takes from discovering you to paying you. Where are they dropping off? Where's the friction? We'll redesign the journey so it feels seamless — for them and for your team.</li>
+      </ul>
+
+      <p>Here's why this matters: we've worked with 700+ business owners, and the ones whose marketing works long-term all have one thing in common. They didn't start with ads. They started with clarity.</p>
+
+      <p>The ones who skipped this? They end up rebuilding everything six months later.</p>
+
+      <div class="divider"></div>
+
+      <p><strong>What we need from you right now:</strong></p>
+
+      <ul>
+        <li><span class="check">&#10003;</span> Complete the Brand + Marketing Intake Form (check your welcome email)</li>
+        <li><span class="check">&#10003;</span> Share any brand assets, past campaigns, or content you've got — even if it's messy</li>
+        <li><span class="check">&#10003;</span> Be ready for your Deep Dive call — we'll walk through your business, your offer, and your ideal client together</li>
+      </ul>
+
+      <p>That's it. No overwhelm. Just these three things.</p>
+
+      <p>By the time we're done with this phase, you'll have an Offer Clarity Canvas, an Ideal Client Avatar, and a fully mapped customer journey. These aren't documents that sit in a folder — they're the foundation that every ad, every funnel, and every piece of copy gets built on.</p>
+
+      <p>This part isn't glamorous. There are no leads yet. No ads running. But this is where the real leverage lives.</p>
+
+      <p>Let's get it right.</p>
+
+      <p class="signoff">
+        Talk soon,<br>
+        <span class="name">Mario + Brando</span><br>
+        Kaizen Collective
+      </p>
+    </div>
+
+    <div class="email-notes">
+      <strong>Internal Notes</strong>
+      Send within 24 hours of onboarding. This email does two jobs: (1) sets the expectation that we're not rushing to ads — we're being strategic, and (2) gives them a clear, short action list so they feel momentum on Day 1. The "no leads yet" paragraph is deliberate — it names the anxiety before they feel it.
+    </div>
+
+    <button class="copy-btn" onclick="copyEmail(0)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      Copy Email Text
+    </button>
+  </div>
+
+  <!-- PLACEHOLDER FOR EMAILS 2-4 -->
+  <!-- EMAIL 2: INFRASTRUCTURE -->
+  <div class="email-card" id="email-2">
+    <div class="email-meta">
+      <div class="email-meta-item">
+        <span class="email-meta-label">Send When</span>
+        <span class="email-meta-value">After Phases 1-3 complete</span>
+      </div>
+      <div class="email-meta-item">
+        <span class="email-meta-label">Theme</span>
+        <span class="email-meta-value">Infrastructure — from strategy to systems</span>
+      </div>
+      <div class="email-meta-item">
+        <span class="email-meta-label">Covers</span>
+        <div class="email-phases">
+          <span class="email-phase-tag">Phase 4</span>
+          <span class="email-phase-tag">Phase 5</span>
+          <span class="email-phase-tag">Phase 6</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="email-subject">
+      <span class="email-subject-label">Subject</span>
+      <span class="email-subject-text">Your sales system is taking shape</span>
+    </div>
+
+    <div class="email-subject" style="background: var(--gold-glow); border: 1px dashed var(--gold-light);">
+      <span class="email-subject-label" style="color: var(--gold-dark);">Preview</span>
+      <span class="email-subject-text" style="font-weight: 400; font-size: 0.88rem; color: var(--gray-600);">Your offer, your sales process, and your landing pages — all being built this phase.</span>
+    </div>
+
+    <div class="email-body">
+      <p class="greeting">Hey <span class="placeholder">{{first_name}}</span> —</p>
+
+      <p>Quick update on where we're at.</p>
+
+      <p>The clarity phase is done. You've got your Brand Identity, your Ideal Client Avatar, and a fully mapped customer journey. That's the foundation — and it's solid.</p>
+
+      <p>Now we build on it.</p>
+
+      <p>The next three phases are where your business starts to feel like a different operation. This is the infrastructure that turns clarity into revenue.</p>
+
+      <p>Here's what we're working on:</p>
+
+      <ul>
+        <li><span class="check">04</span> <strong>Define & Optimise Your Packages</strong> — We're taking your offer and making it impossible to misunderstand. Clear tiers, clear value, clear pricing. When your offer does the heavy lifting, the sales conversation gets a lot easier.</li>
+        <li><span class="check">05</span> <strong>Install Your Sales Mechanisms</strong> — This is the biggest phase so far. Sales scripts, a Sell By Chat framework, discovery call structure, objection handling playbook, follow-up sequences, and a fully configured CRM pipeline. You'll walk out of this knowing exactly what to say and when — and your team will too.</li>
+        <li><span class="check">06</span> <strong>Create Your Landing Pages</strong> — Not brochure pages. Conversion assets. Every page designed to guide someone toward one clear action, integrated directly into your CRM so leads don't slip through the cracks.</li>
+      </ul>
+
+      <p>This is 36 hours of work across these three phases.</p>
+
+      <p>By the time we're through, you'll have an offer that sells itself, a sales process you can hand to your team, and landing pages that work while you sleep.</p>
+
+      <div class="divider"></div>
+
+      <p><strong>What we'll need from you during this phase:</strong></p>
+
+      <ul>
+        <li><span class="check">&#10003;</span> Share your current pricing and package details (even if they feel messy)</li>
+        <li><span class="check">&#10003;</span> Attend the sales training and role-play session — this one's important</li>
+        <li><span class="check">&#10003;</span> Review and approve the landing page wireframes when they land in your Slack channel</li>
+      </ul>
+
+      <p>The first phase was about knowing who you are and who you serve.</p>
+
+      <p>This phase is about giving them a reason to say yes — and making it easy for them to do it.</p>
+
+      <p class="signoff">
+        Talk soon,<br>
+        <span class="name">Mario + Brando</span><br>
+        Kaizen Collective
+      </p>
+    </div>
+
+    <div class="email-notes">
+      <strong>Internal Notes</strong>
+      This email bridges the gap between "strategy" and "tangible systems." The client has been through the thinking phases — now they need to feel like things are being built. Calling out "36 hours of work" makes the investment visible. The sales training call-out is deliberate — Phase 5 requires their active participation, not just approval. Send within 24 hours of completing Phase 3 deliverables.
+    </div>
+
+    <button class="copy-btn" onclick="copyEmail(2)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      Copy Email Text
+    </button>
+  </div>
+  <!-- EMAIL 3: ENGINE -->
+  <div class="email-card" id="email-3">
+    <div class="email-meta">
+      <div class="email-meta-item">
+        <span class="email-meta-label">Send When</span>
+        <span class="email-meta-value">After Phases 4-6 complete</span>
+      </div>
+      <div class="email-meta-item">
+        <span class="email-meta-label">Theme</span>
+        <span class="email-meta-value">Engine — the machine goes live</span>
+      </div>
+      <div class="email-meta-item">
+        <span class="email-meta-label">Covers</span>
+        <div class="email-phases">
+          <span class="email-phase-tag">Phase 7</span>
+          <span class="email-phase-tag">Phase 8</span>
+          <span class="email-phase-tag">Phase 9</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="email-subject">
+      <span class="email-subject-label">Subject</span>
+      <span class="email-subject-text">The engine is live — here's what's happening</span>
+    </div>
+
+    <div class="email-subject" style="background: var(--gold-glow); border: 1px dashed var(--gold-light);">
+      <span class="email-subject-label" style="color: var(--gold-dark);">Preview</span>
+      <span class="email-subject-text" style="font-weight: 400; font-size: 0.88rem; color: var(--gray-600);">Automations running. Content strategy locked in. Ads about to go live.</span>
+    </div>
+
+    <div class="email-body">
+      <p class="greeting">Hey <span class="placeholder">{{first_name}}</span> —</p>
+
+      <p>Look at where you are right now.</p>
+
+      <p>You've got a brand identity that actually represents you. An ideal client profile that sharpens every piece of marketing you put out. A customer journey with the friction removed. An offer structure that makes sense. Sales scripts your team can follow. And landing pages that convert.</p>
+
+      <p>That's six phases of foundational work. Done.</p>
+
+      <p>Now it's time to turn it all on.</p>
+
+      <p>The next three phases are where everything starts moving. Leads coming in. Automations firing. Content going out. This is the part where the system you've been building starts working <em>for</em> you.</p>
+
+      <ul>
+        <li><span class="check">07</span> <strong>Build Automated Workflows</strong> — Every lead gets an instant response. Every booking gets a reminder. Every no-show gets a follow-up. Every stage in your pipeline triggers the right action — without you lifting a finger. This is 14 hours of automation work, tested end-to-end.</li>
+        <li><span class="check">08</span> <strong>Define Your Social Strategy</strong> — Not "post more." A real content strategy with pillars, angles, reel frameworks, and carousel templates — all built from the messaging work we've already done. You'll know exactly what to post, when, and why. No more staring at a blank screen.</li>
+        <li><span class="check">09</span> <strong>Amplify Your Message & Grow Your Database</strong> — This is launch. We build your ad campaigns from the ground up — audience targeting, creative production, copy variations, pixel tracking, campaign structure. Then we go live and monitor the first 72 hours closely.</li>
+      </ul>
+
+      <p>40 hours of work across these three phases. And by the end of Phase 9, you'll have leads coming in.</p>
+
+      <p>Not theoretical leads. Real people, entering your CRM, getting nurtured automatically, booking into your calendar.</p>
+
+      <div class="divider"></div>
+
+      <p><strong>What we'll need from you:</strong></p>
+
+      <ul>
+        <li><span class="check">&#10003;</span> Confirm your preferred response times and messaging tone for the automations</li>
+        <li><span class="check">&#10003;</span> Record some raw footage or stories for content when we send you the prompts — doesn't need to be polished</li>
+        <li><span class="check">&#10003;</span> Give us admin access to your Meta Business Manager (if you haven't already)</li>
+        <li><span class="check">&#10003;</span> Approve the ad creative, copy, and campaign budget before we go live</li>
+      </ul>
+
+      <p>There's a moment in this process where clients stop saying "I hope this works" and start saying "I can see how this works."</p>
+
+      <p>That's this phase.</p>
+
+      <p class="signoff">
+        Talk soon,<br>
+        <span class="name">Mario + Brando</span><br>
+        Kaizen Collective
+      </p>
+    </div>
+
+    <div class="email-notes">
+      <strong>Internal Notes</strong>
+      This is the most emotionally important email. The client has been patient through 6 phases of foundational work — now they need to feel the payoff arriving. The opening paragraph deliberately lists everything they've already built (social proof of their own progress). "40 hours of work" and "leads coming in" are the two anchors. The closing line — "I can see how this works" — names the exact shift in confidence this phase creates. Send within 24 hours of completing Phase 6.
+    </div>
+
+    <button class="copy-btn" onclick="copyEmail(3)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      Copy Email Text
+    </button>
+  </div>
+  <!-- EMAIL 4: AUTHORITY -->
+  <div class="email-card" id="email-4">
+    <div class="email-meta">
+      <div class="email-meta-item">
+        <span class="email-meta-label">Send When</span>
+        <span class="email-meta-value">After Phases 7-9 complete</span>
+      </div>
+      <div class="email-meta-item">
+        <span class="email-meta-label">Theme</span>
+        <span class="email-meta-value">Authority — from leads to legacy</span>
+      </div>
+      <div class="email-meta-item">
+        <span class="email-meta-label">Covers</span>
+        <div class="email-phases">
+          <span class="email-phase-tag">Phase 10</span>
+          <span class="email-phase-tag">Phase 11</span>
+          <span class="email-phase-tag">Phase 12</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="email-subject">
+      <span class="email-subject-label">Subject</span>
+      <span class="email-subject-text">The final pieces — from leads to legacy</span>
+    </div>
+
+    <div class="email-subject" style="background: var(--gold-glow); border: 1px dashed var(--gold-light);">
+      <span class="email-subject-label" style="color: var(--gold-dark);">Preview</span>
+      <span class="email-subject-text" style="font-weight: 400; font-size: 0.88rem; color: var(--gray-600);">Your database is an asset. Your brand is an authority. Your platform is about to go live.</span>
+    </div>
+
+    <div class="email-body">
+      <p class="greeting">Hey <span class="placeholder">{{first_name}}</span> —</p>
+
+      <p>Take a second to think about where you were when we started.</p>
+
+      <p>No system. No clarity on your messaging. Marketing that felt like guesswork. Maybe an agency that didn't get it. Maybe a course you never finished. Maybe just you, doing everything yourself, wondering why it wasn't working.</p>
+
+      <p>Now look at what exists.</p>
+
+      <p>A brand identity. An ideal client profile. A frictionless customer journey. An offer that sells. Sales scripts and a CRM pipeline. Landing pages that convert. Automations running 24/7. A content strategy. And a live ad campaign generating leads.</p>
+
+      <p>That's nine phases. 112 hours of strategic and technical work. Built with you.</p>
+
+      <p>Now we finish it.</p>
+
+      <ul>
+        <li><span class="check">10</span> <strong>Activate & Monetise Your Database</strong> — The leads you've been generating? They're an asset now. We'll build nurture sequences, re-engagement campaigns, and a launch template you can activate any time you want to generate revenue — without spending a dollar on ads.</li>
+        <li><span class="check">11</span> <strong>Build Your Authority Brand</strong> — We refine your visual identity and create a brand guidelines document that your whole team can follow. When someone researches you, everything they find reinforces their decision to work with you.</li>
+        <li><span class="check">12</span> <strong>Launch Your Authority Platform</strong> — A full website. Not a brochure — a conversion asset. Strategy, copy, design, build, CRM integration, mobile optimisation, SEO. Every page designed to build trust and drive action. This is 24 hours of work on its own.</li>
+      </ul>
+
+      <p>50 hours across these final three phases.</p>
+
+      <div class="divider"></div>
+
+      <p><strong>What we'll need from you:</strong></p>
+
+      <ul>
+        <li><span class="check">&#10003;</span> Give us access to your existing contact/email list for the database work</li>
+        <li><span class="check">&#10003;</span> Share feedback on visual direction — colours, style, the feel you're going for</li>
+        <li><span class="check">&#10003;</span> Provide content and imagery for the website (we'll guide you on exactly what we need)</li>
+        <li><span class="check">&#10003;</span> Review and approve before we go live</li>
+      </ul>
+
+      <div class="divider"></div>
+
+      <p>When this is done, you won't just have a marketing system. You'll have a business that looks, feels, and operates like the authority you actually are.</p>
+
+      <p>Most business owners never get here. They stay stuck in the cycle of launching one campaign, watching it fade, and starting again from scratch. You won't have that problem anymore.</p>
+
+      <p>You've got a system. You've got a brand. You've got a platform. And you've got a team that knows how to keep it running.</p>
+
+      <p>It's been a privilege building this with you. And we're just getting started.</p>
+
+      <p class="signoff">
+        <span class="name">Mario + Brando</span><br>
+        Kaizen Collective
+      </p>
+    </div>
+
+    <div class="email-notes">
+      <strong>Internal Notes</strong>
+      This is the most important email in the sequence. It does two things: (1) makes them feel the full weight of what's been built by walking them back to where they started, and (2) plants the seed for ongoing retention — "we're just getting started." The paragraph listing all nine phases of completed work is the emotional peak. Don't trim it. The "most business owners never get here" line creates belonging — they're in a different category now. Send within 24 hours of completing Phase 9. This email should also transition them into the ongoing DWY rhythm.
+    </div>
+
+    <button class="copy-btn" onclick="copyEmail(4)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      Copy Email Text
+    </button>
+  </div>
+
+</div>
+
+<div class="footer">
+  Kaizen Collective &middot; kaizencollective.com.au &middot; We Turn Pros Into CEOs
+</div>
+
+<script>
+function showEmail(idx) {
+  document.querySelectorAll('.email-card').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.email-nav-btn').forEach(b => b.classList.remove('active'));
+  const card = document.getElementById('email-' + idx);
+  if (card) card.classList.add('active');
+  document.querySelectorAll('.email-nav-btn')[idx]?.classList.add('active');
+}
+
+function copyEmail(idx) {
+  const body = document.querySelectorAll('.email-body')[idx];
+  if (!body) return;
+  // Get plain text, replacing placeholders
+  const text = body.innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelectorAll('.copy-btn')[idx];
+    btn.textContent = 'Copied!';
+    setTimeout(() => { btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy Email Text'; }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>
