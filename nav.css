@@ -103,9 +103,31 @@ body {
 }
 
 @media (max-width: 640px) {
-  .top-nav { padding: 0 1rem; }
-  .top-nav-inner { gap: 0.75rem; }
-  .top-nav-brand { font-size: 0.85rem; }
-  .top-nav-link { font-size: 0.72rem; padding: 0.4rem 0.6rem; }
-  .container { padding: 0 1.25rem; }
+  .top-nav { padding: 0 0.75rem; }
+  .top-nav-inner {
+    gap: 0;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0.6rem 0;
+  }
+  .top-nav-brand {
+    font-size: 0.82rem;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid rgba(200, 168, 112, 0.1);
+    margin-bottom: 0.35rem;
+  }
+  .top-nav-links {
+    width: 100%;
+    justify-content: center;
+    gap: 0.2rem;
+    margin-left: 0;
+  }
+  .top-nav-link {
+    font-size: 0.68rem;
+    padding: 0.35rem 0.55rem;
+  }
+  .container { padding: 0 1rem; }
+  .footer { padding: 1.5rem 1rem; }
 }

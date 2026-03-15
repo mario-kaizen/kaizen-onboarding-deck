@@ -250,9 +250,18 @@
   .copy-btn:hover { background: var(--ink-soft); }
 
   @media (max-width: 640px) {
-    .email-body { padding: 1.5rem; }
-    .email-subject { flex-direction: column; gap: 0.25rem; }
-    .email-meta { gap: 1rem; }
+    .page-header h1 { font-size: 1.5rem; }
+    .page-header p { font-size: 0.85rem; }
+    .page-header { padding: 2rem 0 1.25rem; }
+    .email-nav { gap: 0.3rem; }
+    .email-nav-btn { font-size: 0.7rem; padding: 0.35rem 0.6rem; }
+    .email-meta { gap: 0.75rem; flex-direction: column; }
+    .email-subject { flex-direction: column; gap: 0.25rem; padding: 0.85rem 1rem; }
+    .email-subject-text { font-size: 0.88rem; }
+    .email-body { padding: 1.25rem; font-size: 0.88rem; }
+    .email-body ul { gap: 0.5rem; }
+    .email-notes { padding: 0.85rem 1rem; font-size: 0.78rem; }
+    .copy-btn { font-size: 0.75rem; }
   }
 </style>
 </head>
@@ -263,8 +272,8 @@
     <a href="index.html" class="top-nav-brand">Kaizen Onramp</a>
     <div class="top-nav-links">
       <a href="index.html" class="top-nav-link">Overview</a>
-      <a href="project-management.html" class="top-nav-link">Project Management</a>
       <a href="emails.html" class="top-nav-link active">Email Templates</a>
+      <a href="project-management.html" class="top-nav-link">Project Management</a>
     </div>
   </div>
 </nav>
