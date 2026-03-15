@@ -1,0 +1,1213 @@
+  <!-- ══════════════════════════════════════════ -->
+  <!-- PHASE 10: ACTIVATE & MONETISE YOUR DATABASE -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="phase-content" id="phase-9">
+
+    <div class="phase-hero">
+      <div class="phase-hero-eyebrow">Phase 10 of 12</div>
+      <h2>Activate &amp; Monetise Your Database</h2>
+      <div class="phase-hero-focus">The easiest sale is to someone who already knows you.</div>
+      <div class="phase-hero-stats">
+        <div class="phase-hero-stat">
+          <span class="phase-hero-stat-val">14</span>
+          <span class="phase-hero-stat-label">Hours</span>
+        </div>
+        <div class="phase-hero-stat">
+          <span class="phase-hero-stat-val">8</span>
+          <span class="phase-hero-stat-label">Projects</span>
+        </div>
+        <div class="phase-hero-stat">
+          <span class="phase-hero-stat-val">26</span>
+          <span class="phase-hero-stat-label">Tasks</span>
+        </div>
+        <div class="phase-hero-stat">
+          <span class="phase-hero-stat-val">Chloe</span>
+          <span class="phase-hero-stat-label">Lead</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: var(--ink); border-radius: 10px; padding: 1.25rem 1.5rem; margin-bottom: 1rem;">
+      <h4 style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); font-weight: 700; margin-bottom: 0.5rem;">The Job of This Phase</h4>
+      <p style="font-size: 1rem; color: var(--cream); line-height: 1.7; font-weight: 500;">The client can generate revenue on demand from their existing database — without paid ads — using a repeatable launch template they understand and can trigger themselves.</p>
+      <p style="font-size: 0.84rem; color: var(--gray-400); line-height: 1.6; margin-top: 0.75rem;">This phase proves the entire system works. If you can make money from your existing database without ads, everything upstream is validated — the offer, the messaging, the nurture, the automation. If this phase falls flat, don't blame the database. Go back and audit Phases 1-9.</p>
+    </div>
+
+    <div class="standard-block">
+      <h4>The Standard — What Good Looks Like</h4>
+      <p>"I made sales this month without running a single ad. Just from our existing database."</p>
+    </div>
+
+    <!-- ─── SECTION 1: DATABASE AUDIT & SEGMENTATION ─── -->
+    <div class="section-card" onclick="this.classList.toggle('open')">
+      <div class="section-header">
+        <span class="section-arrow">&#9660;</span>
+        <span class="section-title">1. Database Audit &amp; Segmentation</span>
+        <span class="section-badge badge-both">CLAUDE + TEAM</span>
+      </div>
+      <div class="section-body">
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Export and audit the full contact database</div>
+            <div class="task-desc">Pull the complete contact list from GHL. Identify: total contacts, contacts with email, contacts with phone, contacts with both, last activity date, lead source, pipeline stage. This gives us the real size of the opportunity.</div>
+            <div class="task-how"><strong>How:</strong> Export contacts from <code>GHL → Contacts → Export</code>. Claude can analyse the CSV to produce an audit summary: total count, email/phone coverage %, contacts with zero engagement in 90+ days, top lead sources, pipeline stage distribution. Upload audit to client Google Drive.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Identify dead, dormant, and active segments</div>
+            <div class="task-desc">Categorise every contact into one of three buckets: Active (engaged in last 30 days), Dormant (engaged 31-180 days ago), Dead (no engagement 180+ days or bounced). Each segment gets a different re-engagement strategy.</div>
+            <div class="task-how"><strong>How:</strong> Claude analyses the exported CSV by last activity date. Create three GHL Smart Lists: <code>DB - Active (30d)</code>, <code>DB - Dormant (31-180d)</code>, <code>DB - Dead (180d+)</code>. Team builds these as saved views in GHL Contacts. Cross-reference with <code>email_valid</code> and <code>phone_valid</code> fields.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Create interest-based sub-segments</div>
+            <div class="task-desc">Beyond recency, segment by interest: past purchasers (upsell potential), enquired but never bought (warm leads), lead magnet downloaders (top of funnel), referral sources. Each sub-segment gets personalised messaging.</div>
+            <div class="task-how"><strong>How:</strong> Claude reviews GHL tags, pipeline stages, and opportunity data to recommend segment definitions. Team creates corresponding Smart Lists in GHL: <code>DB - Past Buyers</code>, <code>DB - Enquired Not Bought</code>, <code>DB - Lead Magnet Only</code>, <code>DB - Referral Sources</code>. Tag contacts accordingly.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Clean and deduplicate the database</div>
+            <div class="task-desc">Remove duplicate contacts, fix formatting issues (phone numbers, email typos), merge duplicates, remove known bounces. A clean database means higher deliverability and accurate reporting.</div>
+            <div class="task-how"><strong>How:</strong> Team uses GHL's built-in duplicate detection (<code>Settings → Labs → Duplicate Detection</code>). For bulk cleanup, export CSV, Claude identifies duplicates by email/phone matching, team merges in GHL. Remove contacts marked <code>bounced</code> or <code>unsubscribed</code> from active segments.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 2: NURTURE SEQUENCE STRATEGY ─── -->
+    <div class="section-card" onclick="this.classList.toggle('open')">
+      <div class="section-header">
+        <span class="section-arrow">&#9660;</span>
+        <span class="section-title">2. Nurture Sequence Strategy &amp; Build</span>
+        <span class="section-badge badge-both">CLAUDE + TEAM</span>
+      </div>
+      <div class="section-body">
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Design the nurture sequence strategy</div>
+            <div class="task-desc">Map out the nurture journey for each segment. Active contacts get value-first content. Dormant contacts get re-engagement sequences. Dead contacts get a "win-back or clean out" campaign. Each sequence has a clear goal and CTA.</div>
+            <div class="task-how"><strong>How:</strong> Claude drafts the nurture map using the client's Brand Bible, offer stack (from Phase 4), and segment data. Format: Segment → Sequence Name → # of touchpoints → Cadence → Goal → Primary CTA. Present to client on next strategy call for approval. Document in Google Drive: <code>Database Nurture Strategy.pdf</code>.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Write the Active segment nurture sequence</div>
+            <div class="task-desc">6-email sequence for active contacts. Goal: deepen relationship, build authority, prime for offer. Structure: Value → Value → Story → Social proof → Soft CTA → Direct CTA. Cadence: 1 email every 3-4 days.</div>
+            <div class="task-how"><strong>How:</strong> Claude writes all 6 emails using the Brand Bible tone of voice, messaging framework, and offer copy from Phase 4. Each email: subject line (max 50 chars), preview text (max 90 chars), body (150-300 words), CTA button text. Use <code>{{first_name}}</code> personalisation. Deliver as Google Doc for client review.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Write the Dormant segment re-engagement sequence</div>
+            <div class="task-desc">4-email + 2-SMS sequence for dormant contacts. Goal: re-ignite interest or identify disengaged. Structure: "We miss you" → Value bomb → Exclusive offer → Last chance. SMS used for high-intent touchpoints only.</div>
+            <div class="task-how"><strong>How:</strong> Claude writes 4 emails + 2 SMS messages. Emails follow re-engagement best practices: shorter, more personal, direct subject lines ("Still interested in [outcome]?"). SMS: max 160 chars, personal tone, link to landing page. Deliver in same Google Doc as active sequence, clearly labelled.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Build nurture workflows in GHL</div>
+            <div class="task-desc">Take approved copy and build the actual workflows in GHL. Each workflow triggers on segment tag assignment, runs the email/SMS sequence at defined intervals, and exits on conversion or unsubscribe.</div>
+            <div class="task-how"><strong>How:</strong> Team builds in <code>GHL → Automation → Workflows</code>. Workflow per segment: trigger = tag added (e.g., <code>DB - Active (30d)</code>), actions = wait + send email/SMS in sequence. Add exit conditions: contact replies, books appointment, purchases, or unsubscribes. Test with team email addresses before activating.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Test all sequences end-to-end</div>
+            <div class="task-desc">Send test emails and SMS to internal team members. Verify: links work, personalisation renders correctly, images load, unsubscribe link present, timing between messages is correct, exit conditions fire properly.</div>
+            <div class="task-how"><strong>How:</strong> Team adds themselves as test contacts with segment tags. Run through full sequence at accelerated pace. Check: email deliverability (not landing in spam), SMS delivery, link tracking, CRM record updates. Document any issues and fix before client approval.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 3: AUTHORITY EMAIL FRAMEWORK ─── -->
+    <div class="section-card" onclick="this.classList.toggle('open')">
+      <div class="section-header">
+        <span class="section-arrow">&#9660;</span>
+        <span class="section-title">3. Authority Email Framework</span>
+        <span class="section-badge badge-claude">CLAUDE</span>
+      </div>
+      <div class="section-body">
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Design the weekly authority email template</div>
+            <div class="task-desc">Create a repeatable email framework the client (or team) can use weekly to build authority with their database. Not promotional — educational, valuable, trust-building. This is the long-game nurture that makes every campaign more effective.</div>
+            <div class="task-how"><strong>How:</strong> Claude creates the Authority Email Framework: 4 email archetypes (Story-driven, Lesson-driven, Myth-busting, Behind-the-scenes), each with a fill-in template. Include: subject line formulas, opening hook templates, body structure, CTA options. Output: Google Doc in client Drive folder <code>Authority Email Framework.pdf</code>.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Write 4 weeks of authority emails</div>
+            <div class="task-desc">Give the client a 4-week head start. Write one email per week using each of the 4 archetypes. This demonstrates the framework in action and gives them a bank of content to launch with.</div>
+            <div class="task-how"><strong>How:</strong> Claude writes 4 emails using the Brand Bible, deep dive call transcript, and client's unique stories/insights. Week 1: Story (founding story or client transformation). Week 2: Lesson (common mistake in their industry). Week 3: Myth-bust (challenge a popular assumption). Week 4: Behind-the-scenes (what goes into their service). Each 200-400 words.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Set up weekly email broadcast workflow</div>
+            <div class="task-desc">Create the recurring workflow in GHL so the authority email goes out every week at the optimal time. Client or team loads copy, GHL sends and tracks.</div>
+            <div class="task-how"><strong>How:</strong> Team creates a GHL email template with the client's brand header/footer. Set up a broadcast workflow: manual trigger (team loads the email copy each week) or scheduled if the client wants to batch. Configure send time based on database engagement data (check GHL email analytics for best open-rate windows).</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 4: RE-ENGAGEMENT CAMPAIGN ─── -->
+    <div class="section-card" onclick="this.classList.toggle('open')">
+      <div class="section-header">
+        <span class="section-arrow">&#9660;</span>
+        <span class="section-title">4. Re-Engagement Campaign Design &amp; Execution</span>
+        <span class="section-badge badge-both">CLAUDE + TEAM</span>
+      </div>
+      <div class="section-body">
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Design the re-engagement campaign strategy</div>
+            <div class="task-desc">Create a multi-channel campaign (email + SMS + voicemail drop) specifically for the dormant and dead segments. Goal: get a response — even a "no" is better than silence, because it cleans the list.</div>
+            <div class="task-how"><strong>How:</strong> Claude designs the campaign flow: Day 1 = Email (personal, curiosity-driven subject). Day 2 = SMS (short, casual, asks a question). Day 4 = Email (value-driven, offers something free). Day 6 = Voicemail drop (if available in GHL). Day 8 = Final email ("Should I close your file?"). This sequence is proven to get 15-25% response rates from dormant lists.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Write all re-engagement campaign copy</div>
+            <div class="task-desc">Write every email, SMS, and voicemail script for the re-engagement campaign. Tone: personal, non-salesy, genuinely curious. The "Should I close your file?" email consistently gets the highest response rate.</div>
+            <div class="task-how"><strong>How:</strong> Claude writes all touchpoints using Brand Bible voice. Key principle: write like a human, not a brand. Use first name, reference their original enquiry if possible (<code>{{lead_source}}</code> merge field), ask genuine questions. Voicemail script: max 30 seconds. Deliver as Google Doc for review.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Build and launch the re-engagement workflow</div>
+            <div class="task-desc">Build the full multi-channel workflow in GHL. Trigger on dormant/dead segment tags. Include reply detection so the sequence stops when someone responds.</div>
+            <div class="task-how"><strong>How:</strong> Team builds in <code>GHL → Automation → Workflows</code>. Key settings: trigger = tag <code>DB - Dormant</code> or <code>DB - Dead</code> added. Add wait steps between touchpoints. Add "If/Else" branches: if contact replies → stop workflow + move to manual follow-up pipeline. If contact opens but doesn't reply → extend by 1 more touchpoint. Test with 3-5 internal contacts first.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Monitor re-engagement results and clean the list</div>
+            <div class="task-desc">After the campaign runs, categorise results: Re-engaged (responded positively), Not Interested (responded negatively), Unreachable (bounced/no response). Remove unreachable contacts from future campaigns. This improves deliverability for everything going forward.</div>
+            <div class="task-how"><strong>How:</strong> Team reviews GHL workflow stats after 10 days. Tag contacts: <code>RE - Re-engaged</code>, <code>RE - Not Interested</code>, <code>RE - Unreachable</code>. Move re-engaged contacts to active nurture. Archive unreachable. Report results to client: response rate, re-engagement rate, list health improvement.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 5: LAUNCH CAMPAIGN TEMPLATE ─── -->
+    <div class="section-card" onclick="this.classList.toggle('open')">
+      <div class="section-header">
+        <span class="section-arrow">&#9660;</span>
+        <span class="section-title">5. Repeatable Launch Campaign Template</span>
+        <span class="section-badge badge-both">CLAUDE + TEAM</span>
+      </div>
+      <div class="section-body">
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Design the launch campaign blueprint</div>
+            <div class="task-desc">Create a reusable 7-day launch template the client can deploy whenever they want to monetise their database: new offer, seasonal promotion, event, challenge launch. This is the "revenue on demand" playbook.</div>
+            <div class="task-how"><strong>How:</strong> Claude designs the 7-day launch blueprint: Day 1-2 = Seed (tease what's coming). Day 3 = Reveal (announce the offer). Day 4 = Social proof (testimonials, results). Day 5 = Objection handling (FAQ, myth-busting). Day 6 = Scarcity (deadline or limited spots). Day 7 = Last call (final push). Each day = 1 email + 1 SMS. Output: <code>Launch Campaign Blueprint.pdf</code> in Google Drive.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Write the first launch campaign</div>
+            <div class="task-desc">Write the full 7-day campaign for the client's primary offer. All 7 emails + 7 SMS messages, ready to load into GHL. This is the first live test of the database monetisation system.</div>
+            <div class="task-how"><strong>How:</strong> Claude writes all 14 pieces of copy (7 emails + 7 SMS) using Brand Bible voice, offer copy from Phase 4, and social proof from Phase 5. Each email: subject line, preview text, body (200-400 words), CTA. Each SMS: max 160 chars with tracking link. Deliver as Google Doc, organised by day.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Build the launch workflow in GHL</div>
+            <div class="task-desc">Create a reusable GHL workflow template for the 7-day launch. The client should be able to duplicate this workflow, swap the copy, and run a new launch in under 30 minutes.</div>
+            <div class="task-how"><strong>How:</strong> Team builds the workflow in <code>GHL → Automation → Workflows</code>. Use placeholder fields for offer-specific copy so the template can be duplicated. Trigger = manual (tag-based). Include: daily email + SMS, reply detection, conversion tracking via opportunity pipeline stage changes. Save as template workflow: <code>TEMPLATE - 7 Day Launch</code>.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Train client on how to trigger a launch</div>
+            <div class="task-desc">Record a Loom walkthrough showing the client exactly how to: duplicate the template, swap copy, select the segment, activate the workflow, and monitor results. The goal is independence — they should be able to run a launch without us.</div>
+            <div class="task-how"><strong>How:</strong> Team records a 10-15 minute Loom covering the full process. Upload to client Google Drive folder. Share in Slack channel with the message: "Here's your Launch Campaign SOP. You can now run a campaign anytime. We'll walk through the first one together on our next call." Pin in Slack for easy access.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 6: TRACKING & PERFORMANCE DASHBOARD ─── -->
+    <div class="section-card" onclick="this.classList.toggle('open')">
+      <div class="section-header">
+        <span class="section-arrow">&#9660;</span>
+        <span class="section-title">6. Tracking &amp; Performance Dashboard</span>
+        <span class="section-badge badge-both">CLAUDE + TEAM</span>
+      </div>
+      <div class="section-body">
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Define database campaign KPIs</div>
+            <div class="task-desc">Set the metrics that matter: open rate, click rate, reply rate, conversion rate, revenue generated per campaign, cost per acquisition (should be $0 since no ad spend), revenue per contact in database.</div>
+            <div class="task-how"><strong>How:</strong> Claude drafts the KPI framework with benchmarks: Email open rate target = 25%+, Click rate = 3%+, Reply rate (re-engagement) = 15%+, Conversion rate = 2-5%, Revenue per contact = calculate from first campaign. Document in <code>Database Performance KPIs.pdf</code>.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Set up campaign tracking in GHL</div>
+            <div class="task-desc">Configure GHL reporting so every email, SMS, and conversion is tracked. The client needs to see: how many people opened, clicked, replied, and bought — for every campaign they run.</div>
+            <div class="task-how"><strong>How:</strong> Team configures in <code>GHL → Reporting</code>. Set up: email campaign reports (open/click/bounce), SMS delivery reports, opportunity pipeline tracking (attribute revenue to campaign source). Create a custom dashboard view: <code>Database Campaign Performance</code>. Ensure UTM parameters are on all links for cross-platform tracking.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Create the database revenue tracker</div>
+            <div class="task-desc">Build a simple tracker (Google Sheet or GHL dashboard) that shows: total database size, active %, revenue generated from database campaigns (no ads), revenue per contact, and campaign history with results.</div>
+            <div class="task-how"><strong>How:</strong> Claude creates the Google Sheet template with formulas: Campaign Name, Date, Segment Targeted, # Sent, Open Rate, Click Rate, Conversions, Revenue, CPA. Auto-calculates: Revenue Per Contact, List Growth Rate, Lifetime Value of Database. Team shares with client and populates after each campaign.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Run the first campaign and report results</div>
+            <div class="task-desc">Execute the first launch campaign. Monitor in real-time. After completion, compile results into a client-facing report. This is the proof point — the moment they see revenue from their database without ads.</div>
+            <div class="task-how"><strong>How:</strong> Team activates the workflow targeting the selected segment. Monitor daily: open rates, replies, conversions. After Day 7, Claude compiles the campaign report: total reach, engagement metrics, revenue generated, key learnings, recommendations for next campaign. Share in Slack + Google Drive. Celebrate wins.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── MISTAKES ─── -->
+    <div class="mistakes-block">
+      <h4>Common Mistakes — What Goes Wrong in Phase 10</h4>
+      <div class="mistake-item">
+        <span class="mistake-x">&#10005;</span>
+        <span><strong>Blasting the entire database with the same message.</strong> Segmentation exists for a reason. An active customer and a dead lead should never receive the same email. Segment first, send second.</span>
+      </div>
+      <div class="mistake-item">
+        <span class="mistake-x">&#10005;</span>
+        <span><strong>Skipping the re-engagement campaign and going straight to selling.</strong> If someone hasn't heard from you in 6 months, your first email shouldn't be a sales pitch. Warm them up first or you'll spike unsubscribes and kill deliverability.</span>
+      </div>
+      <div class="mistake-item">
+        <span class="mistake-x">&#10005;</span>
+        <span><strong>Not cleaning the database before sending.</strong> Sending to bounced, invalid, or unsubscribed contacts tanks your sender reputation. Clean the list first — it's not glamorous, but it determines whether your emails reach inboxes or spam folders.</span>
+      </div>
+      <div class="mistake-item">
+        <span class="mistake-x">&#10005;</span>
+        <span><strong>Building the workflows but not training the client to use them.</strong> The goal is independence. If the client can't trigger a launch campaign without you, you've built a dependency, not a system. Record the Loom. Walk them through it live. Make sure they own it.</span>
+      </div>
+      <div class="mistake-item">
+        <span class="mistake-x">&#10005;</span>
+        <span><strong>Treating a zero-result campaign as a failure instead of a diagnostic.</strong> If the first campaign generates nothing, the database isn't the problem. Go back and audit: Was the offer compelling? Was the segment right? Was the copy on-brand? The data tells you where to fix.</span>
+      </div>
+    </div>
+
+    <!-- ─── EVIDENCE ─── -->
+    <div class="evidence-block">
+      <h4>Evidence — How to Verify Phase 10 is Complete</h4>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>Database audit report in Google Drive showing total contacts, segment sizes, and list health</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>At least 3 GHL Smart Lists created (Active, Dormant, Dead) with contacts correctly tagged</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>Nurture sequences active in GHL with all emails/SMS tested and approved</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>Re-engagement campaign completed with results reported (response rate, re-engaged count, cleaned contacts)</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>7-day launch campaign template saved in GHL as a reusable workflow</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>Client has received Loom walkthrough and can explain how to trigger a launch campaign independently</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>First campaign executed with revenue tracked — even $1 proves the system works</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>Database revenue tracker (Google Sheet) populated with first campaign results</span></div>
+    </div>
+
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- PHASE 11: BUILD YOUR AUTHORITY BRAND       -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="phase-content" id="phase-10">
+
+    <div class="phase-hero">
+      <div class="phase-hero-eyebrow">Phase 11 of 12</div>
+      <h2>Build Your Authority Brand</h2>
+      <div class="phase-hero-focus">Brand builds credibility. Credibility builds trust. Trust drives decisions.</div>
+      <div class="phase-hero-stats">
+        <div class="phase-hero-stat">
+          <span class="phase-hero-stat-val">12</span>
+          <span class="phase-hero-stat-label">Hours</span>
+        </div>
+        <div class="phase-hero-stat">
+          <span class="phase-hero-stat-val">5</span>
+          <span class="phase-hero-stat-label">Projects</span>
+        </div>
+        <div class="phase-hero-stat">
+          <span class="phase-hero-stat-val">22</span>
+          <span class="phase-hero-stat-label">Tasks</span>
+        </div>
+        <div class="phase-hero-stat">
+          <span class="phase-hero-stat-val">Mario</span>
+          <span class="phase-hero-stat-label">Lead</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: var(--ink); border-radius: 10px; padding: 1.25rem 1.5rem; margin-bottom: 1rem;">
+      <h4 style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); font-weight: 700; margin-bottom: 0.5rem;">The Job of This Phase</h4>
+      <p style="font-size: 1rem; color: var(--cream); line-height: 1.7; font-weight: 500;">Every touchpoint — website, social, ads, emails, in-person — feels like the same business, and the client's team can maintain brand consistency without the founders checking every piece of content.</p>
+      <p style="font-size: 0.84rem; color: var(--gray-400); line-height: 1.6; margin-top: 0.75rem;">This is not Phase 1 again. Phase 1 was about clarity — figuring out who you are. Phase 11 is about consistency and scale — the visual and operational expression of that clarity. The Brand Bible becomes a brand system that other people can use without you in the room.</p>
+    </div>
+
+    <div class="standard-block">
+      <h4>The Standard — What Good Looks Like</h4>
+      <p>"When people research me now, everything they find reinforces their decision to work with me."</p>
+    </div>
+
+    <!-- ─── SECTION 1: BRAND POSITIONING REFINEMENT ─── -->
+    <div class="section-card" onclick="this.classList.toggle('open')">
+      <div class="section-header">
+        <span class="section-arrow">&#9660;</span>
+        <span class="section-title">1. Brand Positioning Refinement</span>
+        <span class="section-badge badge-both">CLAUDE + TEAM</span>
+      </div>
+      <div class="section-body">
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Audit brand positioning against Phases 1-10 learnings</div>
+            <div class="task-desc">By now you have 10 phases of data: what messaging converted, what ad angles worked, what the client's audience responded to, what language they use in sales calls. The original Phase 1 positioning was a hypothesis — now refine it with evidence.</div>
+            <div class="task-how"><strong>How:</strong> Claude reviews: ad performance data (Phase 9), email open/click rates (Phase 10), sales call transcripts, social engagement data, funnel conversion rates. Identify: which positioning angle got the best results? Which language resonated most? Which differentiators actually matter to buyers? Output: Refined Positioning Statement (1-2 sentences) + supporting evidence.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Validate refined positioning with Mario</div>
+            <div class="task-desc">Present the data-backed positioning refinement to Mario for strategic review. This is a calibration step — the data informs, but strategic intuition validates.</div>
+            <div class="task-how"><strong>How:</strong> Claude prepares a 1-page positioning brief: current positioning (Phase 1) → proposed refinement → evidence (metrics, quotes, data points) → recommendation. Share in Slack for Mario's review. Book 15-minute call if needed. Document final approved positioning in Brand Bible (update the Google Doc).</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Update the Brand Bible with refined positioning</div>
+            <div class="task-desc">Update the Brand Bible Google Doc with the final positioning. This is the version that becomes the permanent reference for all future work — website, ads, content, sales scripts.</div>
+            <div class="task-how"><strong>How:</strong> Claude updates the Brand Bible sections: Brand Positioning, Core Messaging, and Competitive Differentiation. Version the document: add "v2.0 — Updated [date]" to the header. Notify client in Slack: "Your Brand Bible has been updated with refined positioning based on what we've learned from your campaigns."</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 2: MESSAGING FRAMEWORK FINALISATION ─── -->
+    <div class="section-card" onclick="this.classList.toggle('open')">
+      <div class="section-header">
+        <span class="section-arrow">&#9660;</span>
+        <span class="section-title">2. Messaging Framework Finalisation</span>
+        <span class="section-badge badge-claude">CLAUDE</span>
+      </div>
+      <div class="section-body">
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Compile the proven messaging library</div>
+            <div class="task-desc">Pull together every piece of copy that performed well across Phases 1-10: ad headlines, email subject lines, landing page headlines, SMS messages, social captions. This becomes the client's "swipe file" — proven language they can reuse.</div>
+            <div class="task-how"><strong>How:</strong> Claude reviews all campaign data and compiles: top 10 ad headlines by CTR, top 10 email subject lines by open rate, top 5 landing page headlines by conversion rate, top performing SMS messages. Organise into categories: Headlines, Subject Lines, CTAs, Value Props, Objection Handlers. Output: <code>Proven Messaging Library.pdf</code> in Google Drive.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Finalise the messaging framework document</div>
+            <div class="task-desc">Lock in the complete messaging framework: brand story, elevator pitch, value propositions (3-5), key messages per audience segment, tone of voice rules, words to use / words to avoid. This is the single source of truth for all copy.</div>
+            <div class="task-how"><strong>How:</strong> Claude creates the final messaging framework as a structured document. Sections: Brand Story (150 words), Elevator Pitch (30 seconds), Value Propositions (ranked by evidence), Key Messages (per segment: new leads, warm leads, existing clients), Tone of Voice (3 personality traits + dos/don'ts), Vocabulary Guide (use/avoid lists). Output: <code>Messaging Framework v2.0.pdf</code>. Get client sign-off in Slack.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Create quick-reference messaging cards</div>
+            <div class="task-desc">Distil the messaging framework into 1-page reference cards that the client's team can pin to their desk or save on their phone. If someone needs to write a social caption, they check the card, not the 15-page document.</div>
+            <div class="task-how"><strong>How:</strong> Claude creates 3 quick-reference cards: (1) Brand Voice Card — personality traits, tone rules, use/avoid words. (2) Headline Formulas Card — 10 proven headline templates with fill-in blanks. (3) CTA Cheat Sheet — primary/secondary CTAs for every context (social, email, ads, website). Design team formats these as branded PDFs. Share in Slack + Google Drive.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 3: VISUAL IDENTITY DESIGN ─── -->
+    <div class="section-card" onclick="this.classList.toggle('open')">
+      <div class="section-header">
+        <span class="section-arrow">&#9660;</span>
+        <span class="section-title">3. Visual Identity Design</span>
+        <span class="section-badge badge-team">TEAM</span>
+      </div>
+      <div class="section-body">
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Review and refine the logo</div>
+            <div class="task-desc">Assess the client's current logo against their refined positioning. Does it still represent who they are? Does it work across all sizes (social avatar, website header, email signature, physical signage)? If not, redesign or refine.</div>
+            <div class="task-how"><strong>How:</strong> Design team reviews the logo in context: social profile picture (32px circle), website header (full width), email signature, business card, physical signage. Check: readability at small sizes, colour contrast, versatility on dark/light backgrounds. If redesign needed, create 2-3 options + present to client. Deliver final logo pack: PNG (transparent), SVG, horizontal + stacked versions, light + dark versions.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Define colour palette and typography</div>
+            <div class="task-desc">Lock in the brand colour palette (primary, secondary, accent, neutrals) and typography system (heading font, body font, accent font). These must work for digital and print. Include hex codes, RGB, and CMYK values.</div>
+            <div class="task-how"><strong>How:</strong> Design team creates the colour and type system. Colour: primary (1-2 colours), secondary (1-2), accent (1), neutrals (3-4 shades). Typography: heading font (display/serif), body font (sans-serif), mono (for code/data if needed). Test combinations for accessibility (WCAG AA contrast). Document with swatches, hex/RGB/CMYK codes, and usage rules.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Design social media templates</div>
+            <div class="task-desc">Create a set of branded social media templates in Canva the client can reuse: Instagram post (1080x1080), Instagram story (1080x1920), carousel cover, quote graphic, testimonial graphic. This makes content creation fast and consistent.</div>
+            <div class="task-how"><strong>How:</strong> Design team creates templates in Canva (shared with client's Canva account). Minimum 8 templates: 2x quote graphics, 2x testimonial graphics, 2x educational/tip graphics, 1x carousel cover, 1x story template. Each template uses the locked brand colours, fonts, and logo placement. Share Canva link in client Slack channel.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Design email template</div>
+            <div class="task-desc">Create a branded email template in GHL that matches the visual identity. Header, footer, button styling, font choices — all consistent with the brand system.</div>
+            <div class="task-how"><strong>How:</strong> Design team creates the GHL email template: branded header (logo + brand colours), styled body area (correct fonts, line spacing), branded CTA buttons (primary colour + hover state), footer (social links, address, unsubscribe). Save as template in <code>GHL → Marketing → Email Templates</code>. Apply retroactively to all active nurture sequences from Phase 10.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 4: BRAND GUIDELINES DOCUMENT ─── -->
+    <div class="section-card" onclick="this.classList.toggle('open')">
+      <div class="section-header">
+        <span class="section-arrow">&#9660;</span>
+        <span class="section-title">4. Brand Guidelines Document</span>
+        <span class="section-badge badge-both">CLAUDE + TEAM</span>
+      </div>
+      <div class="section-body">
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Draft the brand guidelines document</div>
+            <div class="task-desc">Compile everything into a single, professional brand guidelines document. This is the operational rulebook anyone on the client's team (or a future hire, or a freelancer) can follow to produce on-brand work without supervision.</div>
+            <div class="task-how"><strong>How:</strong> Claude drafts the full document. Sections: (1) Brand Story & Mission, (2) Positioning Statement, (3) Target Audience, (4) Tone of Voice & Messaging, (5) Logo Usage (clear space, minimum size, don'ts), (6) Colour Palette (with codes), (7) Typography (with hierarchy), (8) Photography Style, (9) Social Media Guidelines, (10) Email Guidelines, (11) Templates & Resources. Output: Google Doc first for review, then design team formats as branded PDF.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Design and format the brand guidelines PDF</div>
+            <div class="task-desc">Take the Claude-drafted content and design it into a professional, visually polished PDF. This document represents the brand — it should look as good as the brand it describes.</div>
+            <div class="task-how"><strong>How:</strong> Design team takes the approved Google Doc and designs it in Canva or InDesign. Apply the brand's own visual system to the document (practice what you preach). Include: colour swatches with drag-and-drop hex codes, font samples at different sizes, logo placement examples, do/don't visual examples. Export as PDF. Upload to Google Drive: <code>Brand Guidelines - [Business Name] - v1.0.pdf</code>.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Client review and sign-off</div>
+            <div class="task-desc">Present the brand guidelines to the client. Walk them through each section. Get explicit sign-off — this is the foundation for Phase 12 (website) and all future marketing.</div>
+            <div class="task-how"><strong>How:</strong> Share PDF in Slack with a summary message: "Here's your Brand Guidelines — the playbook for how your brand looks, sounds, and feels everywhere." Schedule 30-minute walkthrough call. Get written confirmation in Slack: "Approved" or feedback for revisions. Max 2 revision rounds. Pin the final version in Slack.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 5: TEAM ALIGNMENT & BRAND BRIEFING ─── -->
+    <div class="section-card" onclick="this.classList.toggle('open')">
+      <div class="section-header">
+        <span class="section-arrow">&#9660;</span>
+        <span class="section-title">5. Team Alignment &amp; Brand Briefing</span>
+        <span class="section-badge badge-both">CLAUDE + TEAM</span>
+      </div>
+      <div class="section-body">
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Create the team brand briefing document</div>
+            <div class="task-desc">A simplified version of the brand guidelines designed for the client's staff — front desk, trainers, salespeople. Not the full design spec, but the brand essence: who we are, how we talk, what we never say, what makes us different.</div>
+            <div class="task-how"><strong>How:</strong> Claude creates a 2-3 page "Team Brand Brief" distilled from the full guidelines. Sections: Our Story (2 sentences), Our Difference (3 bullet points), How We Sound (tone examples — "we say this, not that"), Our Promise (to clients), Quick Reference (logo, colours, where to find templates). Written at a level anyone can understand and remember.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Conduct team alignment session with Mario</div>
+            <div class="task-desc">Mario reviews the brand guidelines with the client and their team (if applicable). This is a strategic conversation, not a presentation — it's about making sure the brand lives in people's behaviour, not just in a PDF.</div>
+            <div class="task-how"><strong>How:</strong> Schedule 45-minute session. Mario walks through: positioning, key messages, tone of voice, visual identity. Ask the client's team: "If a customer asks why they should choose us, what do you say?" If the answer doesn't match the brand guidelines, keep workshopping until it does. Record via Read.ai.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Apply visual identity across existing channels</div>
+            <div class="task-desc">Update all existing touchpoints with the new/refined visual identity: social media profiles (profile pic, cover images, bio), email signatures, GHL emails, Google Business Profile, any existing landing pages.</div>
+            <div class="task-how"><strong>How:</strong> Team creates a channel audit checklist: Instagram (profile pic, bio, highlights covers), Facebook (profile, cover, about), Google Business Profile (logo, cover, description), email signatures (new template), GHL email template (updated header/footer), existing landing pages (updated colours/fonts). Work through systematically. Screenshot each updated channel as evidence.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Post-briefing Slack message with all brand assets</div>
+            <div class="task-desc">After the team session, post a comprehensive message in the client's Slack channel with every brand asset they need, organised and easy to find. Pin it. This becomes their go-to reference.</div>
+            <div class="task-how"><strong>How:</strong> Claude drafts the Slack message. Include links to: Brand Guidelines PDF, Team Brand Brief, Logo Pack (Google Drive link), Canva Templates, Messaging Framework, Proven Messaging Library, Social Media Templates. Format with clear headers and bullet points. Team posts and pins in Slack channel.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── MISTAKES ─── -->
+    <div class="mistakes-block">
+      <h4>Common Mistakes — What Goes Wrong in Phase 11</h4>
+      <div class="mistake-item">
+        <span class="mistake-x">&#10005;</span>
+        <span><strong>Treating this as a repeat of Phase 1.</strong> Phase 1 was discovery. Phase 11 is codification. You're not asking "who are you?" again — you're locking in "this is who you are, based on evidence" and making it operational. If you're re-doing the Brand Bible from scratch, something went wrong earlier.</span>
+      </div>
+      <div class="mistake-item">
+        <span class="mistake-x">&#10005;</span>
+        <span><strong>Designing a beautiful brand guide that nobody uses.</strong> The guide must be practical. If the client's receptionist can't tell you the brand's three differentiators after reading it, the document failed. Test it with a non-marketing person.</span>
+      </div>
+      <div class="mistake-item">
+        <span class="mistake-x">&#10005;</span>
+        <span><strong>Not updating existing channels with the new identity.</strong> A new brand guide means nothing if the Instagram profile still has the old logo, the email signature uses the wrong font, and the GHL emails look completely different. Consistency is the whole point.</span>
+      </div>
+      <div class="mistake-item">
+        <span class="mistake-x">&#10005;</span>
+        <span><strong>Skipping the team alignment session.</strong> The client's staff interact with customers every day. If they can't articulate the brand, the guidelines document is decoration. The session is where the brand becomes real — don't skip it.</span>
+      </div>
+      <div class="mistake-item">
+        <span class="mistake-x">&#10005;</span>
+        <span><strong>Over-designing at the expense of usability.</strong> Canva templates that are too complex to edit defeat the purpose. The client needs templates they can use in 5 minutes, not 50. Simplicity enables consistency.</span>
+      </div>
+    </div>
+
+    <!-- ─── EVIDENCE ─── -->
+    <div class="evidence-block">
+      <h4>Evidence — How to Verify Phase 11 is Complete</h4>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>Brand Guidelines PDF (v1.0+) uploaded to client Google Drive and pinned in Slack</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>Logo pack delivered: PNG, SVG, horizontal, stacked, light, dark versions</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>Colour palette and typography system documented with hex/RGB/CMYK codes</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>Canva social media templates (8+) shared with client's Canva account</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>GHL email template updated with new visual identity</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>Team Brand Brief created and reviewed in alignment session (recorded via Read.ai)</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>All existing channels updated: Instagram, Facebook, Google Business Profile, email signatures</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>Client sign-off received in Slack: "Approved"</span></div>
+    </div>
+
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- PHASE 12: LAUNCH YOUR AUTHORITY PLATFORM   -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="phase-content" id="phase-11">
+
+    <div class="phase-hero">
+      <div class="phase-hero-eyebrow">Phase 12 of 12</div>
+      <h2>Launch Your Authority Platform</h2>
+      <div class="phase-hero-focus">When someone hears about you and researches you, they land somewhere that reinforces their decision.</div>
+      <div class="phase-hero-stats">
+        <div class="phase-hero-stat">
+          <span class="phase-hero-stat-val">24</span>
+          <span class="phase-hero-stat-label">Hours</span>
+        </div>
+        <div class="phase-hero-stat">
+          <span class="phase-hero-stat-val">9</span>
+          <span class="phase-hero-stat-label">Projects</span>
+        </div>
+        <div class="phase-hero-stat">
+          <span class="phase-hero-stat-val">34</span>
+          <span class="phase-hero-stat-label">Tasks</span>
+        </div>
+        <div class="phase-hero-stat">
+          <span class="phase-hero-stat-val">Juan</span>
+          <span class="phase-hero-stat-label">Lead</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background: var(--ink); border-radius: 10px; padding: 1.25rem 1.5rem; margin-bottom: 1rem;">
+      <h4 style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); font-weight: 700; margin-bottom: 0.5rem;">The Job of This Phase</h4>
+      <p style="font-size: 1rem; color: var(--cream); line-height: 1.7; font-weight: 500;">The client has a live, conversion-focused website that builds authority, captures leads, integrates with their CRM, and ranks in search — and they feel genuine pride when they share the link.</p>
+      <p style="font-size: 0.84rem; color: var(--gray-400); line-height: 1.6; margin-top: 0.75rem;">This is the biggest phase (24 hours) and the capstone of the entire onramp. Everything built in Phases 1-11 comes together here. The website IS the brand identity + the messaging framework + the offer clarity + the social proof + the conversion system. If the client isn't excited to share the link, the job isn't done.</p>
+    </div>
+
+    <div class="standard-block">
+      <h4>The Standard — What Good Looks Like</h4>
+      <p>"This is exactly who we are. Everything someone needs to trust us is right here."</p>
+    </div>
+
+    <!-- ─── SECTION 1: WEBSITE STRATEGY & SITEMAP ─── -->
+    <div class="section-card" onclick="this.classList.toggle('open')">
+      <div class="section-header">
+        <span class="section-arrow">&#9660;</span>
+        <span class="section-title">1. Website Strategy &amp; Sitemap</span>
+        <span class="section-badge badge-both">CLAUDE + TEAM</span>
+      </div>
+      <div class="section-body">
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Define the website's strategic purpose</div>
+            <div class="task-desc">Before designing a single page, clarify: What is this website's #1 job? For most clients: convert cold/warm visitors into leads (enquiry, booking, trial). Every design decision flows from this answer.</div>
+            <div class="task-how"><strong>How:</strong> Claude reviews the client's conversion goal (from Phase 4), offer stack (Phase 4), and buyer journey (Phase 3). Define: primary conversion action (e.g., "Book a Free Trial"), secondary conversion action (e.g., "Download Guide"), traffic sources (ads, organic, referral, social). Document in <code>Website Strategy Brief.pdf</code>.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Create the sitemap</div>
+            <div class="task-desc">Map every page the website needs: Homepage, About, Services/Programs (one per major offer), Testimonials/Results, Blog (if applicable), Contact, Thank You pages, Legal (Privacy Policy, Terms). Most clients need 5-8 pages, not 20.</div>
+            <div class="task-how"><strong>How:</strong> Claude drafts the sitemap based on offer stack and conversion strategy. Format: page name → purpose → primary CTA → content requirements. Keep it lean — every page must earn its place. If a page doesn't serve conversion or authority, cut it. Output: visual sitemap diagram (text-based tree structure) + page-by-page brief in <code>Website Sitemap.pdf</code>.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Audit competitor websites for benchmarking</div>
+            <div class="task-desc">Review the 3-5 competitors identified in Phase 1. Assess their websites: structure, messaging, design quality, load speed, mobile experience, CTA strategy, SEO fundamentals. Identify what to match, what to beat, and what to avoid.</div>
+            <div class="task-how"><strong>How:</strong> Claude performs competitor website analysis via web search and chrome-takeover. Score each competitor on: first impression (5s test), messaging clarity, visual quality, mobile responsiveness, CTA visibility, social proof usage, page load speed (via PageSpeed Insights). Compile into <code>Competitor Website Audit.pdf</code>. Highlight 3 "steal-worthy" elements and 3 "avoid" patterns.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Client approval on sitemap and strategy</div>
+            <div class="task-desc">Present the website strategy and sitemap to the client. Get sign-off before any design or copy begins. Changes here are cheap — changes after the site is built are expensive.</div>
+            <div class="task-how"><strong>How:</strong> Share the Website Strategy Brief and Sitemap in Slack. Walk through on the next strategy call: "Here are the pages we're building, here's why, here's the conversion flow." Get written approval: "Approved to proceed." Document any requested additions or changes. Max 1 revision round at this stage.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 2: WIREFRAMES & PAGE STRUCTURE ─── -->
+    <div class="section-card" onclick="this.classList.toggle('open')">
+      <div class="section-header">
+        <span class="section-arrow">&#9660;</span>
+        <span class="section-title">2. Wireframes &amp; Page Structure</span>
+        <span class="section-badge badge-team">TEAM</span>
+      </div>
+      <div class="section-body">
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Create wireframes for all pages</div>
+            <div class="task-desc">Design low-fidelity wireframes showing the layout, content hierarchy, and CTA placement for each page. Wireframes focus on structure, not aesthetics — grey boxes and placeholder text. This step prevents expensive design rework.</div>
+            <div class="task-how"><strong>How:</strong> Design team creates wireframes in Figma or Canva. For each page: section order, content blocks, image placement zones, CTA positions, navigation structure. Use the sitemap brief as the guide. Key principle: Above the fold = headline + subheadline + primary CTA + hero image. No exceptions. Share wireframes in Slack for review.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Define the homepage conversion flow</div>
+            <div class="task-desc">Map the exact scroll journey of the homepage. Most visitors won't go past the homepage, so it must do the heavy lifting: hook, build trust, overcome objections, convert. Typical structure: Hero → Social Proof → Problem → Solution → Offer → Testimonials → CTA → FAQ → Final CTA.</div>
+            <div class="task-how"><strong>How:</strong> Design team wireframes the homepage section by section. Claude provides the content brief for each section: what content goes here, what emotion it should trigger, what objection it overcomes. Every 2-3 sections should include a CTA — don't make visitors scroll to the bottom to take action.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Plan the mobile-first layout</div>
+            <div class="task-desc">70%+ of traffic will come from mobile. Design the mobile layout before the desktop layout. If it doesn't work beautifully on a phone screen, nothing else matters.</div>
+            <div class="task-how"><strong>How:</strong> Design team creates mobile wireframes for every page. Key mobile rules: single-column layout, thumb-friendly CTA buttons (minimum 44px height), no horizontal scrolling, images compress to under 200kb, text readable without pinching (minimum 16px body), sticky header with CTA button always visible.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Client sign-off on wireframes</div>
+            <div class="task-desc">Present wireframes to the client. Explain: "This is the structure and flow — not the final design. We want to make sure the layout and content order feel right before we add brand colours, images, and final copy."</div>
+            <div class="task-how"><strong>How:</strong> Share wireframes in Slack or via Figma link. Walk through on a call — screen share and scroll through each page explaining the logic: "Here's why the testimonials come before the pricing section." Get sign-off. Max 1 revision round — structure changes only, not design feedback.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 3: CONVERSION COPY ─── -->
+    <div class="section-card" onclick="this.classList.toggle('open')">
+      <div class="section-header">
+        <span class="section-arrow">&#9660;</span>
+        <span class="section-title">3. Conversion Copy for All Pages</span>
+        <span class="section-badge badge-claude">CLAUDE</span>
+      </div>
+      <div class="section-body">
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Write homepage copy</div>
+            <div class="task-desc">The homepage is the most important page. Write every word: hero headline, subheadline, section headers, body copy, CTAs, social proof snippets. The copy must pass the "5-second test" — a visitor should understand what you do, who it's for, and what to do next within 5 seconds of landing.</div>
+            <div class="task-how"><strong>How:</strong> Claude writes homepage copy using: Brand Bible (tone/voice), Messaging Framework (key messages), Proven Messaging Library (tested headlines), and wireframe structure (content flow). Write section by section, matching the wireframe layout. Include: hero headline (max 10 words), subheadline (max 25 words), body sections (100-200 words each), CTA button text (max 5 words per button). Deliver as Google Doc with sections clearly labelled to match wireframe.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Write About page copy</div>
+            <div class="task-desc">The About page is usually the second most visited page. It's not a biography — it's a trust builder. Structure: who you help, why you started, what you believe, your credentials, your team (if applicable), CTA.</div>
+            <div class="task-how"><strong>How:</strong> Claude writes the About page using the brand story from the Messaging Framework and deep dive call transcript. Key principle: 80% about the customer, 20% about you. Lead with the customer's problem, then explain why you're the right person to solve it. Include: founder story (150 words), team section (if applicable), credentials/results, values, CTA to services or booking page.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Write Services/Programs page(s) copy</div>
+            <div class="task-desc">One page per major offer (or a combined services page for simpler businesses). Each service page must answer: What is it? Who is it for? What do they get? What results can they expect? How do they start? Structure mirrors the landing pages from Phase 6.</div>
+            <div class="task-how"><strong>How:</strong> Claude writes service page copy using the offer stack from Phase 4 and landing page copy from Phase 6. For each service: headline (outcome-focused), subheadline, what's included (bullet points), who it's for, pricing (if displayed), social proof, FAQ, CTA. Reuse proven copy from landing pages where possible — don't rewrite what already converts.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Write Contact page and form copy</div>
+            <div class="task-desc">The Contact page is the final conversion point. Make it frictionless and reassuring. Include: what happens after they submit, expected response time, alternative contact methods, a brief reassurance statement.</div>
+            <div class="task-how"><strong>How:</strong> Claude writes: page headline ("Let's Talk" or similar), brief intro paragraph (2-3 sentences setting expectations), form field labels (keep fields to minimum — name, email, phone, message), submit button text, thank you message, response time commitment. Also write the auto-reply email that fires after form submission.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Write all alt text and accessibility copy</div>
+            <div class="task-desc">Write descriptive alt text for every image on the site. This serves accessibility (screen readers) and SEO (Google reads alt text). Also write any ARIA labels needed for interactive elements.</div>
+            <div class="task-how"><strong>How:</strong> Claude writes alt text for each image placeholder in the wireframes. Format: descriptive, concise, keyword-aware. Example: "Personal trainer coaching client through a squat exercise in a bright gym studio" — not "IMG_0234.jpg". Compile in a Google Doc mapped to wireframe image positions.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 4: WEBSITE DESIGN & BUILD ─── -->
+    <div class="section-card" onclick="this.classList.toggle('open')">
+      <div class="section-header">
+        <span class="section-arrow">&#9660;</span>
+        <span class="section-title">4. Website Design &amp; Build</span>
+        <span class="section-badge badge-team">TEAM</span>
+      </div>
+      <div class="section-body">
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Design the website in the chosen platform</div>
+            <div class="task-desc">Build the website using the approved wireframes, brand guidelines, and copy. Platform options: WordPress + Elementor (most clients), Webflow (design-heavy clients), or GHL website builder (simple/fast deployments).</div>
+            <div class="task-how"><strong>How:</strong> Juan and design team build the site page by page. Apply: brand colours, typography, logo, imagery style from Brand Guidelines. Load Claude's approved copy into each section. Key principle: design serves the copy, not the other way around. Don't redesign around copy — the words were written to convert in a specific order.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Source and place imagery</div>
+            <div class="task-desc">Select and place all images: hero images, team photos, service photos, background images, icons. Prioritise real photos of the client's business over stock photos. Authenticity builds trust — stock photos destroy it.</div>
+            <div class="task-how"><strong>How:</strong> Use client-provided photos first (from Phase 3 assets). If gaps exist, use premium stock that matches the brand's photography style (defined in Brand Guidelines). Optimise all images: compress to WebP format, max 200kb per image, serve responsive sizes. Use <code>alt</code> text from Claude's copy document.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Build all forms and CTAs</div>
+            <div class="task-desc">Implement every conversion point: contact forms, booking buttons, lead magnet opt-ins, phone number click-to-call. Every CTA must be functional and connected to GHL.</div>
+            <div class="task-how"><strong>How:</strong> Team implements forms using GHL embedded forms or native platform forms with GHL webhook integration. Each form submission must: create/update a GHL contact, trigger the appropriate automation workflow, redirect to the correct thank you page. Test every form with a real submission before going live.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Internal design review</div>
+            <div class="task-desc">Before showing the client, do an internal review: Juan reviews build quality, design team reviews visual consistency, Claude reviews copy implementation (was the copy loaded correctly? Is the hierarchy right?).</div>
+            <div class="task-how"><strong>How:</strong> Claude can review the live staging site via chrome-takeover: check that all copy matches the approved Google Doc, CTA buttons are prominent, navigation works, images load, forms submit correctly. Flag any discrepancies. Team fixes before client sees the site.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 5: CRM & LEAD CAPTURE INTEGRATION ─── -->
+    <div class="section-card" onclick="this.classList.toggle('open')">
+      <div class="section-header">
+        <span class="section-arrow">&#9660;</span>
+        <span class="section-title">5. CRM &amp; Lead Capture Integration</span>
+        <span class="section-badge badge-both">CLAUDE + TEAM</span>
+      </div>
+      <div class="section-body">
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Connect all forms to GHL</div>
+            <div class="task-desc">Every form on the website must flow into GHL: contact form → GHL contact + pipeline, booking form → GHL calendar, lead magnet form → GHL contact + nurture workflow. No leads should fall through the cracks.</div>
+            <div class="task-how"><strong>How:</strong> Team sets up integrations: embed GHL forms directly (preferred) or use webhooks from native forms to <code>GHL → Settings → Integrations → Webhooks</code>. Map fields: name, email, phone, message → GHL contact fields. Set up pipeline stage assignment: new form submission → "New Lead" stage in the appropriate pipeline. Test each form with a real submission — verify the contact appears in GHL within 60 seconds.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Set up lead capture automations</div>
+            <div class="task-desc">Configure the automated response for each form type: instant email confirmation, SMS follow-up (within 5 minutes), internal team notification, pipeline assignment. Speed-to-lead matters — every minute of delay reduces conversion probability.</div>
+            <div class="task-how"><strong>How:</strong> Team builds GHL workflows for each form: (1) Contact form → auto-email confirmation + SMS "Thanks, we'll be in touch within 24 hours" + internal Slack notification + assign to pipeline. (2) Booking form → calendar confirmation + reminder sequence. (3) Lead magnet form → deliver asset + add to nurture sequence from Phase 10. Test all automations end-to-end.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Test CRM integration via browser automation</div>
+            <div class="task-desc">Run through the entire conversion flow as a real user would: land on the website, navigate to a service page, fill out a form, verify the GHL record is created, verify the automation fires, verify the follow-up email/SMS arrives.</div>
+            <div class="task-how"><strong>How:</strong> Claude can test this via chrome-takeover: navigate to the website, submit a test form with a known test email, then check GHL (via API or browser) to verify the contact was created with correct data. Team verifies the automation: check that email confirmation sent, SMS delivered, Slack notification fired, pipeline stage assigned. Document any failures and fix.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 6: SEO SETUP & META TAGS ─── -->
+    <div class="section-card" onclick="this.classList.toggle('open')">
+      <div class="section-header">
+        <span class="section-arrow">&#9660;</span>
+        <span class="section-title">6. SEO Setup &amp; Meta Tags</span>
+        <span class="section-badge badge-both">CLAUDE + TEAM</span>
+      </div>
+      <div class="section-body">
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Write SEO meta titles and descriptions for all pages</div>
+            <div class="task-desc">Every page needs a unique meta title (max 60 chars) and meta description (max 155 chars). These are what appear in Google search results — they must be compelling enough to click and keyword-relevant enough to rank.</div>
+            <div class="task-how"><strong>How:</strong> Claude writes meta titles and descriptions for each page. Format: Title = <code>Primary Keyword | Brand Name</code> (e.g., "Personal Training Bondi Beach | Body By Brando"). Description = action-oriented summary with keyword + CTA. Include location keywords for local businesses. Compile in a Google Sheet: Page, Title, Description, Target Keyword, Character Count.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Implement technical SEO fundamentals</div>
+            <div class="task-desc">Set up the technical SEO foundation: XML sitemap, robots.txt, canonical URLs, schema markup (LocalBusiness), Open Graph tags for social sharing, favicon.</div>
+            <div class="task-how"><strong>How:</strong> Team implements: (1) XML sitemap — auto-generated by platform or manually created, submitted to Google Search Console. (2) robots.txt — allow all pages, block admin areas. (3) Canonical URLs — self-referencing on each page. (4) Schema markup — LocalBusiness JSON-LD on homepage (Claude can write the schema code). (5) Open Graph — og:title, og:description, og:image for each page. (6) Favicon — upload brand icon.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Set up Google Search Console and Analytics</div>
+            <div class="task-desc">Connect the website to Google Search Console (for indexing and search performance) and Google Analytics 4 (for traffic and conversion tracking). These are non-negotiable — without them, you're flying blind.</div>
+            <div class="task-how"><strong>How:</strong> Team sets up: (1) Google Search Console — verify domain ownership (DNS TXT record or HTML tag), submit sitemap. (2) GA4 — install tracking code via Google Tag Manager or direct embed. Set up conversion events: form submission, phone click, booking confirmation. (3) Connect GA4 to GHL for closed-loop attribution if possible.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Optimise page load speed</div>
+            <div class="task-desc">Run Google PageSpeed Insights on every page. Target: 90+ on mobile. Slow sites kill conversions — every second of load time reduces conversion by ~7%. Optimise images, minify CSS/JS, enable caching.</div>
+            <div class="task-how"><strong>How:</strong> Team runs PageSpeed Insights (<code>pagespeed.web.dev</code>) on all pages. Address common issues: compress images to WebP, lazy-load below-fold images, minify CSS and JavaScript, enable browser caching, reduce server response time. Retest after optimisation. Document scores: before vs after. Target: 90+ mobile, 95+ desktop.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 7: MOBILE & CROSS-BROWSER TESTING ─── -->
+    <div class="section-card" onclick="this.classList.toggle('open')">
+      <div class="section-header">
+        <span class="section-arrow">&#9660;</span>
+        <span class="section-title">7. Mobile Optimisation &amp; Cross-Browser Testing</span>
+        <span class="section-badge badge-team">TEAM</span>
+      </div>
+      <div class="section-body">
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Test on real mobile devices</div>
+            <div class="task-desc">Don't rely on browser dev tools alone. Test the website on at least 3 real devices: iPhone (Safari), Android (Chrome), iPad (Safari). Check: layout, text readability, button tap targets, form usability, image quality, scroll behaviour.</div>
+            <div class="task-how"><strong>How:</strong> Team tests on physical devices. Use a testing checklist: (1) Homepage loads in under 3 seconds, (2) All text readable without zooming, (3) Buttons are thumb-friendly (min 44px), (4) Forms are easy to fill on mobile keyboard, (5) Images don't break layout, (6) No horizontal scrolling, (7) Sticky header/CTA works correctly. Screenshot any issues and fix.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Cross-browser testing</div>
+            <div class="task-desc">Test in the 4 major browsers: Chrome, Safari, Firefox, Edge. Check for: layout differences, font rendering, animation behaviour, form styling, and any CSS compatibility issues.</div>
+            <div class="task-how"><strong>How:</strong> Team opens the site in each browser on desktop. Check every page for visual consistency. Common issues: Safari handles certain CSS differently (flexbox gaps, backdrop-filter), Firefox may render fonts differently. Use BrowserStack if team doesn't have access to all browsers locally. Document and fix any inconsistencies.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Test all interactive elements</div>
+            <div class="task-desc">Click every button, link, form, dropdown, accordion, and navigation item. Test: hover states, active states, error states (submit empty form), success states (form submitted). Nothing should be broken or dead-end.</div>
+            <div class="task-how"><strong>How:</strong> Team works through a comprehensive QA checklist page by page. Every link must go somewhere real (no 404s). Every form must submit and confirm. Every button must have a hover state. Navigation must work on all screen sizes. Test the "back button" behaviour — visitors should never get stuck. Log issues in a shared Google Sheet for the build team to fix.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 8: CLIENT REVIEW & REVISIONS ─── -->
+    <div class="section-card" onclick="this.classList.toggle('open')">
+      <div class="section-header">
+        <span class="section-arrow">&#9660;</span>
+        <span class="section-title">8. Client Review &amp; Revisions</span>
+        <span class="section-badge badge-both">CLAUDE + TEAM</span>
+      </div>
+      <div class="section-body">
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Present the website to the client</div>
+            <div class="task-desc">Share the staging site link with the client. This is a moment — treat it like a reveal, not a review. Walk through the site on a call, explaining the strategic thinking behind each section. Make them feel the pride first, then ask for feedback.</div>
+            <div class="task-how"><strong>How:</strong> Schedule a 30-45 minute call. Screen share and walk through every page: "Here's your homepage — notice how the headline uses the language your customers actually use..." Make them scroll on their own phone during the call. Ask: "Does this feel like your business?" After the walkthrough, share the staging link in Slack for them to review at their own pace. Give 48 hours for feedback.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Collect and organise client feedback</div>
+            <div class="task-desc">Gather all feedback in one place. Categorise: copy changes, design changes, functionality issues, "nice to haves" (defer to post-launch). Set clear expectations: 2 rounds of revisions included.</div>
+            <div class="task-how"><strong>How:</strong> Ask the client to provide feedback in Slack or a shared Google Doc. Claude compiles and categorises: (1) Must-fix (factual errors, broken elements), (2) Should-fix (copy tweaks, design adjustments), (3) Could-fix (nice-to-haves, defer to post-launch). Present the categorised list back: "Here's what we'll fix in Round 1. We'll address these post-launch." Set timeline: Round 1 revisions in 48 hours.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Implement revisions (Round 1)</div>
+            <div class="task-desc">Make all approved changes from the first feedback round. Copy changes go through Claude for tone consistency. Design changes go through the design team. Functionality fixes go through Juan.</div>
+            <div class="task-how"><strong>How:</strong> Claude updates any copy changes — ensure they still match the messaging framework and Brand Bible voice. Team implements design and functionality changes. After all changes: re-test on mobile and desktop, verify all forms still work, check page speed hasn't degraded. Share updated staging link in Slack for Round 2 review.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Final sign-off</div>
+            <div class="task-desc">Get explicit written approval from the client: "This is ready to go live." Don't launch without this. The client must feel proud of the site before it becomes public.</div>
+            <div class="task-how"><strong>How:</strong> Post in Slack: "Here's the final version. If everything looks good, reply 'Approved to launch' and we'll schedule go-live." If the client hesitates, ask what's holding them back — there's usually a specific concern that can be resolved in 15 minutes. Do not proceed without the written approval.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SECTION 9: GO LIVE & POST-LAUNCH ─── -->
+    <div class="section-card" onclick="this.classList.toggle('open')">
+      <div class="section-header">
+        <span class="section-arrow">&#9660;</span>
+        <span class="section-title">9. Go Live &amp; Post-Launch Monitoring</span>
+        <span class="section-badge badge-team">TEAM</span>
+      </div>
+      <div class="section-body">
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Pre-launch checklist</div>
+            <div class="task-desc">Run the final pre-launch checklist. Every item must be verified before the DNS is pointed to the new site. This is the "measure twice, cut once" moment.</div>
+            <div class="task-how"><strong>How:</strong> Team runs through: (1) All forms tested and working, (2) GHL integrations verified, (3) Google Analytics tracking firing, (4) Meta Pixel installed (for ad retargeting), (5) SSL certificate active, (6) Favicon uploaded, (7) 404 page designed, (8) Old URL redirects set up (if replacing existing site), (9) robots.txt allows indexing, (10) XML sitemap submitted to Search Console. Every item checked off before proceeding.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Point DNS and go live</div>
+            <div class="task-desc">Update DNS records to point to the new website. If replacing an existing site, set up 301 redirects from old URLs to new URLs to preserve SEO equity. Verify SSL is working on the live domain.</div>
+            <div class="task-how"><strong>How:</strong> Juan updates DNS records (typically an A record or CNAME depending on hosting). Verify: site loads on the live domain, SSL padlock shows, all pages accessible, no mixed content warnings. If replacing an old site: map old URLs to new URLs, implement 301 redirects, test each redirect. Monitor for 2 hours after launch for any issues.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Post-launch notification to client</div>
+            <div class="task-desc">Celebrate the launch. Post in the client's Slack channel: the live URL, a congratulatory message, and what to expect in the next 2 weeks (monitoring period). This is a milestone — mark it.</div>
+            <div class="task-how"><strong>How:</strong> Claude drafts the launch celebration message: "Your new website is LIVE! [URL]. This is the culmination of everything we've built together. Here's what happens now: we monitor performance for 2 weeks, optimise based on data, and make sure everything is running perfectly. Share the link with everyone — you should be proud of this." Team posts in Slack.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">2-week post-launch monitoring</div>
+            <div class="task-desc">Monitor the website daily for 2 weeks after launch: uptime, form submissions, page speed, SEO indexing, any user-reported issues. Fix anything that breaks immediately. Report performance to the client weekly.</div>
+            <div class="task-how"><strong>How:</strong> Team checks daily: (1) Site is live and loading (uptime check), (2) Forms are submitting to GHL (test submission every 3 days), (3) Google Search Console for indexing issues or errors, (4) GA4 for traffic patterns and conversion events, (5) PageSpeed for any degradation. After 2 weeks: compile a post-launch report with traffic stats, form submissions, top pages, and recommendations. Share in Slack.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+
+        <div class="task-row">
+          <div class="task-check"></div>
+          <div class="task-info">
+            <div class="task-name">Update all marketing to point to new website</div>
+            <div class="task-desc">Update every channel and touchpoint with the new website URL: social media bios, Google Business Profile, email signatures, ad campaigns, landing pages, Linktree, business cards, any printed materials.</div>
+            <div class="task-how"><strong>How:</strong> Team works through the channel checklist from Phase 11 (Section 5). Update: Instagram bio link, Facebook page URL, Google Business Profile website, GHL email signatures, ad campaign destination URLs (Phase 9), landing page navigation links (Phase 6). Verify each update is live. This ensures no traffic goes to an old or dead URL.</div>
+          </div>
+          <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── MISTAKES ─── -->
+    <div class="mistakes-block">
+      <h4>Common Mistakes — What Goes Wrong in Phase 12</h4>
+      <div class="mistake-item">
+        <span class="mistake-x">&#10005;</span>
+        <span><strong>Designing the website before the copy is written.</strong> Design should serve the copy, not the other way around. The words determine the layout, not the reverse. Write the copy first, then design around it. If the designer says "we need shorter copy here," push back — the conversion logic dictates the content length.</span>
+      </div>
+      <div class="mistake-item">
+        <span class="mistake-x">&#10005;</span>
+        <span><strong>Prioritising desktop over mobile.</strong> 70%+ of traffic comes from mobile. If the mobile experience is an afterthought, you're losing the majority of your visitors. Design mobile-first, then adapt for desktop — never the reverse.</span>
+      </div>
+      <div class="mistake-item">
+        <span class="mistake-x">&#10005;</span>
+        <span><strong>Launching without testing the CRM integration.</strong> A beautiful website that doesn't capture leads is a brochure, not a conversion tool. Test every form, every automation, every follow-up email before go-live. One broken form can cost dozens of lost leads.</span>
+      </div>
+      <div class="mistake-item">
+        <span class="mistake-x">&#10005;</span>
+        <span><strong>Skipping SEO fundamentals because "we'll do it later."</strong> Meta titles, descriptions, schema markup, and sitemap submission take 2-3 hours to set up properly. Skipping them means the site is invisible to Google for months. Do it at launch, not after.</span>
+      </div>
+      <div class="mistake-item">
+        <span class="mistake-x">&#10005;</span>
+        <span><strong>Treating launch as the finish line.</strong> Launch is the starting line. The 2-week monitoring period is critical — that's when you find real-world issues, gather performance data, and make the first optimisations. Budget for it. Don't disappear after pushing the site live.</span>
+      </div>
+    </div>
+
+    <!-- ─── EVIDENCE ─── -->
+    <div class="evidence-block">
+      <h4>Evidence — How to Verify Phase 12 is Complete</h4>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>Website live on the client's domain with SSL active</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>All pages match the approved wireframes and copy (no placeholder text, no broken images)</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>Every form tested: submits to GHL, triggers automation, sends confirmation email/SMS</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>Google Analytics 4 installed and tracking conversions (verified with real test event)</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>Google Search Console connected, sitemap submitted, pages indexed</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>PageSpeed Insights: 90+ mobile, 95+ desktop on all pages</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>Mobile tested on 3+ real devices with no layout or usability issues</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>Cross-browser tested in Chrome, Safari, Firefox, and Edge</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>Client has provided written sign-off: "Approved to launch"</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>All marketing channels updated to point to the new website URL</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>2-week post-launch monitoring report delivered with performance data</span></div>
+      <div class="evidence-item"><div class="evidence-dot"></div><span>The client is excited to share the link — the pride test is passed</span></div>
+    </div>
+
+  </div>

@@ -1,0 +1,1322 @@
+<!-- ══════════════════════════════════════════ -->
+<!-- PHASE 2: DEFINE YOUR IDEAL CLIENT        -->
+<!-- ══════════════════════════════════════════ -->
+<div class="phase-content" id="phase-1">
+
+  <div class="phase-hero">
+    <div class="phase-hero-eyebrow">Phase 2 of 12</div>
+    <h2>Define Your Ideal Client</h2>
+    <div class="phase-hero-focus">When you speak to someone specific, conversion improves instantly.</div>
+    <div class="phase-hero-stats">
+      <div class="phase-hero-stat">
+        <span class="phase-hero-stat-val">6</span>
+        <span class="phase-hero-stat-label">Hours</span>
+      </div>
+      <div class="phase-hero-stat">
+        <span class="phase-hero-stat-val">5</span>
+        <span class="phase-hero-stat-label">Projects</span>
+      </div>
+      <div class="phase-hero-stat">
+        <span class="phase-hero-stat-val">19</span>
+        <span class="phase-hero-stat-label">Tasks</span>
+      </div>
+      <div class="phase-hero-stat">
+        <span class="phase-hero-stat-val">Mario</span>
+        <span class="phase-hero-stat-label">Lead</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: var(--ink); border-radius: 10px; padding: 1.25rem 1.5rem; margin-bottom: 1rem;">
+    <h4 style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); font-weight: 700; margin-bottom: 0.5rem;">The Job of This Phase</h4>
+    <p style="font-size: 1rem; color: var(--cream); line-height: 1.7; font-weight: 500;">The client can describe their ideal customer &mdash; their fears, their language, their buying triggers &mdash; with enough specificity that every ad, email, and conversation hits differently.</p>
+    <p style="font-size: 0.84rem; color: var(--gray-400); line-height: 1.6; margin-top: 0.75rem;">A filled-out avatar template is not the job done. The job is done when the client speaks about their ideal customer the way they'd speak about a close friend &mdash; with empathy, specificity, and certainty. If they can't name the exact objection someone has before walking through the door, we're not there yet.</p>
+  </div>
+
+  <div class="standard-block">
+    <h4>The Standard &mdash; What Good Looks Like</h4>
+    <p>"I finally know exactly who I'm talking to &mdash; and what makes them buy."</p>
+  </div>
+
+  <!-- ─── SECTION 1: CLIENT BASE ANALYSIS ─── -->
+  <div class="section-card" onclick="this.classList.toggle('open')">
+    <div class="section-header">
+      <span class="section-arrow">&#9660;</span>
+      <span class="section-title">1. Current Client Base Analysis</span>
+      <span class="section-badge badge-claude">CLAUDE</span>
+    </div>
+    <div class="section-body">
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Export and segment current client data</div>
+          <div class="task-desc">Pull all current and recent clients from GHL. Segment by: revenue contribution, retention length, referral rate, ease of service, and alignment with the business the client wants to build.</div>
+          <div class="task-how"><strong>How:</strong> Export contacts from GHL via <code>API &gt; Contacts &gt; GET /contacts</code> with tags for active clients. Use Claude to sort into tiers: A-tier (love working with, high revenue, refer others), B-tier (fine but not ideal), C-tier (draining, low revenue, high maintenance). Compile into a Google Sheet in client's Drive folder.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Identify the top 5 "dream clients"</div>
+          <div class="task-desc">From the A-tier, identify 5 clients who represent the ideal. These are the people the client wishes every customer was like. Document: what they have in common, how they found the business, what made them buy, how long they stayed.</div>
+          <div class="task-how"><strong>How:</strong> Claude analyses the A-tier list against intake data. Cross-reference with GHL contact records: source, tags, purchase history, notes. If data is thin, flag for the client workshop &mdash; "Tell us about your best 5 clients."</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Map revenue concentration</div>
+          <div class="task-desc">What percentage of revenue comes from what type of client? Often 20% of clients generate 80% of revenue. This reveals who to target more of &mdash; and who to stop attracting.</div>
+          <div class="task-how"><strong>How:</strong> Claude calculates revenue by client tier from GHL payment data or client-provided financials. Output: a revenue breakdown chart showing concentration. Share in Slack: "Your top 12 clients generate 68% of your revenue. Here's what they have in common..."</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Document the "anti-avatar" &mdash; who to repel</div>
+          <div class="task-desc">Equally important: who should the marketing actively filter out? Identify the C-tier patterns &mdash; the clients who drain energy, churn fast, or demand discounts. This protects margins and morale.</div>
+          <div class="task-how"><strong>How:</strong> Claude analyses the C-tier list for common traits: acquisition source (e.g., Groupon, discount ads), demographic patterns, objections they raised, how quickly they churned. Output: a short "not for" profile that informs ad exclusions and qualifying questions.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 2: IDEAL CLIENT AVATAR DEEP-DIVE ─── -->
+  <div class="section-card" onclick="this.classList.toggle('open')">
+    <div class="section-header">
+      <span class="section-arrow">&#9660;</span>
+      <span class="section-title">2. Ideal Client Avatar Deep-Dive</span>
+      <span class="section-badge badge-both">CLAUDE + TEAM</span>
+    </div>
+    <div class="section-body">
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Run the Avatar Workshop call (30-45 mins)</div>
+          <div class="task-desc">Mario leads a focused conversation about the client's ideal customer. Not demographics &mdash; psychographics: What are they afraid of? What have they tried before? What do they tell their friends? What's the internal monologue at 11pm?</div>
+          <div class="task-how"><strong>How:</strong> Schedule via Google Calendar. Use the client base analysis as a conversation starter: "Your best 5 clients all share these traits. Let's go deeper." Key questions: "What does your ideal client complain about to their partner?" / "What would they Google at midnight?" / "What's the moment they decide to take action?" Record via Read.ai.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Build the psychographic profile</div>
+          <div class="task-desc">Go beyond demographics. Document: daily routine, frustrations, aspirations, identity beliefs ("I'm not a gym person"), emotional triggers, decision-making style (logic vs. emotion vs. social proof).</div>
+          <div class="task-how"><strong>How:</strong> Claude generates the psychographic profile from the workshop transcript (Read.ai) + intake data + client base analysis. Use the Kaizen Communication Code Filter: is this person a What If (dreamer), Why (sceptic), What (pragmatist), or How (doer) thinker? This determines messaging angle.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Define the "before and after" transformation</div>
+          <div class="task-desc">What is life like before they buy? What is life like after? This becomes the emotional core of every ad, landing page, and sales conversation. It must be vivid and specific.</div>
+          <div class="task-how"><strong>How:</strong> Claude drafts the before/after using the "Before &amp; After Grid" framework: Status, Feelings, Average Day, Evil (what they blame). Example Before: "Feeling invisible online, posting randomly, getting 3 likes from friends." Example After: "DMs from strangers asking to work with them, content calendar running on autopilot."</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Validate avatar against real experience</div>
+          <div class="task-desc">Share the draft avatar with the client. Does it match someone they've actually served? If the client says "that's exactly my client Sarah" &mdash; it's right. If they hesitate, it needs more work.</div>
+          <div class="task-how"><strong>How:</strong> Post the avatar summary in the client's Slack channel. Ask: "Does this describe a real person you've worked with? If yes, who? If not, what's off?" Iterate based on feedback. The avatar should feel like a real human, not a marketing exercise.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 3: BUYING TRIGGERS & OBJECTION MAPPING ─── -->
+  <div class="section-card" onclick="this.classList.toggle('open')">
+    <div class="section-header">
+      <span class="section-arrow">&#9660;</span>
+      <span class="section-title">3. Buying Triggers &amp; Objection Mapping</span>
+      <span class="section-badge badge-claude">CLAUDE</span>
+    </div>
+    <div class="section-body">
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Identify the top 5 buying triggers</div>
+          <div class="task-desc">What events, emotions, or moments cause someone to go from "thinking about it" to "I need this now"? Examples: new year resolution, doctor's warning, wedding coming up, saw a friend's transformation, hit a revenue plateau.</div>
+          <div class="task-how"><strong>How:</strong> Claude analyses the workshop transcript + intake data + GHL contact notes for trigger patterns. Cross-reference with common industry triggers. Output: ranked list of triggers with recommended messaging for each. Example: Trigger: "Just had a health scare" &rarr; Message: "Start where you are. We meet you there."</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Map the top 7 objections with responses</div>
+          <div class="task-desc">Every business hears the same objections repeatedly. Document each one with: the real fear behind it, the empathetic response, and the reframe. These feed directly into Phase 5 (Sales Mechanisms).</div>
+          <div class="task-how"><strong>How:</strong> Claude drafts objections from workshop transcript + common industry objections. For each: (1) Surface objection, (2) Real fear underneath, (3) Empathetic response, (4) Reframe. Example: Surface: "It's too expensive" &rarr; Real fear: "What if it doesn't work and I waste money?" &rarr; Response: "Totally fair. Let me show you what other people in your situation got from this..." Client validates on the next call.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Map the decision-making journey</div>
+          <div class="task-desc">How does the ideal client make buying decisions? Who influences them? What research do they do? Do they need to check with a partner? How many touchpoints before they act? This shapes the entire funnel design.</div>
+          <div class="task-how"><strong>How:</strong> Claude maps the journey from trigger to purchase using the Kaizen Infinite Acquisition Loop framework: Awareness &rarr; Affinity &rarr; Action. Document: typical research behaviour (Google? Instagram? Ask friends?), number of touchpoints needed, key decision influencers. Output feeds into Phase 3 (Path to Purchase).</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 4: CLIENT LANGUAGE & MESSAGING BANK ─── -->
+  <div class="section-card" onclick="this.classList.toggle('open')">
+    <div class="section-header">
+      <span class="section-arrow">&#9660;</span>
+      <span class="section-title">4. Client Language &amp; Messaging Bank</span>
+      <span class="section-badge badge-claude">CLAUDE</span>
+    </div>
+    <div class="section-body">
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Harvest real client language</div>
+          <div class="task-desc">Pull actual words, phrases, and sentences from: Google reviews, testimonials, DMs, intake form open-text fields, social media comments. This is the language the ideal client uses &mdash; not marketing speak.</div>
+          <div class="task-how"><strong>How:</strong> Claude scrapes Google reviews (via web search), pulls GHL contact notes and form responses, and analyses any testimonials the client has shared. Extract 20-30 verbatim phrases. Categorise: pain language ("I've tried everything"), aspiration language ("I just want to feel confident"), objection language ("I'm worried it won't work for me").</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Build the Messaging Bank document</div>
+          <div class="task-desc">A structured library of proven phrases, headlines, hooks, and CTAs organised by use case: ads, emails, landing pages, social posts, sales conversations. This is the team's copy toolkit &mdash; no more starting from scratch.</div>
+          <div class="task-how"><strong>How:</strong> Claude compiles the messaging bank as a Google Doc in the client's Drive folder. Sections: (1) Pain-Point Headlines (10+), (2) Aspiration Headlines (10+), (3) Social Proof Hooks (5+), (4) CTAs by Channel (5+), (5) Email Subject Lines (10+), (6) Objection Reframes (7+). Each entry includes the source language it was derived from.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Test messaging against Brand Bible tone</div>
+          <div class="task-desc">Cross-check: does the messaging bank match the tone of voice from Phase 1? A gym that positions as "welcoming and non-judgmental" shouldn't have aggressive "no excuses" copy in the bank.</div>
+          <div class="task-how"><strong>How:</strong> Claude runs a tone alignment check: compare each messaging bank entry against the Tone of Voice guide from the Brand Bible. Flag any mismatches. Remove or rewrite entries that contradict the brand voice. Output: a clean, on-brand messaging bank.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Share and brief the team</div>
+          <div class="task-desc">Post the messaging bank in the client Slack channel. Brief anyone who writes for this client (team, Claude, the client themselves) on how to use it. Pin it alongside the Tone of Voice guide.</div>
+          <div class="task-how"><strong>How:</strong> Post in Slack with context: "Here's your Messaging Bank &mdash; a library of tested phrases, headlines, and CTAs we'll use across all your marketing. Any time we write copy, we start here." Pin the Google Doc link. Tag team members who'll be writing copy.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 5: AVATAR DOCUMENT & TEAM BRIEFING ─── -->
+  <div class="section-card" onclick="this.classList.toggle('open')">
+    <div class="section-header">
+      <span class="section-arrow">&#9660;</span>
+      <span class="section-title">5. Avatar Document &amp; Team Briefing</span>
+      <span class="section-badge badge-both">CLAUDE + TEAM</span>
+    </div>
+    <div class="section-body">
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Compile the Ideal Client Avatar document</div>
+          <div class="task-desc">One master document that brings together: demographics, psychographics, before/after transformation, buying triggers, objections, decision journey, and key language. This is the single source of truth for "who are we talking to?"</div>
+          <div class="task-how"><strong>How:</strong> Claude generates the avatar document as a Google Doc in the client's Drive folder. Sections: (1) Who They Are (demo + psycho), (2) Their World (daily life, frustrations, aspirations), (3) The Transformation (before/after grid), (4) What Makes Them Buy (triggers), (5) What Holds Them Back (objections + responses), (6) How They Decide (journey map), (7) How to Talk to Them (key phrases). Styled with Kaizen design system.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Internal review &mdash; Mario validates</div>
+          <div class="task-desc">Mario reviews the avatar document against what was discussed in the workshop. Does it feel like a real person? Could you write an ad for this person right now without any other information?</div>
+          <div class="task-how"><strong>How:</strong> Review in Google Docs. Litmus test: read the avatar out loud. If it sounds like a textbook, it needs more humanity. If it sounds like you're describing a friend, it's right. Pay special attention to the "How to Talk to Them" section &mdash; this is what the team will use daily.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Client sign-off</div>
+          <div class="task-desc">Share with the client for approval. They should read it and say "that's my ideal client." If they don't, iterate until they do.</div>
+          <div class="task-how"><strong>How:</strong> Post the Google Doc link in Slack with: "This is who all your marketing will be speaking to. Read it and tell us: does this person exist in your world? Is this who you want more of?" Get explicit confirmation before moving to Phase 3.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Update The Lighthouse client profile</div>
+          <div class="task-desc">Sync all avatar data back into The Lighthouse so it's accessible for future phases. The system should know who this client's ideal customer is for automated content generation and ad targeting.</div>
+          <div class="task-how"><strong>How:</strong> Update the client record in The Lighthouse via the admin panel or API: <code>PATCH /api/clients/[id]</code> with avatar summary, buying triggers, and key messaging phrases. Mark Phase 2 as complete in the project tracker.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── COMMON MISTAKES ─── -->
+  <div class="mistakes-block">
+    <h4>Common Mistakes &mdash; What Goes Wrong in Phase 2</h4>
+    <div class="mistake-item">
+      <span class="mistake-x">&#10005;</span>
+      <span><strong>Writing a demographic profile instead of a psychographic one.</strong> "Female, 35-45, household income $120k" is useless. "She compares herself to the mums at school drop-off who seem to have it all together" is useful. Go deeper.</span>
+    </div>
+    <div class="mistake-item">
+      <span class="mistake-x">&#10005;</span>
+      <span><strong>Creating an avatar that describes who the client WANTS to attract instead of who actually buys.</strong> Start with who's already paying &mdash; then refine from there. Fantasy avatars produce fantasy results.</span>
+    </div>
+    <div class="mistake-item">
+      <span class="mistake-x">&#10005;</span>
+      <span><strong>Skipping the objection mapping.</strong> Objections aren't a sales problem &mdash; they're a marketing problem. If you address objections in the ad, you never hear them on the call. This step directly improves conversion.</span>
+    </div>
+    <div class="mistake-item">
+      <span class="mistake-x">&#10005;</span>
+      <span><strong>Using marketing language instead of client language.</strong> The messaging bank should be full of phrases pulled from real reviews and conversations &mdash; not copywriting frameworks. "Transform your life" is marketing. "I just want to stop feeling like crap every morning" is client language.</span>
+    </div>
+    <div class="mistake-item">
+      <span class="mistake-x">&#10005;</span>
+      <span><strong>Not connecting the avatar back to the Brand Bible.</strong> The avatar and brand identity should reinforce each other. If the brand is "premium and exclusive," the avatar shouldn't be price-sensitive bargain hunters.</span>
+    </div>
+  </div>
+
+  <!-- ─── EVIDENCE ─── -->
+  <div class="evidence-block">
+    <h4>Evidence &mdash; How to Verify Phase 2 is Complete</h4>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Ideal Client Avatar document (Google Doc) in client's Drive folder &mdash; approved by client</span></div>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Messaging Bank (Google Doc) with 20+ entries across all categories, pinned in Slack</span></div>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Buying Triggers Map with top 5 triggers and corresponding messaging angles</span></div>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Objection Map with top 7 objections, real fears, and reframes documented</span></div>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>The Lighthouse client profile updated with avatar data and Phase 2 marked complete</span></div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- PHASE 3: CONFIRM YOUR PATH TO PURCHASE    -->
+<!-- ══════════════════════════════════════════ -->
+<div class="phase-content" id="phase-2">
+
+  <div class="phase-hero">
+    <div class="phase-hero-eyebrow">Phase 3 of 12</div>
+    <h2>Confirm Your Path to Purchase</h2>
+    <div class="phase-hero-focus">No friction. No confusion. No awkward transitions.</div>
+    <div class="phase-hero-stats">
+      <div class="phase-hero-stat">
+        <span class="phase-hero-stat-val">8</span>
+        <span class="phase-hero-stat-label">Hours</span>
+      </div>
+      <div class="phase-hero-stat">
+        <span class="phase-hero-stat-val">5</span>
+        <span class="phase-hero-stat-label">Projects</span>
+      </div>
+      <div class="phase-hero-stat">
+        <span class="phase-hero-stat-val">22</span>
+        <span class="phase-hero-stat-label">Tasks</span>
+      </div>
+      <div class="phase-hero-stat">
+        <span class="phase-hero-stat-val">Mario</span>
+        <span class="phase-hero-stat-label">Lead</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: var(--ink); border-radius: 10px; padding: 1.25rem 1.5rem; margin-bottom: 1rem;">
+    <h4 style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); font-weight: 700; margin-bottom: 0.5rem;">The Job of This Phase</h4>
+    <p style="font-size: 1rem; color: var(--cream); line-height: 1.7; font-weight: 500;">Every step from "someone hears about you" to "they pay you" is mapped, frictionless, and intentional &mdash; and the client can walk anyone through it.</p>
+    <p style="font-size: 0.84rem; color: var(--gray-400); line-height: 1.6; margin-top: 0.75rem;">A journey map on a whiteboard means nothing if the client can't explain it to a new staff member in under 2 minutes. The job is done when the path is so clear that no lead gets lost, no step feels awkward, and the client can point to exactly where conversions were leaking before.</p>
+  </div>
+
+  <div class="standard-block">
+    <h4>The Standard &mdash; What Good Looks Like</h4>
+    <p>"Now I can see every step a customer takes &mdash; and where we were losing them."</p>
+  </div>
+
+  <!-- ─── SECTION 1: CURRENT JOURNEY AUDIT ─── -->
+  <div class="section-card" onclick="this.classList.toggle('open')">
+    <div class="section-header">
+      <span class="section-arrow">&#9660;</span>
+      <span class="section-title">1. Current Customer Journey Audit</span>
+      <span class="section-badge badge-both">CLAUDE + TEAM</span>
+    </div>
+    <div class="section-body">
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Map the current journey as-is</div>
+          <div class="task-desc">Document every step a customer currently takes from first awareness to purchase. Include: discovery channels, first contact method, response process, booking mechanism, sales conversation, payment, onboarding. Be brutally honest &mdash; map what actually happens, not what should happen.</div>
+          <div class="task-how"><strong>How:</strong> Claude drafts the initial journey map from intake data + website audit + GHL pipeline review. Check: What happens when someone fills out a form? How fast is the response? What's the next step? Is there a booking link? Does it work on mobile? Output: a numbered step-by-step flow in Google Docs.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Walk through the journey with the client</div>
+          <div class="task-desc">30-minute call where Mario walks through the mapped journey with the client step by step. The client fills in gaps: "Actually, what really happens is..." This reveals the hidden friction only the client knows about.</div>
+          <div class="task-how"><strong>How:</strong> Schedule via Google Calendar. Share the draft journey map in Slack before the call: "We've mapped your current customer journey. On our call, we'll walk through it together and find the gaps." Record via Read.ai. Ask at each step: "What percentage of people make it to the next step? What stops them?"</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Mystery-shop the current experience</div>
+          <div class="task-desc">Actually go through the journey as a prospect. Fill out the form. See how fast the response comes. Try to book. Check the landing page on mobile. Experience what a real customer experiences.</div>
+          <div class="task-how"><strong>How:</strong> Claude uses web search and Playwright to audit the website: load time, mobile responsiveness, form functionality, CTA clarity. Team member submits a test enquiry via the live form and documents: response time, response quality, next steps clarity. Record findings in the journey audit doc.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Audit GHL pipeline and automations</div>
+          <div class="task-desc">Review the current CRM setup: pipeline stages, automation triggers, email/SMS sequences, booking calendars. Are leads moving through stages? Are automations firing? Where do contacts stall?</div>
+          <div class="task-how"><strong>How:</strong> Access GHL via the client's PIT. Review: <code>Opportunities &gt; Pipeline</code> for stage structure, <code>Automation &gt; Workflows</code> for active triggers, <code>Calendars</code> for booking setup. Document: what's working, what's broken, what's missing. Output: a CRM health check in the journey audit doc.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 2: TOUCHPOINT MAPPING ─── -->
+  <div class="section-card" onclick="this.classList.toggle('open')">
+    <div class="section-header">
+      <span class="section-arrow">&#9660;</span>
+      <span class="section-title">2. Touchpoint Mapping &mdash; Discovery to Sale</span>
+      <span class="section-badge badge-claude">CLAUDE</span>
+    </div>
+    <div class="section-body">
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Map all touchpoints across channels</div>
+          <div class="task-desc">Every point of contact between the business and a potential customer: Instagram DMs, Facebook comments, Google searches, website visits, phone calls, walk-ins, referrals, email replies. Nothing should be invisible.</div>
+          <div class="task-how"><strong>How:</strong> Claude compiles touchpoints from: GHL contact sources (how did they find us?), website analytics (if available), social media (Instagram insights, Facebook page), Google Business Profile (calls, direction requests, reviews). Output: a touchpoint inventory categorised by the Infinite Acquisition Loop stages: Awareness, Affinity, Action.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Assign conversion rates to each transition</div>
+          <div class="task-desc">For each step in the journey, estimate: what percentage of people move to the next step? This reveals the biggest leak. If 100 people visit the website but only 3 enquire, the website is the constraint &mdash; not the sales call.</div>
+          <div class="task-how"><strong>How:</strong> Claude calculates conversion rates from GHL data: leads in &rarr; appointments booked &rarr; appointments attended &rarr; sales closed. If data is incomplete, use industry benchmarks and flag gaps: "We're estimating your website-to-enquiry rate at 3% based on industry average. We need to verify this with analytics." Output: a conversion funnel with rates at each stage.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Identify the #1 bottleneck</div>
+          <div class="task-desc">Where is the single biggest drop-off? This is the constraint that gets fixed first. Don't try to fix everything &mdash; find the one transition that, if improved by 20%, would have the biggest revenue impact.</div>
+          <div class="task-how"><strong>How:</strong> Claude analyses the conversion funnel and calculates the revenue impact of a 20% improvement at each stage. Example: "If we improve your enquiry-to-booking rate from 30% to 36%, that's an additional $X/month based on your average sale value." Present the top 3 bottlenecks ranked by revenue impact.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Document the "critical path"</div>
+          <div class="task-desc">The minimum viable journey &mdash; the shortest, most likely path from awareness to purchase. Strip away all secondary touchpoints and map only the primary pathway. This becomes the focus for the redesign.</div>
+          <div class="task-how"><strong>How:</strong> Claude identifies the most common lead source &rarr; most common next action &rarr; most common conversion path from GHL data. Document as a 5-7 step linear flow. Example: "Instagram Ad &rarr; Landing Page &rarr; Form Submit &rarr; Auto-SMS + Email &rarr; Phone Call &rarr; Trial Booked &rarr; Sale." This becomes the blueprint for Phases 6-7.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 3: FRICTION POINT IDENTIFICATION ─── -->
+  <div class="section-card" onclick="this.classList.toggle('open')">
+    <div class="section-header">
+      <span class="section-arrow">&#9660;</span>
+      <span class="section-title">3. Friction Point Identification &amp; Removal Plan</span>
+      <span class="section-badge badge-both">CLAUDE + TEAM</span>
+    </div>
+    <div class="section-body">
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Categorise friction by type</div>
+          <div class="task-desc">Friction comes in 4 forms: (1) Confusion &mdash; they don't know what to do next, (2) Effort &mdash; too many steps, (3) Fear &mdash; they're not sure it's safe/right, (4) Delay &mdash; too slow to respond. Categorise every identified friction point.</div>
+          <div class="task-how"><strong>How:</strong> Claude categorises all friction points from the audit into the 4 types. For each: describe the friction, where it occurs in the journey, what it costs (estimated lost conversions), and the recommended fix. Output: a friction matrix in the journey audit doc.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Prioritise fixes by impact vs. effort</div>
+          <div class="task-desc">Not all friction is equal. A 5-minute fix that recovers 10 leads/month beats a 20-hour project that recovers 2. Rank every friction point on a 2x2 grid: high impact / low effort (do first) to low impact / high effort (do last or never).</div>
+          <div class="task-how"><strong>How:</strong> Claude creates the priority matrix. "Quick wins" (high impact, low effort) go into the immediate action plan. "Big projects" (high impact, high effort) get scheduled into Phase 6-7. "Nice to haves" get parked. Present to the client: "Here are the 3 quick wins we can fix this week."</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Fix quick wins immediately</div>
+          <div class="task-desc">Any friction that can be resolved in under 30 minutes should be fixed now &mdash; don't wait for the redesign. Examples: broken booking link, missing phone number on website, slow autoresponder, unclear CTA.</div>
+          <div class="task-how"><strong>How:</strong> Team member fixes quick wins in GHL or on the website directly. Claude can update GHL automations via API: fix response delays, update email copy, adjust pipeline stages. Document each fix in Slack: "Fixed: your booking link was pointing to the wrong calendar. Now resolves correctly."</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Create the removal plan for bigger fixes</div>
+          <div class="task-desc">For friction that requires more work (new landing page, new automation sequence, new booking process), create a phased removal plan that maps to subsequent onramp phases.</div>
+          <div class="task-how"><strong>How:</strong> Claude drafts the removal plan with timelines tied to onramp phases. Example: "Friction: No automated follow-up after enquiry &rarr; Fix: Build in Phase 7 (Automations) &rarr; Timeline: Week 4." Post in Slack so the client sees what's coming and when. This builds confidence that nothing is being ignored.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 4: JOURNEY REDESIGN ─── -->
+  <div class="section-card" onclick="this.classList.toggle('open')">
+    <div class="section-header">
+      <span class="section-arrow">&#9660;</span>
+      <span class="section-title">4. Journey Redesign &amp; Documentation</span>
+      <span class="section-badge badge-both">CLAUDE + TEAM</span>
+    </div>
+    <div class="section-body">
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Design the ideal customer journey</div>
+          <div class="task-desc">Based on everything above, design the journey as it should be. Every step intentional. Every transition smooth. Every touchpoint reinforcing trust. This becomes the blueprint for Phases 5-9.</div>
+          <div class="task-how"><strong>How:</strong> Claude maps the redesigned journey using the Infinite Acquisition Loop framework. For each stage: (1) What the customer experiences, (2) What happens in the CRM, (3) What the team does, (4) What's automated. Output: a visual journey map (Google Doc or Slides) with the critical path highlighted.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Define response time standards</div>
+          <div class="task-desc">Set clear expectations: how fast should the business respond at each touchpoint? Industry data shows that responding within 5 minutes increases conversion by 400%. Set the standard and build the systems to meet it.</div>
+          <div class="task-how"><strong>How:</strong> Claude drafts response time standards for each channel: Form submission (&lt;5 mins auto-response, &lt;2 hours human follow-up), Phone call (&lt;3 rings or voicemail + auto-SMS), Instagram DM (&lt;1 hour during business hours), Email (&lt;4 hours). These standards feed directly into Phase 7 (Automations).</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Validate the redesign with client</div>
+          <div class="task-desc">Walk the client through the proposed journey. They need to understand it, believe in it, and be able to explain it to their team. If they can't walk a new staff member through it in 2 minutes, simplify it.</div>
+          <div class="task-how"><strong>How:</strong> Share the journey map in Slack before the validation call. On the call, Mario walks through each step: "When someone sees your ad, this happens. Then this. Then this." Ask: "Does anything feel unnatural or forced?" Test: "Can you explain this journey to me as if I'm a new hire?" Record via Read.ai.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 5: IMPLEMENTATION CHECKLIST & HANDOVER ─── -->
+  <div class="section-card" onclick="this.classList.toggle('open')">
+    <div class="section-header">
+      <span class="section-arrow">&#9660;</span>
+      <span class="section-title">5. Implementation Checklist &amp; Handover</span>
+      <span class="section-badge badge-claude">CLAUDE</span>
+    </div>
+    <div class="section-body">
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Create the implementation checklist</div>
+          <div class="task-desc">A master list of everything that needs to be built, configured, or changed to make the redesigned journey real. Each item linked to the onramp phase where it gets done.</div>
+          <div class="task-how"><strong>How:</strong> Claude generates the checklist from the journey redesign. Format: Task | Phase | Owner | Status. Example: "Build lead capture landing page | Phase 6 | Michelle + Claude | Not Started." Upload to the client's Google Drive folder and create matching tasks in The Lighthouse project tracker.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Brief the team on the journey plan</div>
+          <div class="task-desc">Everyone working on this client needs to understand the full journey, not just their piece. The designer needs to know why the landing page matters. The ad manager needs to know what happens after the click.</div>
+          <div class="task-how"><strong>How:</strong> Post a team brief in the internal Slack channel: journey map summary, key friction points fixed, remaining work mapped to phases, response time standards. Tag all assigned team members. Pin the journey map doc.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Update The Lighthouse and mark Phase 3 complete</div>
+          <div class="task-desc">Sync the journey data into The Lighthouse. Update the client profile with: critical path, primary bottleneck, response time standards. Mark Phase 3 complete.</div>
+          <div class="task-how"><strong>How:</strong> Update via The Lighthouse admin panel or API: <code>PATCH /api/clients/[id]</code>. Attach the journey map document link. Log the conversion rates at each stage as baseline metrics for future comparison. Mark phase complete in project tracker.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── COMMON MISTAKES ─── -->
+  <div class="mistakes-block">
+    <h4>Common Mistakes &mdash; What Goes Wrong in Phase 3</h4>
+    <div class="mistake-item">
+      <span class="mistake-x">&#10005;</span>
+      <span><strong>Mapping the ideal journey without understanding the current one.</strong> You can't design a fix for something you haven't diagnosed. Always start with what actually happens today, warts and all.</span>
+    </div>
+    <div class="mistake-item">
+      <span class="mistake-x">&#10005;</span>
+      <span><strong>Overcomplicating the journey with too many steps.</strong> Every additional step is a potential drop-off point. The best journeys have 5-7 steps max from awareness to purchase. If yours has 12, simplify.</span>
+    </div>
+    <div class="mistake-item">
+      <span class="mistake-x">&#10005;</span>
+      <span><strong>Not mystery-shopping the current experience.</strong> Clients often describe what they think happens, not what actually happens. Submit a real enquiry. Time the response. Experience it firsthand.</span>
+    </div>
+    <div class="mistake-item">
+      <span class="mistake-x">&#10005;</span>
+      <span><strong>Ignoring the post-purchase journey.</strong> The journey doesn't end at the sale. What happens after they buy determines whether they stay, refer, and become a case study. Map onboarding too.</span>
+    </div>
+    <div class="mistake-item">
+      <span class="mistake-x">&#10005;</span>
+      <span><strong>Setting response time standards without building the systems to meet them.</strong> Saying "respond in 5 minutes" means nothing without an automation that makes it happen. Standards without systems are just wishes.</span>
+    </div>
+  </div>
+
+  <!-- ─── EVIDENCE ─── -->
+  <div class="evidence-block">
+    <h4>Evidence &mdash; How to Verify Phase 3 is Complete</h4>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Customer Journey Map (Google Doc or Slides) in client's Drive folder &mdash; approved by client</span></div>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Friction points documented with categorisation (Confusion / Effort / Fear / Delay) and priority ranking</span></div>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Quick-win fixes implemented and confirmed in Slack</span></div>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Implementation checklist created with tasks mapped to onramp phases</span></div>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Response time standards documented and shared with team</span></div>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Phase 3 marked complete in The Lighthouse with baseline conversion rates logged</span></div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- PHASE 4: DEFINE & OPTIMISE YOUR PACKAGES  -->
+<!-- ══════════════════════════════════════════ -->
+<div class="phase-content" id="phase-3">
+
+  <div class="phase-hero">
+    <div class="phase-hero-eyebrow">Phase 4 of 12</div>
+    <h2>Define &amp; Optimise Your Packages</h2>
+    <div class="phase-hero-focus">When the offer is clear, the sale is easier.</div>
+    <div class="phase-hero-stats">
+      <div class="phase-hero-stat">
+        <span class="phase-hero-stat-val">8</span>
+        <span class="phase-hero-stat-label">Hours</span>
+      </div>
+      <div class="phase-hero-stat">
+        <span class="phase-hero-stat-val">5</span>
+        <span class="phase-hero-stat-label">Projects</span>
+      </div>
+      <div class="phase-hero-stat">
+        <span class="phase-hero-stat-val">23</span>
+        <span class="phase-hero-stat-label">Tasks</span>
+      </div>
+      <div class="phase-hero-stat">
+        <span class="phase-hero-stat-val">Mario</span>
+        <span class="phase-hero-stat-label">Lead</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: var(--ink); border-radius: 10px; padding: 1.25rem 1.5rem; margin-bottom: 1rem;">
+    <h4 style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); font-weight: 700; margin-bottom: 0.5rem;">The Job of This Phase</h4>
+    <p style="font-size: 1rem; color: var(--cream); line-height: 1.7; font-weight: 500;">The client's offer is so clear that a stranger could understand what they get, what it costs, and why it's worth it &mdash; in under 30 seconds.</p>
+    <p style="font-size: 0.84rem; color: var(--gray-400); line-height: 1.6; margin-top: 0.75rem;">A nice-looking pricing page is not the job done. The job is done when the client can explain any offer in one sentence and the listener immediately gets it. If they need a paragraph to explain what's included, the offer is too complicated. Simplicity is the ultimate sophistication.</p>
+  </div>
+
+  <div class="standard-block">
+    <h4>The Standard &mdash; What Good Looks Like</h4>
+    <p>"My offers finally make sense. I can explain them in one sentence and people get it."</p>
+  </div>
+
+  <!-- ─── SECTION 1: CURRENT OFFER AUDIT ─── -->
+  <div class="section-card" onclick="this.classList.toggle('open')">
+    <div class="section-header">
+      <span class="section-arrow">&#9660;</span>
+      <span class="section-title">1. Current Offer Audit &amp; Pricing Analysis</span>
+      <span class="section-badge badge-both">CLAUDE + TEAM</span>
+    </div>
+    <div class="section-body">
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Document all current offers and pricing</div>
+          <div class="task-desc">List every package, membership, service, and pricing tier the client currently sells. Include: name, price, what's included, contract length, any upsells or add-ons. Get the complete picture &mdash; even the ones they don't actively promote.</div>
+          <div class="task-how"><strong>How:</strong> Pull from intake form data (the client listed their offers), website pricing page, GHL products/invoices. Cross-check with the client: "Are there any packages you sell that aren't listed here? Any special deals or legacy pricing?" Output: a comprehensive offer inventory in Google Docs.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Analyse revenue by offer</div>
+          <div class="task-desc">Which offers generate the most revenue? Which have the highest margins? Which have the best retention? Often clients discover one offer does 70% of the revenue while they spend half their energy promoting the other three.</div>
+          <div class="task-how"><strong>How:</strong> Claude analyses GHL payment data or client-provided financials. Break down: revenue per offer, number of active clients per offer, average lifetime value per offer, churn rate per offer. Output: a revenue mix chart showing where the money actually comes from vs. where the client thinks it comes from.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Run competitive pricing analysis</div>
+          <div class="task-desc">What are the 3-5 closest competitors charging for similar services? Is the client priced too low (leaving money on the table), too high (struggling to convert), or positioned in the middle (undifferentiated)?</div>
+          <div class="task-how"><strong>How:</strong> Claude web searches competitor pricing using the competitor list from Phase 1. Check their websites, social media for price mentions, Google Business Profile for service details. Compile: competitor name, comparable offer, price, what's included. Output: a pricing comparison matrix. Flag if the client is underpriced relative to their positioning.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Identify offer confusion and overlap</div>
+          <div class="task-desc">Where are customers confused about which offer is right for them? Are there packages that overlap in what they include? Are there too many options creating decision paralysis?</div>
+          <div class="task-how"><strong>How:</strong> Claude analyses the offer inventory for: (1) Overlapping inclusions between packages, (2) Unclear differentiation between tiers, (3) Too many options (more than 3-4 tiers creates paralysis), (4) Missing "entry point" offer (easy first purchase). Review with Mario on call. Apply the "paradox of choice" principle &mdash; fewer options, more conversions.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 2: VALUE STACK REDESIGN ─── -->
+  <div class="section-card" onclick="this.classList.toggle('open')">
+    <div class="section-header">
+      <span class="section-arrow">&#9660;</span>
+      <span class="section-title">2. Value Stack Redesign</span>
+      <span class="section-badge badge-both">CLAUDE + TEAM</span>
+    </div>
+    <div class="section-body">
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Strategy session on offer structure (Mario)</div>
+          <div class="task-desc">Mario leads a 45-60 minute session to redesign the offer architecture. Core question: "If someone lands on your page with zero context, can they understand in 10 seconds which offer is for them and why?"</div>
+          <div class="task-how"><strong>How:</strong> Schedule via Google Calendar. Pre-load: the offer audit, revenue analysis, competitor pricing matrix. Use the Kaizen Offer Clarity framework: (1) Entry Offer (low risk, first taste), (2) Core Offer (the main thing), (3) Premium Offer (high-touch, high-value). Map each current offer into this framework or identify gaps. Record via Read.ai.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Build the value stack for each offer</div>
+          <div class="task-desc">For each offer, stack the value: what's included, what it's worth individually, and the total perceived value vs. the price. The gap between perceived value and price is what makes the offer feel like a no-brainer.</div>
+          <div class="task-how"><strong>How:</strong> Claude drafts the value stack from the strategy session. For each offer: list every component, assign a standalone value, total the stack, show the price as a fraction of total value. Example: "Personal Training 3x/week ($240/wk value) + Nutrition Plan ($197 value) + Progress Tracking ($49/mo value) = $486/week value. Your price: $199/week." Format as a visual stack in Google Docs.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Design the ascension path</div>
+          <div class="task-desc">How does a customer naturally move from the entry offer to the core offer to the premium offer? Each level should feel like a logical next step, not a hard upsell. The path should mirror the customer's growing commitment.</div>
+          <div class="task-how"><strong>How:</strong> Claude maps the ascension path: Entry &rarr; Core &rarr; Premium with trigger points for each transition. Example: "After 6 weeks on the Intro Offer, if they've attended 15+ sessions, the coach recommends the Core Membership." Document the trigger, the conversation script, and the upgrade incentive for each transition.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Test the "one sentence" rule</div>
+          <div class="task-desc">For each redesigned offer, the client must be able to explain it in one sentence. If they can't, it's too complicated. Simplify until they can.</div>
+          <div class="task-how"><strong>How:</strong> On the next call, Mario asks the client to explain each offer in one sentence without notes. If they stumble, the offer needs simplification. The sentence should answer: Who is it for? What do they get? What does it cost? Example: "Our 8-Week Kickstart is $49/week and gives beginners 3 group sessions plus a nutrition guide to build the habit." Record the one-liners for the sales collateral.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 3: PRICING STRATEGY ─── -->
+  <div class="section-card" onclick="this.classList.toggle('open')">
+    <div class="section-header">
+      <span class="section-arrow">&#9660;</span>
+      <span class="section-title">3. Pricing Strategy &amp; Tier Structure</span>
+      <span class="section-badge badge-both">CLAUDE + TEAM</span>
+    </div>
+    <div class="section-body">
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Set pricing based on value, not cost</div>
+          <div class="task-desc">Price is a function of perceived value, not cost to deliver. If the client is underpriced (common in fitness), model the revenue impact of a 10-20% price increase. Often it's the single highest-leverage change in the entire onramp.</div>
+          <div class="task-how"><strong>How:</strong> Claude models pricing scenarios: current price vs. proposed price, factoring in potential churn. Example: "If you raise from $49/wk to $59/wk and lose 5% of members, your monthly revenue still increases by $X." Present 3 pricing scenarios (conservative, moderate, aggressive) with projected revenue impact. Mario reviews and recommends.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Design the pricing presentation</div>
+          <div class="task-desc">How pricing is displayed matters as much as the price itself. Use anchoring (show the most expensive first), decoy pricing (make the middle option look best), and clear naming that signals value.</div>
+          <div class="task-how"><strong>How:</strong> Claude drafts 2-3 pricing presentation layouts. Apply behavioural pricing principles: (1) Anchor with the premium tier, (2) Highlight the "most popular" mid-tier, (3) Name tiers with outcome words not numbers (e.g., "Starter," "Accelerator," "Unlimited" not "Bronze, Silver, Gold"). Share options with client for feedback.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Handle the transition for existing members</div>
+          <div class="task-desc">If pricing is changing, plan how existing members are handled. Options: grandfather existing rates, phase in over 60-90 days, or add value to justify the increase. This prevents churn during the transition.</div>
+          <div class="task-how"><strong>How:</strong> Mario advises on the transition strategy based on the client's member base and culture. Claude drafts the communication: (1) Email to existing members explaining the value add, (2) Script for in-person conversations, (3) Timeline for the rollout. Post the plan in Slack for client approval before any changes are made.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 4: PACKAGE COPY & SALES DESCRIPTIONS ─── -->
+  <div class="section-card" onclick="this.classList.toggle('open')">
+    <div class="section-header">
+      <span class="section-arrow">&#9660;</span>
+      <span class="section-title">4. Package Copy &amp; Sales Descriptions</span>
+      <span class="section-badge badge-claude">CLAUDE</span>
+    </div>
+    <div class="section-body">
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Write offer descriptions for each package</div>
+          <div class="task-desc">Clear, compelling descriptions for each offer that answer: What is it? Who is it for? What do you get? What's the outcome? What does it cost? Written in the client's tone of voice from Phase 1.</div>
+          <div class="task-how"><strong>How:</strong> Claude writes descriptions using: Brand Bible tone of voice, avatar language from Phase 2, value stack from this phase. Each description follows the format: Hook (pain/aspiration) &rarr; What You Get &rarr; Who It's For &rarr; Outcome &rarr; Price &rarr; CTA. Write 3 versions per offer: short (1 sentence for ads), medium (1 paragraph for social), long (full description for landing page).</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Create the pricing comparison table</div>
+          <div class="task-desc">A visual side-by-side comparison of all tiers showing what's included in each. This becomes a key sales tool for the website, landing pages, and sales conversations.</div>
+          <div class="task-how"><strong>How:</strong> Claude designs the comparison table: rows = features/inclusions, columns = tiers. Use checkmarks and X marks. Highlight the recommended tier. Include a "Best for..." row at the top so prospects self-select. Output: a styled table in Google Docs + a version formatted for the landing page (Phase 6).</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Draft FAQ for common pricing questions</div>
+          <div class="task-desc">Pre-answer the 5-7 questions prospects always ask: "What's the cancellation policy?" "Are there joining fees?" "Can I pause?" "What if it doesn't work?" These go on the landing page and in the sales script.</div>
+          <div class="task-how"><strong>How:</strong> Claude drafts FAQs using objection data from Phase 2 + common industry questions. Each FAQ: Question &rarr; Answer (warm, direct, addresses the real fear). Example: Q: "What if I can't make it to every session?" A: "Life happens. You can make up sessions any time within the week &mdash; we're flexible because consistency matters more than perfection." Client reviews for accuracy.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Client approval on all copy</div>
+          <div class="task-desc">Share all package copy for review. The client must confirm: "This sounds like me, this is accurate, and I'd be confident saying this on a sales call."</div>
+          <div class="task-how"><strong>How:</strong> Share the complete Package Copy doc in Slack: "Here's the copy for all your offers. Read each one out loud. If anything sounds off or inaccurate, mark it up. We want this to feel like you, not a template." Iterate on feedback. Final version gets saved as the master copy document in Google Drive.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 5: SALES COLLATERAL UPDATE ─── -->
+  <div class="section-card" onclick="this.classList.toggle('open')">
+    <div class="section-header">
+      <span class="section-arrow">&#9660;</span>
+      <span class="section-title">5. Sales Collateral Update</span>
+      <span class="section-badge badge-both">CLAUDE + TEAM</span>
+    </div>
+    <div class="section-body">
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Update GHL products and pricing</div>
+          <div class="task-desc">Ensure the CRM reflects the new offer structure: correct product names, pricing, recurring vs. one-time, any setup fees. This is what the team uses to invoice and what automations reference.</div>
+          <div class="task-how"><strong>How:</strong> Access GHL via client's PIT. Navigate to <code>Payments &gt; Products</code>. Update or create products to match the redesigned offer structure. Set correct pricing, billing frequency, and descriptions. Test: create a test invoice for each product to verify amounts and labels.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Update any existing website pricing</div>
+          <div class="task-desc">If the client has a pricing page on their website, update it to match the new structure. Old pricing floating around creates confusion and undermines the sales process.</div>
+          <div class="task-how"><strong>How:</strong> Team member updates the website (WordPress/Elementor or GHL funnel page) with the new pricing table, offer descriptions, and CTAs. If there's no pricing page, note it for Phase 6 (Landing Pages) or Phase 12 (Authority Platform). Verify the update is live on desktop and mobile.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Create the Package Pricing Document</div>
+          <div class="task-desc">A polished, branded PDF that the client or their team can send to prospects. This replaces awkward "let me type out the pricing in a text" moments with something professional.</div>
+          <div class="task-how"><strong>How:</strong> Claude generates the PDF using the Kaizen design system: Playfair Display headings, DM Sans body, ink/gold/cream palette. Include: offer names, descriptions, value stacks, pricing, comparison table, FAQ, and CTA. Upload to client's Google Drive folder. Share in Slack: "Here's a pricing PDF you can send to anyone who asks 'what do you offer?'"</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Mark Phase 4 complete and prep for Phase 5</div>
+          <div class="task-desc">Update The Lighthouse, confirm all documents are in Google Drive, and brief the team on how the new offer structure connects to the sales mechanisms coming in Phase 5.</div>
+          <div class="task-how"><strong>How:</strong> Update The Lighthouse client profile with the finalised offer structure. Mark Phase 4 complete. Post in Slack: "Offer structure locked in. Next up: Phase 5 &mdash; we'll build the sales process around these offers so your team can present them with confidence." Link to the Package Pricing Document as the reference for Phase 5.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── COMMON MISTAKES ─── -->
+  <div class="mistakes-block">
+    <h4>Common Mistakes &mdash; What Goes Wrong in Phase 4</h4>
+    <div class="mistake-item">
+      <span class="mistake-x">&#10005;</span>
+      <span><strong>Too many offers.</strong> If you have more than 3-4 distinct packages, you're creating decision paralysis. The paradox of choice is real. Simplify ruthlessly &mdash; fewer options, more conversions.</span>
+    </div>
+    <div class="mistake-item">
+      <span class="mistake-x">&#10005;</span>
+      <span><strong>Pricing based on what competitors charge instead of the value delivered.</strong> If you're better, charge more. Competing on price is a race to the bottom. The value stack exists to justify the premium.</span>
+    </div>
+    <div class="mistake-item">
+      <span class="mistake-x">&#10005;</span>
+      <span><strong>Describing offers by features instead of outcomes.</strong> "3 sessions per week, nutrition plan, progress tracking" is features. "Go from feeling invisible to turning heads in 12 weeks" is an outcome. Lead with the outcome, back it up with features.</span>
+    </div>
+    <div class="mistake-item">
+      <span class="mistake-x">&#10005;</span>
+      <span><strong>Not testing the "one sentence" rule.</strong> If the client can't explain the offer in one sentence, prospects definitely can't understand it either. Keep simplifying until it clicks.</span>
+    </div>
+    <div class="mistake-item">
+      <span class="mistake-x">&#10005;</span>
+      <span><strong>Changing prices without a transition plan for existing members.</strong> A sudden price increase without communication breeds resentment. Always communicate the value add, give notice, and handle it with care.</span>
+    </div>
+  </div>
+
+  <!-- ─── EVIDENCE ─── -->
+  <div class="evidence-block">
+    <h4>Evidence &mdash; How to Verify Phase 4 is Complete</h4>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Package Pricing Document (PDF) in client's Google Drive folder &mdash; branded and approved</span></div>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Value stacks documented for each offer with perceived value calculations</span></div>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Sales collateral updated (website pricing, GHL products, comparison table)</span></div>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Client can explain each offer in one sentence (verified on call)</span></div>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Ascension path mapped: Entry &rarr; Core &rarr; Premium with transition triggers</span></div>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Phase 4 marked complete in The Lighthouse with offer structure synced</span></div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- PHASE 5: INSTALL YOUR SALES MECHANISMS    -->
+<!-- ══════════════════════════════════════════ -->
+<div class="phase-content" id="phase-4">
+
+  <div class="phase-hero">
+    <div class="phase-hero-eyebrow">Phase 5 of 12</div>
+    <h2>Install Your Sales Mechanisms</h2>
+    <div class="phase-hero-focus">Confidence isn't personality. It's process.</div>
+    <div class="phase-hero-stats">
+      <div class="phase-hero-stat">
+        <span class="phase-hero-stat-val">16</span>
+        <span class="phase-hero-stat-label">Hours</span>
+      </div>
+      <div class="phase-hero-stat">
+        <span class="phase-hero-stat-val">9</span>
+        <span class="phase-hero-stat-label">Projects</span>
+      </div>
+      <div class="phase-hero-stat">
+        <span class="phase-hero-stat-val">31</span>
+        <span class="phase-hero-stat-label">Tasks</span>
+      </div>
+      <div class="phase-hero-stat">
+        <span class="phase-hero-stat-val">Mario</span>
+        <span class="phase-hero-stat-label">Lead</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: var(--ink); border-radius: 10px; padding: 1.25rem 1.5rem; margin-bottom: 1rem;">
+    <h4 style="font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gold); font-weight: 700; margin-bottom: 0.5rem;">The Job of This Phase</h4>
+    <p style="font-size: 1rem; color: var(--cream); line-height: 1.7; font-weight: 500;">The client (and their team) can confidently handle any sales conversation &mdash; from first DM to price presentation to objection &mdash; using a repeatable process, not improvisation.</p>
+    <p style="font-size: 0.84rem; color: var(--gray-400); line-height: 1.6; margin-top: 0.75rem;">Scripts in a Google Doc aren't the job done. The job is done when the client can walk into a sales conversation without anxiety because they know exactly what to say at each stage. They've practised it. They've role-played it. The CRM tracks it. The follow-up happens automatically. Sales becomes a system, not a personality trait.</p>
+  </div>
+
+  <div class="standard-block">
+    <h4>The Standard &mdash; What Good Looks Like</h4>
+    <p>"I don't dread sales conversations anymore. I actually know what to say and when."</p>
+  </div>
+
+  <!-- ─── SECTION 1: SALES PROCESS AUDIT ─── -->
+  <div class="section-card" onclick="this.classList.toggle('open')">
+    <div class="section-header">
+      <span class="section-arrow">&#9660;</span>
+      <span class="section-title">1. Sales Process Audit &amp; Gap Analysis</span>
+      <span class="section-badge badge-both">CLAUDE + TEAM</span>
+    </div>
+    <div class="section-body">
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Map the current sales process</div>
+          <div class="task-desc">Document how sales currently happen: What channels do enquiries come through? Who responds? How fast? What's the conversion process? Is there a follow-up? Map reality, not aspiration.</div>
+          <div class="task-how"><strong>How:</strong> Claude analyses the Path to Purchase from Phase 3 (the sales-specific portion) + GHL pipeline data. Pull: average response time, appointment show rate, close rate, average sale value. Ask the client: "Walk me through the last 3 sales you made. What happened from first contact to payment?"</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Identify the primary sales mechanism</div>
+          <div class="task-desc">Every business has one primary way sales happen: phone call, in-person trial, DM conversation, discovery call, walk-in. Identify which mechanism drives the most revenue and double down on it.</div>
+          <div class="task-how"><strong>How:</strong> Claude analyses GHL opportunity data: source &rarr; close rate by channel. Typically: in-person trial (fitness), discovery call (services), chat-to-sale (DM-based). Present to Mario: "78% of your closes come from in-person trials. That's your primary mechanism &mdash; everything should funnel toward getting someone through the door."</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Diagnose the conversion leaks</div>
+          <div class="task-desc">Where are leads falling out of the pipeline? Common leaks: slow response time, no follow-up after missed calls, no system for handling objections, no structured price presentation, ghosted after the trial.</div>
+          <div class="task-how"><strong>How:</strong> Claude analyses the GHL pipeline: how many leads enter each stage vs. how many move to the next. Calculate drop-off rates at each transition. Cross-reference with Phase 3 friction analysis. Output: a ranked list of conversion leaks with estimated revenue impact. Example: "42% of booked trials don't show up. At your average sale value of $X, that's $Y/month in lost revenue."</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Sales strategy session with Mario</div>
+          <div class="task-desc">Mario reviews the audit findings with the client and designs the sales strategy: which mechanisms to build, which scripts to write, what the pipeline should look like, and how follow-up should work.</div>
+          <div class="task-how"><strong>How:</strong> Schedule a 45-60 minute strategy call. Mario uses the Kaizen Sales &amp; Influence module framework. Key decisions: (1) Primary sales mechanism, (2) SBC (Sell By Chat) structure, (3) Discovery call structure, (4) Price presentation approach, (5) Follow-up cadence. Record via Read.ai. Post decisions in Slack.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 2: SELL BY CHAT (SBC) ─── -->
+  <div class="section-card" onclick="this.classList.toggle('open')">
+    <div class="section-header">
+      <span class="section-arrow">&#9660;</span>
+      <span class="section-title">2. Sell By Chat (SBC) Framework &amp; Scripts</span>
+      <span class="section-badge badge-claude">CLAUDE</span>
+    </div>
+    <div class="section-body">
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Build the SBC conversation structure</div>
+          <div class="task-desc">A step-by-step framework for turning a DM or SMS enquiry into a booking or sale &mdash; without being salesy. The structure: Acknowledge &rarr; Qualify &rarr; Connect &rarr; Recommend &rarr; Invite.</div>
+          <div class="task-how"><strong>How:</strong> Claude drafts the SBC framework using the Kaizen methodology. For each stage: (1) What the message does psychologically, (2) Example message, (3) What to do if they don't respond. The tone must match the Brand Bible from Phase 1. No "Hey!! Are you ready to CRUSH your goals??" &mdash; match how the client actually talks.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Write SBC scripts for each enquiry type</div>
+          <div class="task-desc">Different enquiry types need different scripts: new lead from ad, Instagram DM enquiry, website form submission, referral, past client re-engagement. Each script adapts the SBC framework to the context.</div>
+          <div class="task-how"><strong>How:</strong> Claude writes 4-5 SBC scripts based on the most common lead sources (from GHL data). Each script includes: opening message, 2-3 qualifying questions, the recommendation message, and the booking CTA. Include response templates for: "What are your prices?", "Do you have availability?", "My friend recommended you." Save in Google Drive as the SBC Playbook.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Create SBC quick-reply templates in GHL</div>
+          <div class="task-desc">Set up templated responses in GHL so the team doesn't have to type scripts from memory. One click to send the right message at the right stage.</div>
+          <div class="task-how"><strong>How:</strong> Access GHL via client's PIT. Navigate to <code>Settings &gt; Custom Values</code> or <code>Conversations &gt; Templates</code>. Create templates for each SBC stage with merge fields: <code>{{contact.first_name}}</code>. Name them clearly: "SBC-01-Welcome", "SBC-02-Qualify", "SBC-03-Recommend", "SBC-04-Invite". Test each template by sending to a test contact.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 3: DISCOVERY CALL FRAMEWORK ─── -->
+  <div class="section-card" onclick="this.classList.toggle('open')">
+    <div class="section-header">
+      <span class="section-arrow">&#9660;</span>
+      <span class="section-title">3. Discovery Call &amp; Price Presentation</span>
+      <span class="section-badge badge-both">CLAUDE + TEAM</span>
+    </div>
+    <div class="section-body">
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Build the discovery call framework</div>
+          <div class="task-desc">A structured conversation flow for phone calls or in-person consultations. Stages: Rapport (2 mins) &rarr; Situation (5 mins) &rarr; Problem (5 mins) &rarr; Impact (3 mins) &rarr; Solution (5 mins) &rarr; Offer (3 mins) &rarr; Next Steps (2 mins).</div>
+          <div class="task-how"><strong>How:</strong> Claude drafts the framework using Mario's diagnostic filters. For each stage: key questions to ask, what to listen for, transition phrases. The framework must feel conversational, not interrogative. Include: "What's your biggest challenge right now?" (Situation), "How long has that been going on?" (Problem), "What would it mean to fix that?" (Impact). Save as Discovery Call Script in Google Drive.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Design the price presentation structure</div>
+          <div class="task-desc">How the price is presented determines whether the prospect hears "expensive" or "worth it." Structure: Recap the value &rarr; Present the investment &rarr; Anchor against alternatives &rarr; Silence (let them process).</div>
+          <div class="task-how"><strong>How:</strong> Claude drafts the price presentation script using the value stack from Phase 4. Format: "Based on what you've told me, [recommended offer] is the best fit. Here's what's included: [value stack]. The investment is [price]. Compared to [alternative/cost of doing nothing], that's [value comparison]." Include: when to present price (after establishing value, never before), how to handle silence, transition to close.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Build the objection handling playbook</div>
+          <div class="task-desc">A structured response for every objection from Phase 2, plus the 5 universal objections every business faces: price, timing, trust, commitment, and "I need to think about it."</div>
+          <div class="task-how"><strong>How:</strong> Claude compiles the playbook from Phase 2 objection data + universal objections. For each: (1) Acknowledge ("I totally get that..."), (2) Clarify ("When you say it's too expensive, is it the total amount or the weekly commitment?"), (3) Reframe ("Most of our members felt the same way before they started. Here's what changed..."), (4) Close ("Would it help if we...?"). Format: pocket-size reference the team can have during calls. Save in Google Drive.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Review and personalise scripts with client</div>
+          <div class="task-desc">Scripts must sound like the client, not a sales training manual. Mario reviews all scripts with the client, adjusting language, phrasing, and approach until the client says "I would actually say it like that."</div>
+          <div class="task-how"><strong>How:</strong> On the next strategy call, Mario walks through each script with the client. Read sections out loud. Ask: "Would you actually say this? What words would you use instead?" Make real-time edits. The scripts should feel like a natural extension of how the client already communicates &mdash; just more structured. Record via Read.ai for reference.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 4: FOLLOW-UP & CRM PIPELINE ─── -->
+  <div class="section-card" onclick="this.classList.toggle('open')">
+    <div class="section-header">
+      <span class="section-arrow">&#9660;</span>
+      <span class="section-title">4. Follow-Up Sequences &amp; CRM Pipeline</span>
+      <span class="section-badge badge-both">CLAUDE + TEAM</span>
+    </div>
+    <div class="section-body">
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Design the follow-up sequence cadence</div>
+          <div class="task-desc">Most sales are lost because follow-up doesn't happen &mdash; or it happens once and stops. Design a 7-14 day follow-up sequence that combines automated messages with human touchpoints. The goal: no lead goes cold without 5+ contact attempts.</div>
+          <div class="task-how"><strong>How:</strong> Claude drafts the follow-up cadence: Day 0 (immediate auto-response), Day 1 (personal message), Day 2 (value-add email), Day 3 (SMS check-in), Day 5 (social proof email), Day 7 (last-chance message), Day 14 (nurture handoff). Each message has a specific purpose &mdash; not just "checking in." Map which are automated vs. manual.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Write follow-up email and SMS templates</div>
+          <div class="task-desc">Every follow-up message needs to add value, not just ask "are you still interested?" Each message should give the prospect a reason to respond: social proof, a helpful resource, a limited-time offer, or a genuine question.</div>
+          <div class="task-how"><strong>How:</strong> Claude writes the full sequence using the messaging bank from Phase 2 and the Brand Bible tone from Phase 1. Email templates in GHL format with merge fields. SMS templates kept under 160 characters. Each message has: a clear purpose, one CTA, and a reason to act. Save in Google Drive as Follow-Up Playbook and create in GHL as workflow templates.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Configure CRM pipeline stages</div>
+          <div class="task-desc">Set up the sales pipeline in GHL with clear stages that match the actual sales process. Each stage should have: a definition (what qualifies a lead for this stage), a required action, and a maximum time before escalation.</div>
+          <div class="task-how"><strong>How:</strong> Access GHL via client's PIT. Navigate to <code>Opportunities &gt; Pipelines</code>. Create or reconfigure stages: New Lead &rarr; Contacted &rarr; Qualified &rarr; Appointment Booked &rarr; Appointment Attended &rarr; Proposal Sent &rarr; Won &rarr; Lost. Set stage durations. Add pipeline automations: if a lead sits in "Contacted" for >48 hours, trigger a task for the team. Test by moving a test contact through all stages.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Build follow-up automations in GHL</div>
+          <div class="task-desc">Connect the follow-up sequence to the pipeline: when a lead enters a stage, the appropriate automation fires. When they respond, the automation pauses. When they book, they move to the next stage automatically.</div>
+          <div class="task-how"><strong>How:</strong> Build GHL workflows: Trigger (pipeline stage change or form submission) &rarr; Wait step &rarr; Send email/SMS &rarr; If/Else (did they respond? did they book?) &rarr; Next action. Use <code>Automation &gt; Workflows</code>. Create separate workflows for: new lead follow-up, no-show re-engagement, post-consultation follow-up. Test each workflow end-to-end with a test contact.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Set up sales tracking dashboard</div>
+          <div class="task-desc">Build a simple dashboard so the client can see: leads in, appointments booked, appointments attended, sales closed, revenue. This creates accountability and reveals where the system needs tuning.</div>
+          <div class="task-how"><strong>How:</strong> Use GHL's built-in reporting or create a custom dashboard in The Lighthouse. Key metrics: Lead volume (by source), Speed-to-contact, Appointment show rate, Close rate, Average sale value, Revenue (weekly/monthly). Share the dashboard link in Slack. Set up a weekly Slack update: "This week: X leads, Y appointments, Z sales, $W revenue."</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 5: TRAINING & ROLE-PLAY ─── -->
+  <div class="section-card" onclick="this.classList.toggle('open')">
+    <div class="section-header">
+      <span class="section-arrow">&#9660;</span>
+      <span class="section-title">5. Team Training &amp; Role-Play Session</span>
+      <span class="section-badge badge-team">TEAM</span>
+    </div>
+    <div class="section-body">
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Schedule sales training session (60-90 mins)</div>
+          <div class="task-desc">A hands-on session where Mario walks the client (and their team, if applicable) through every script, framework, and system. Not a lecture &mdash; a practice session.</div>
+          <div class="task-how"><strong>How:</strong> Schedule via Google Calendar. Invite the client + any team members who handle sales conversations (front desk, coaches, managers). Send pre-read: SBC scripts, discovery call framework, objection playbook. Set expectations: "Come ready to practise. We'll role-play live scenarios."</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Conduct live role-plays</div>
+          <div class="task-desc">Mario plays the prospect, the client plays themselves. Run through: a cold DM enquiry (SBC), a discovery call, a price presentation, the top 3 objections, and a no-show follow-up. Repeat until the client feels natural.</div>
+          <div class="task-how"><strong>How:</strong> Mario runs 4-5 role-play scenarios. After each: specific feedback on what worked, what to adjust, and what to watch for. Record the session via Read.ai &mdash; the client can re-watch for practice. Key coaching points: tone of voice, pacing (slow down), asking questions instead of presenting, sitting with silence after the price.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Validate scripts feel natural, not robotic</div>
+          <div class="task-desc">After role-play, check: does the client feel comfortable with the scripts? Would they actually use them? If anything feels forced, adjust until it sounds like a natural conversation with guardrails, not a telemarketing script.</div>
+          <div class="task-how"><strong>How:</strong> After role-play, ask: "On a scale of 1-10, how natural did that feel?" Anything below 7 needs adjustment. Have the client rewrite any phrases that feel unnatural in their own words. Update the scripts in Google Drive. The goal: structured enough to be repeatable, flexible enough to be authentic.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Test the complete sales system end-to-end</div>
+          <div class="task-desc">Run a full test: submit a fake enquiry, verify the auto-response fires, follow the SBC script, book an appointment, receive the reminders, conduct the call, present the price, handle an objection, close the sale, process the payment. Every step must work.</div>
+          <div class="task-how"><strong>How:</strong> Team member submits a test lead via the live form. Track through the entire pipeline: Did the auto-response fire? Did the GHL workflow trigger? Did the appointment confirmation send? Did the reminder send? Walk through each step and document any breaks. Fix immediately. Confirm in Slack: "Full sales system tested end-to-end. Everything working."</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SECTION 6: FINALISE & HANDOVER ─── -->
+  <div class="section-card" onclick="this.classList.toggle('open')">
+    <div class="section-header">
+      <span class="section-arrow">&#9660;</span>
+      <span class="section-title">6. Finalise, Document &amp; Handover</span>
+      <span class="section-badge badge-both">CLAUDE + TEAM</span>
+    </div>
+    <div class="section-body">
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Compile the Sales Playbook</div>
+          <div class="task-desc">One master document with everything: SBC scripts, discovery call framework, price presentation script, objection playbook, follow-up sequence, pipeline overview. This is the team's sales bible.</div>
+          <div class="task-how"><strong>How:</strong> Claude compiles all materials into a single branded Google Doc: Sales Playbook. Sections: (1) SBC Scripts, (2) Discovery Call Framework, (3) Price Presentation, (4) Objection Handling, (5) Follow-Up Sequence, (6) Pipeline &amp; CRM Guide, (7) Quick Reference Cheat Sheet. Upload to client's Google Drive. Pin in Slack.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Create the Sales Cheat Sheet</div>
+          <div class="task-desc">A single-page quick reference the team can have at the front desk or on their phone. Key phrases, objection responses, and the SBC flow &mdash; everything they need at a glance.</div>
+          <div class="task-how"><strong>How:</strong> Claude designs a 1-page PDF with the Kaizen brand styling. Include: SBC 5-step flow (one line each), top 5 objection reframes (2-3 words each), price presentation sequence (4 steps), key phone number and booking link. Format for mobile viewing. Upload to Google Drive and share in Slack.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Confirm all automations are live</div>
+          <div class="task-desc">Verify: follow-up sequences active, pipeline automations firing, appointment reminders sending, internal notifications working. Nothing should be in draft mode.</div>
+          <div class="task-how"><strong>How:</strong> Check GHL <code>Automation &gt; Workflows</code>: all workflows should show "Published" status. Run a final test lead through the system. Verify in GHL activity log that each automation fired correctly. Document the active automations in the Sales Playbook appendix. Confirm in Slack: "All sales automations are live and tested."</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span><span class="tag-sm tag-t">TEAM</span></div>
+      </div>
+
+      <div class="task-row">
+        <div class="task-check"></div>
+        <div class="task-info">
+          <div class="task-name">Mark Phase 5 complete and prep for Phase 6</div>
+          <div class="task-desc">Update The Lighthouse. Brief the team: Phase 5 gives them the sales process; Phase 6 gives them the landing pages that drive leads into it. The system is nearly ready to go live.</div>
+          <div class="task-how"><strong>How:</strong> Update The Lighthouse client profile: mark Phase 5 complete, note CRM pipeline URL, link to Sales Playbook. Post in Slack: "Your sales system is installed. Scripts, pipeline, follow-up sequences &mdash; all live. Next up: Phase 6 &mdash; we build the landing pages that drive leads into this machine." This is a momentum moment &mdash; celebrate it.</div>
+        </div>
+        <div class="task-tags"><span class="tag-sm tag-c">CLAUDE</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── COMMON MISTAKES ─── -->
+  <div class="mistakes-block">
+    <h4>Common Mistakes &mdash; What Goes Wrong in Phase 5</h4>
+    <div class="mistake-item">
+      <span class="mistake-x">&#10005;</span>
+      <span><strong>Writing scripts the client would never actually say.</strong> If the script sounds like a sales training seminar, it's wrong. Scripts must match the client's natural communication style. Test by reading them out loud &mdash; if it feels cringy, rewrite it.</span>
+    </div>
+    <div class="mistake-item">
+      <span class="mistake-x">&#10005;</span>
+      <span><strong>Skipping the role-play session.</strong> Reading a script is not the same as using it. Role-play builds muscle memory. Clients who skip this step always revert to winging it under pressure.</span>
+    </div>
+    <div class="mistake-item">
+      <span class="mistake-x">&#10005;</span>
+      <span><strong>Building follow-up sequences that just "check in."</strong> Every follow-up message must add value. "Just checking in" is not a follow-up strategy &mdash; it's a confession that you have nothing useful to say. Each message needs a hook: a testimonial, a tip, a limited offer, a genuine question.</span>
+    </div>
+    <div class="mistake-item">
+      <span class="mistake-x">&#10005;</span>
+      <span><strong>Setting up the CRM pipeline without training the team to use it.</strong> A perfect pipeline that no one updates is worse than no pipeline. The team needs to understand: when to move contacts between stages, what each stage means, and why tracking matters.</span>
+    </div>
+    <div class="mistake-item">
+      <span class="mistake-x">&#10005;</span>
+      <span><strong>Not testing the full system end-to-end.</strong> Individual components might work perfectly in isolation but break when connected. Always run a complete test: lead in &rarr; auto-response &rarr; qualification &rarr; booking &rarr; reminder &rarr; appointment &rarr; follow-up &rarr; close. Fix the chain, not just the links.</span>
+    </div>
+  </div>
+
+  <!-- ─── EVIDENCE ─── -->
+  <div class="evidence-block">
+    <h4>Evidence &mdash; How to Verify Phase 5 is Complete</h4>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Sales Playbook (Google Doc) in client's Drive folder with all scripts, frameworks, and sequences</span></div>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>SBC scripts created and saved as GHL conversation templates</span></div>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>CRM pipeline configured with defined stages, automations, and stage durations</span></div>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Follow-up sequences built and published in GHL workflows</span></div>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Role-play session completed and recorded (Read.ai transcript available)</span></div>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Full end-to-end system test completed &mdash; every automation verified working</span></div>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Sales Cheat Sheet (1-page PDF) in Google Drive and pinned in Slack</span></div>
+    <div class="evidence-item"><div class="evidence-dot"></div><span>Phase 5 marked complete in The Lighthouse with pipeline URL and playbook linked</span></div>
+  </div>
+
+</div>
